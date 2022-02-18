@@ -3,10 +3,22 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		731AC7CCFFB14551DC3147C7 /* Pods_Crown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 837A014AC8004DCC6E47DAD9 /* Pods_Crown.framework */; };
+		E3040B4D27BD91990029E9CA /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3040B4C27BD91990029E9CA /* ButtonView.swift */; };
+		E3040B4F27BD92280029E9CA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3040B4E27BD92280029E9CA /* Constants.swift */; };
+		E3040B5127BD92640029E9CA /* FirebaseFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3040B5027BD92640029E9CA /* FirebaseFunctions.swift */; };
+		E3040B5327BD92910029E9CA /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3040B5227BD92910029E9CA /* ForgotPasswordView.swift */; };
+		E3040B5527BD92B60029E9CA /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3040B5427BD92B60029E9CA /* HomeView.swift */; };
+		E3040B5727BD92F90029E9CA /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3040B5627BD92F90029E9CA /* LoginView.swift */; };
+		E3040B5927BD93310029E9CA /* NavAppearanceModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3040B5827BD93310029E9CA /* NavAppearanceModifier.swift */; };
+		E3040B5B27BD93660029E9CA /* PreviewLayoutComponentModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3040B5A27BD93660029E9CA /* PreviewLayoutComponentModifier.swift */; };
+		E3040B5D27BD937E0029E9CA /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3040B5C27BD937E0029E9CA /* RegisterView.swift */; };
+		E3040B5F27BD939A0029E9CA /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3040B5E27BD939A0029E9CA /* UserInfo.swift */; };
+		E3040B6127BD97BF0029E9CA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E3040B6027BD97BF0029E9CA /* GoogleService-Info.plist */; };
 		E376331127BD557E00A7AD56 /* CrownApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E376331027BD557E00A7AD56 /* CrownApp.swift */; };
 		E376331327BD557E00A7AD56 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E376331227BD557E00A7AD56 /* ContentView.swift */; };
 		E376331527BD558100A7AD56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E376331427BD558100A7AD56 /* Assets.xcassets */; };
@@ -33,6 +45,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		837A014AC8004DCC6E47DAD9 /* Pods_Crown.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Crown.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A46104DD08EF13B12C6F3F4D /* Pods-Crown.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crown.release.xcconfig"; path = "Target Support Files/Pods-Crown/Pods-Crown.release.xcconfig"; sourceTree = "<group>"; };
+		C1FCCBDCA9702607B098B425 /* Pods-Crown.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crown.debug.xcconfig"; path = "Target Support Files/Pods-Crown/Pods-Crown.debug.xcconfig"; sourceTree = "<group>"; };
+		E3040B4C27BD91990029E9CA /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
+		E3040B4E27BD92280029E9CA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		E3040B5027BD92640029E9CA /* FirebaseFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseFunctions.swift; sourceTree = "<group>"; };
+		E3040B5227BD92910029E9CA /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
+		E3040B5427BD92B60029E9CA /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		E3040B5627BD92F90029E9CA /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		E3040B5827BD93310029E9CA /* NavAppearanceModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavAppearanceModifier.swift; sourceTree = "<group>"; };
+		E3040B5A27BD93660029E9CA /* PreviewLayoutComponentModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewLayoutComponentModifier.swift; sourceTree = "<group>"; };
+		E3040B5C27BD937E0029E9CA /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		E3040B5E27BD939A0029E9CA /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		E3040B6027BD97BF0029E9CA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E376330D27BD557E00A7AD56 /* Crown.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Crown.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E376331027BD557E00A7AD56 /* CrownApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrownApp.swift; sourceTree = "<group>"; };
 		E376331227BD557E00A7AD56 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -52,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				731AC7CCFFB14551DC3147C7 /* Pods_Crown.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,6 +99,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4A4204C159E62848E244AEF7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C1FCCBDCA9702607B098B425 /* Pods-Crown.debug.xcconfig */,
+				A46104DD08EF13B12C6F3F4D /* Pods-Crown.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		7ECD0A6F995FB6B705785A28 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				837A014AC8004DCC6E47DAD9 /* Pods_Crown.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E376330427BD557E00A7AD56 = {
 			isa = PBXGroup;
 			children = (
@@ -79,6 +123,8 @@
 				E376332127BD558200A7AD56 /* CrownTests */,
 				E376332C27BD558200A7AD56 /* CrownUITests */,
 				E376330E27BD557E00A7AD56 /* Products */,
+				4A4204C159E62848E244AEF7 /* Pods */,
+				7ECD0A6F995FB6B705785A28 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -100,6 +146,17 @@
 				E376331427BD558100A7AD56 /* Assets.xcassets */,
 				E376331927BD558100A7AD56 /* Info.plist */,
 				E376331627BD558100A7AD56 /* Preview Content */,
+				E3040B4C27BD91990029E9CA /* ButtonView.swift */,
+				E3040B4E27BD92280029E9CA /* Constants.swift */,
+				E3040B5027BD92640029E9CA /* FirebaseFunctions.swift */,
+				E3040B5227BD92910029E9CA /* ForgotPasswordView.swift */,
+				E3040B5427BD92B60029E9CA /* HomeView.swift */,
+				E3040B5627BD92F90029E9CA /* LoginView.swift */,
+				E3040B5827BD93310029E9CA /* NavAppearanceModifier.swift */,
+				E3040B5A27BD93660029E9CA /* PreviewLayoutComponentModifier.swift */,
+				E3040B5C27BD937E0029E9CA /* RegisterView.swift */,
+				E3040B5E27BD939A0029E9CA /* UserInfo.swift */,
+				E3040B6027BD97BF0029E9CA /* GoogleService-Info.plist */,
 			);
 			path = Crown;
 			sourceTree = "<group>";
@@ -137,9 +194,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E376333227BD558200A7AD56 /* Build configuration list for PBXNativeTarget "Crown" */;
 			buildPhases = (
+				323378422B22C6F9D6E90EDB /* [CP] Check Pods Manifest.lock */,
 				E376330927BD557E00A7AD56 /* Sources */,
 				E376330A27BD557E00A7AD56 /* Frameworks */,
 				E376330B27BD557E00A7AD56 /* Resources */,
+				6ACBBFE324629F8C2DBEA550 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -235,6 +294,7 @@
 			files = (
 				E376331827BD558100A7AD56 /* Preview Assets.xcassets in Resources */,
 				E376331527BD558100A7AD56 /* Assets.xcassets in Resources */,
+				E3040B6127BD97BF0029E9CA /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,13 +314,65 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		323378422B22C6F9D6E90EDB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Crown-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6ACBBFE324629F8C2DBEA550 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Crown/Pods-Crown-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Crown/Pods-Crown-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Crown/Pods-Crown-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E376330927BD557E00A7AD56 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3040B5D27BD937E0029E9CA /* RegisterView.swift in Sources */,
+				E3040B5127BD92640029E9CA /* FirebaseFunctions.swift in Sources */,
+				E3040B5527BD92B60029E9CA /* HomeView.swift in Sources */,
 				E376331327BD557E00A7AD56 /* ContentView.swift in Sources */,
+				E3040B5F27BD939A0029E9CA /* UserInfo.swift in Sources */,
 				E376331127BD557E00A7AD56 /* CrownApp.swift in Sources */,
+				E3040B4D27BD91990029E9CA /* ButtonView.swift in Sources */,
+				E3040B5327BD92910029E9CA /* ForgotPasswordView.swift in Sources */,
+				E3040B5727BD92F90029E9CA /* LoginView.swift in Sources */,
+				E3040B5B27BD93660029E9CA /* PreviewLayoutComponentModifier.swift in Sources */,
+				E3040B4F27BD92280029E9CA /* Constants.swift in Sources */,
+				E3040B5927BD93310029E9CA /* NavAppearanceModifier.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,6 +526,7 @@
 		};
 		E376333327BD558200A7AD56 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C1FCCBDCA9702607B098B425 /* Pods-Crown.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -435,6 +548,7 @@
 		};
 		E376333427BD558200A7AD56 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A46104DD08EF13B12C6F3F4D /* Pods-Crown.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
