@@ -19,6 +19,9 @@
 		E3040B5D27BD937E0029E9CA /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3040B5C27BD937E0029E9CA /* RegisterView.swift */; };
 		E3040B5F27BD939A0029E9CA /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3040B5E27BD939A0029E9CA /* UserInfo.swift */; };
 		E3040B6127BD97BF0029E9CA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E3040B6027BD97BF0029E9CA /* GoogleService-Info.plist */; };
+		E3040B6327C673930029E9CA /* TimeCompView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3040B6227C673930029E9CA /* TimeCompView.swift */; };
+		E3040B6527C673A70029E9CA /* BracketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3040B6427C673A70029E9CA /* BracketView.swift */; };
+		E3040B6727C673B90029E9CA /* ScoreCompView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3040B6627C673B90029E9CA /* ScoreCompView.swift */; };
 		E376331127BD557E00A7AD56 /* CrownApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E376331027BD557E00A7AD56 /* CrownApp.swift */; };
 		E376331327BD557E00A7AD56 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E376331227BD557E00A7AD56 /* ContentView.swift */; };
 		E376331527BD558100A7AD56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E376331427BD558100A7AD56 /* Assets.xcassets */; };
@@ -59,6 +62,9 @@
 		E3040B5C27BD937E0029E9CA /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		E3040B5E27BD939A0029E9CA /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		E3040B6027BD97BF0029E9CA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E3040B6227C673930029E9CA /* TimeCompView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeCompView.swift; sourceTree = "<group>"; };
+		E3040B6427C673A70029E9CA /* BracketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BracketView.swift; sourceTree = "<group>"; };
+		E3040B6627C673B90029E9CA /* ScoreCompView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreCompView.swift; sourceTree = "<group>"; };
 		E376330D27BD557E00A7AD56 /* Crown.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Crown.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E376331027BD557E00A7AD56 /* CrownApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrownApp.swift; sourceTree = "<group>"; };
 		E376331227BD557E00A7AD56 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -116,6 +122,69 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E3040B6827C673CD0029E9CA /* Competitions */ = {
+			isa = PBXGroup;
+			children = (
+				E3040B6227C673930029E9CA /* TimeCompView.swift */,
+				E3040B6427C673A70029E9CA /* BracketView.swift */,
+				E3040B6627C673B90029E9CA /* ScoreCompView.swift */,
+			);
+			path = Competitions;
+			sourceTree = "<group>";
+		};
+		E3040B6927C673F00029E9CA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E3040B6E27C6750B0029E9CA /* Button */,
+				E3040B6827C673CD0029E9CA /* Competitions */,
+				E3040B6C27C674A20029E9CA /* Forgot Password */,
+				E3040B6D27C674E80029E9CA /* Home */,
+				E3040B6A27C674670029E9CA /* Login */,
+				E3040B6B27C674800029E9CA /* Register */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E3040B6A27C674670029E9CA /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				E3040B5627BD92F90029E9CA /* LoginView.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		E3040B6B27C674800029E9CA /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				E3040B5C27BD937E0029E9CA /* RegisterView.swift */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		E3040B6C27C674A20029E9CA /* Forgot Password */ = {
+			isa = PBXGroup;
+			children = (
+				E3040B5227BD92910029E9CA /* ForgotPasswordView.swift */,
+			);
+			path = "Forgot Password";
+			sourceTree = "<group>";
+		};
+		E3040B6D27C674E80029E9CA /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				E3040B5427BD92B60029E9CA /* HomeView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		E3040B6E27C6750B0029E9CA /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				E3040B4C27BD91990029E9CA /* ButtonView.swift */,
+			);
+			path = Button;
+			sourceTree = "<group>";
+		};
 		E376330427BD557E00A7AD56 = {
 			isa = PBXGroup;
 			children = (
@@ -141,20 +210,16 @@
 		E376330F27BD557E00A7AD56 /* Crown */ = {
 			isa = PBXGroup;
 			children = (
+				E3040B6927C673F00029E9CA /* Views */,
 				E376331027BD557E00A7AD56 /* CrownApp.swift */,
 				E376331227BD557E00A7AD56 /* ContentView.swift */,
 				E376331427BD558100A7AD56 /* Assets.xcassets */,
 				E376331927BD558100A7AD56 /* Info.plist */,
 				E376331627BD558100A7AD56 /* Preview Content */,
-				E3040B4C27BD91990029E9CA /* ButtonView.swift */,
 				E3040B4E27BD92280029E9CA /* Constants.swift */,
 				E3040B5027BD92640029E9CA /* FirebaseFunctions.swift */,
-				E3040B5227BD92910029E9CA /* ForgotPasswordView.swift */,
-				E3040B5427BD92B60029E9CA /* HomeView.swift */,
-				E3040B5627BD92F90029E9CA /* LoginView.swift */,
 				E3040B5827BD93310029E9CA /* NavAppearanceModifier.swift */,
 				E3040B5A27BD93660029E9CA /* PreviewLayoutComponentModifier.swift */,
-				E3040B5C27BD937E0029E9CA /* RegisterView.swift */,
 				E3040B5E27BD939A0029E9CA /* UserInfo.swift */,
 				E3040B6027BD97BF0029E9CA /* GoogleService-Info.plist */,
 			);
@@ -367,7 +432,10 @@
 				E376331327BD557E00A7AD56 /* ContentView.swift in Sources */,
 				E3040B5F27BD939A0029E9CA /* UserInfo.swift in Sources */,
 				E376331127BD557E00A7AD56 /* CrownApp.swift in Sources */,
+				E3040B6727C673B90029E9CA /* ScoreCompView.swift in Sources */,
 				E3040B4D27BD91990029E9CA /* ButtonView.swift in Sources */,
+				E3040B6527C673A70029E9CA /* BracketView.swift in Sources */,
+				E3040B6327C673930029E9CA /* TimeCompView.swift in Sources */,
 				E3040B5327BD92910029E9CA /* ForgotPasswordView.swift in Sources */,
 				E3040B5727BD92F90029E9CA /* LoginView.swift in Sources */,
 				E3040B5B27BD93660029E9CA /* PreviewLayoutComponentModifier.swift in Sources */,
