@@ -22,6 +22,7 @@
 		E3040B6327C673930029E9CA /* TimeCompView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3040B6227C673930029E9CA /* TimeCompView.swift */; };
 		E3040B6527C673A70029E9CA /* BracketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3040B6427C673A70029E9CA /* BracketView.swift */; };
 		E3040B6727C673B90029E9CA /* ScoreCompView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3040B6627C673B90029E9CA /* ScoreCompView.swift */; };
+		E34F8C1727C7D25300949EED /* CompetitionChooserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34F8C1627C7D25300949EED /* CompetitionChooserView.swift */; };
 		E376331127BD557E00A7AD56 /* CrownApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E376331027BD557E00A7AD56 /* CrownApp.swift */; };
 		E376331327BD557E00A7AD56 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E376331227BD557E00A7AD56 /* ContentView.swift */; };
 		E376331527BD558100A7AD56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E376331427BD558100A7AD56 /* Assets.xcassets */; };
@@ -65,6 +66,7 @@
 		E3040B6227C673930029E9CA /* TimeCompView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeCompView.swift; sourceTree = "<group>"; };
 		E3040B6427C673A70029E9CA /* BracketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BracketView.swift; sourceTree = "<group>"; };
 		E3040B6627C673B90029E9CA /* ScoreCompView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreCompView.swift; sourceTree = "<group>"; };
+		E34F8C1627C7D25300949EED /* CompetitionChooserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionChooserView.swift; sourceTree = "<group>"; };
 		E376330D27BD557E00A7AD56 /* Crown.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Crown.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E376331027BD557E00A7AD56 /* CrownApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrownApp.swift; sourceTree = "<group>"; };
 		E376331227BD557E00A7AD56 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 				E3040B6227C673930029E9CA /* TimeCompView.swift */,
 				E3040B6427C673A70029E9CA /* BracketView.swift */,
 				E3040B6627C673B90029E9CA /* ScoreCompView.swift */,
+				E34F8C1627C7D25300949EED /* CompetitionChooserView.swift */,
 			);
 			path = Competitions;
 			sourceTree = "<group>";
@@ -426,6 +429,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E34F8C1727C7D25300949EED /* CompetitionChooserView.swift in Sources */,
 				E3040B5D27BD937E0029E9CA /* RegisterView.swift in Sources */,
 				E3040B5127BD92640029E9CA /* FirebaseFunctions.swift in Sources */,
 				E3040B5527BD92B60029E9CA /* HomeView.swift in Sources */,

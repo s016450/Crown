@@ -10,7 +10,8 @@ import SwiftUI
 struct HomeView: View {
     
     @EnvironmentObject var userInfo: UserInfo
-    
+    @State private var showCompetitionChooser = false
+
         var body: some View {
             
             NavigationView{
@@ -27,7 +28,10 @@ struct HomeView: View {
                         .clipShape(Circle())
                         .shadow(color: Color.Gray.opacity(0.6), radius: 5, x: 0, y: 0)
                 })
-                Button(action: {}, label: {
+                
+                Button(action: {
+                    showCompetitionChooser.toggle()
+                }, label: {
                     Image(systemName: "plus")
                         .font(.system(size: 24, weight: .bold))
                         .foregroundColor(Color.Gray)
@@ -37,6 +41,10 @@ struct HomeView: View {
                         .clipShape(Circle())
                         .shadow(color: Color.Gray.opacity(0.6), radius: 5, x: 0, y: 0)
                 })
+                .sheet(isPresented: $showCompetitionChooser){
+                    CompetitionChooserView()
+                }
+                
                 Spacer()
                 VStack(alignment: .leading,
                        spacing: 16){
