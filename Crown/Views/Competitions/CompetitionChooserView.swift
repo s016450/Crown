@@ -10,6 +10,12 @@ import SwiftUI
 struct CompetitionChooserView: View {
     
     @Environment(\.presentationMode) var presentationMode
+    @State var buttonColor = Color.gray
+    @State var timeColor = Color.Gray
+    @State var pointsColor = Color.Gray
+    @State var bracketColor = Color.Gray
+    @State var competitionChoice : String? = nil
+    @State var showTimeInfo: Bool = false
     
     var body: some View {
         
@@ -20,7 +26,24 @@ struct CompetitionChooserView: View {
                 Spacer()
                 
                 Button(action: {
-                    
+                    showTimeInfo = true
+                    if buttonColor == Color.gray{
+                        timeColor = Color.Yellow
+                        buttonColor = Color.Yellow
+                        competitionChoice = "time"
+                    }
+                    else if buttonColor == Color.Yellow && competitionChoice != "time"{
+                        showTimeInfo = true
+                        timeColor = Color.Yellow
+                        pointsColor = Color.Gray
+                        bracketColor = Color.Gray
+                        competitionChoice = "time"
+                    }
+                    else{
+                        showTimeInfo = false
+                        timeColor = Color.Gray
+                        buttonColor = Color.gray
+                    }
                 }, label: {
                     HStack(spacing: -12){
                         Spacer()
@@ -28,21 +51,40 @@ struct CompetitionChooserView: View {
                         Spacer()
                         Image(systemName: "stopwatch")
                             .font(.system(size: 24, weight: .bold))
-                            .foregroundColor(Color.Gray)
+                            .foregroundColor(timeColor)
                             .padding()
                             .background(Color.white)
                         
                         Text("Time")
                             .font(.system(size: 24, weight: .bold))
-                            .foregroundColor(Color.Gray)
+                            .foregroundColor(timeColor)
                         Spacer()
                         Spacer()
                         Spacer()
                         Spacer()
                     }
                 })
+                
+                if showTimeInfo{
+                    TimeInfo()
+                }
+                
                 Button(action: {
-                    
+                    if buttonColor == Color.gray{
+                        pointsColor = Color.Yellow
+                        buttonColor = Color.Yellow
+                        competitionChoice = "points"
+                    }
+                    else if buttonColor == Color.Yellow && competitionChoice != "points"{
+                        pointsColor = Color.Yellow
+                        timeColor = Color.Gray
+                        bracketColor = Color.Gray
+                        competitionChoice = "points"
+                    }
+                    else{
+                        pointsColor = Color.Gray
+                        buttonColor = Color.gray
+                    }
                 }, label: {
                     HStack(spacing: -12){
                         Spacer()
@@ -50,13 +92,13 @@ struct CompetitionChooserView: View {
                         Spacer()
                         Image(systemName: "stopwatch")
                             .font(.system(size: 24, weight: .bold))
-                            .foregroundColor(Color.Gray)
+                            .foregroundColor(pointsColor)
                             .padding()
                             .background(Color.white)
                         
                         Text("Score")
                             .font(.system(size: 24, weight: .bold))
-                            .foregroundColor(Color.Gray)
+                            .foregroundColor(pointsColor)
                         Spacer()
                         Spacer()
                         Spacer()
@@ -64,7 +106,21 @@ struct CompetitionChooserView: View {
                     }
                 })
                 Button(action: {
-                    
+                    if buttonColor == Color.gray{
+                        bracketColor = Color.Yellow
+                        buttonColor = Color.Yellow
+                        competitionChoice = "bracket"
+                    }
+                    else if buttonColor == Color.Yellow && competitionChoice != "bracket"{
+                        bracketColor = Color.Yellow
+                        timeColor = Color.Gray
+                        pointsColor = Color.Gray
+                        competitionChoice = "bracket"
+                    }
+                    else{
+                        bracketColor = Color.Gray
+                        buttonColor = Color.gray
+                    }
                 }, label: {
                     HStack(spacing: -12){
                         Spacer()
@@ -72,13 +128,13 @@ struct CompetitionChooserView: View {
                         Spacer()
                         Image(systemName: "stopwatch")
                             .font(.system(size: 24, weight: .bold))
-                            .foregroundColor(Color.Gray)
+                            .foregroundColor(bracketColor)
                             .padding()
                             .background(Color.white)
                         
                         Text("Bracket")
                             .font(.system(size: 24, weight: .bold))
-                            .foregroundColor(Color.Gray)
+                            .foregroundColor(bracketColor)
                         Spacer()
                         Spacer()
                         Spacer()
@@ -89,9 +145,9 @@ struct CompetitionChooserView: View {
                 Spacer()
                 Spacer()
                 ButtonView(title: "Create Competition",
-                           background: Color.Yellow,
+                           background: buttonColor,
                            foreground: Color.white,
-                           border: Color.Yellow){
+                           border: buttonColor){
             
                 }
                 Spacer()
