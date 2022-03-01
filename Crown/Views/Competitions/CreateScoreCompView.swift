@@ -12,7 +12,7 @@ struct CreateScoreCompView: View {
     @EnvironmentObject var competitionInfo: CompetitionInfo
     
     var body: some View {
-        
+          
         VStack{
             Text("New Score Competition")
                 .font(.system(size: 24, weight: .bold))

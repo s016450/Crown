@@ -16,7 +16,7 @@ class CompetitionInfo: ObservableObject{
         
         //FirebaseFunctions.getAuthenticatedUser(self)
     }
-}
+} 
  
 func clear(CompetitionInfo: CompetitionInfo){
     CompetitionInfo.compName = ""
