@@ -26,7 +26,7 @@ struct CreateTimeCompView: View {
             //use an array to add users
             
             
-            //Time Stuff
+            //Time Stuff like
             //(calender/days)
             Text("Enter Duration of Competition")
                 .font(.system(size: 24, weight: .bold))
