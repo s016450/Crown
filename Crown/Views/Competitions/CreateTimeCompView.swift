@@ -37,7 +37,7 @@ struct CreateTimeCompView: View {
         //Button that takes you to the competition
             
         }
-        DatePicker("End Date", selection: <#T##Binding<Date>#>, in: <#T##ClosedRange<Date>#>, displayedComponents: <#T##DatePicker<Text>.Components#>)
+        DatePicker("End Date", selection: Binding<Date>, in: ClosedRange<Date>, displayedComponents: DatePicker<Text>.Components)
     }
 }
 
