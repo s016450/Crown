@@ -13,7 +13,7 @@ struct CreateScoreCompView: View {
     
     var body: some View { 
         
-        NavigationView{
+        NavigationView{ 
             
             VStack{
                 Text("New Score Competition")
