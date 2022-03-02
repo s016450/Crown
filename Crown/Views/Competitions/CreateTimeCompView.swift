@@ -13,34 +13,47 @@ struct CreateTimeCompView: View {
     @State private var enddate = Date()
     
     var body: some View {
-        VStack{
-            Text("New Time Competition")
-                .font(.system(size: 24, weight: .bold))
-                .foregroundColor(Color.Gray)
+        NavigationView{
+            VStack{
+                Text("New Time Competition")
+                    .font(.system(size: 24, weight: .bold))
+                    .foregroundColor(Color.Gray)
+                
+                Text("Competition Name")
+                    .font(.system(size: 24, weight: .bold))
+                    .foregroundColor(Color.Gray)
+                
+                //Users Info
+                Text("Enter The Competitors")
+                    .font(.system(size: 24, weight: .bold))
+                    .foregroundColor(Color.Gray)
+                //use an array to add users
+                
+                
+                //Time Stuff like
+                //(calender/days)
+                Text("Enter Duration of Competition")
+                    .font(.system(size: 24, weight: .bold))
+                    .foregroundColor(Color.Gray)
+                
+                DatePicker("End Date", selection: $enddate)
+                    .foregroundColor(.Purple)
+                
+                //Button that takes you to the time competition
+                //Navigation View
+                
+                NavigationLink(
+                    destination: TimeCompView(),
+                    label: {
+                        Text("Create Competetion")
+                            .foregroundColor(.Purple)
+                    })
+            }
             
-            Text("Competition Name")
-                .font(.system(size: 24, weight: .bold))
-                .foregroundColor(Color.Gray)
             
-            //Users Info
-            Text("Enter The Competitors")
-                .font(.system(size: 24, weight: .bold))
-                .foregroundColor(Color.Gray)
-            //use an array to add users
-            
-            
-            //Time Stuff like
-            //(calender/days)
-            Text("Enter Duration of Competition")
-                .font(.system(size: 24, weight: .bold))
-                .foregroundColor(Color.Gray)
-            
-            DatePicker("End Date", selection: $enddate)
-            
-        //Button that takes you to the time competition
             
         }
-       
+        
     }
 }
 
