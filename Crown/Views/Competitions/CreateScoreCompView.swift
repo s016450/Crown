@@ -49,7 +49,7 @@ struct CreateScoreCompView: View {
                 .font(.system(size: 24, weight: .bold))
                 .foregroundColor(Color.Gray)
             
-            
+              
             
             //input number of points needed
             
