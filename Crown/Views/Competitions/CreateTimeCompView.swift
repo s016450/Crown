@@ -9,6 +9,9 @@ import SwiftUI
 
 //this class will set up 
 struct CreateTimeCompView: View {
+    
+    @State private var enddate = Date()
+    
     var body: some View {
         VStack{
             Text("New Time Competition")
@@ -32,12 +35,12 @@ struct CreateTimeCompView: View {
                 .font(.system(size: 24, weight: .bold))
                 .foregroundColor(Color.Gray)
             
-           
+            DatePicker("End Date", selection: $enddate)
             
         //Button that takes you to the competition
             
         }
-        DatePicker("End Date", selection: Binding<Date>, in: ClosedRange<Date>, displayedComponents: DatePicker<Text>.Components)
+       
     }
 }
 
