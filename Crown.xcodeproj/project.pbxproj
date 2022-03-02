@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		23EB791F27CE5C03009AFC1C /* CreateScoreCompView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EB791E27CE5C03009AFC1C /* CreateScoreCompView.swift */; };
 		23EB792127CE6434009AFC1C /* CompetitionInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EB792027CE6434009AFC1C /* CompetitionInfo.swift */; };
+		5AB62E2427CE5BC0005FA340 /* CreateTimeCompView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB62E2327CE5BC0005FA340 /* CreateTimeCompView.swift */; };
 		731AC7CCFFB14551DC3147C7 /* Pods_Crown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 837A014AC8004DCC6E47DAD9 /* Pods_Crown.framework */; };
 		E3040B4D27BD91990029E9CA /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3040B4C27BD91990029E9CA /* ButtonView.swift */; };
 		E3040B4F27BD92280029E9CA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3040B4E27BD92280029E9CA /* Constants.swift */; };
@@ -31,6 +32,7 @@
 		E376331827BD558100A7AD56 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E376331727BD558100A7AD56 /* Preview Assets.xcassets */; };
 		E376332327BD558200A7AD56 /* CrownTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E376332227BD558200A7AD56 /* CrownTests.swift */; };
 		E376332E27BD558200A7AD56 /* CrownUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E376332D27BD558200A7AD56 /* CrownUITests.swift */; };
+		E3D9E45E27CE61FD00282DBC /* TimeInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D9E45D27CE61FD00282DBC /* TimeInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,7 @@
 /* Begin PBXFileReference section */
 		23EB791E27CE5C03009AFC1C /* CreateScoreCompView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateScoreCompView.swift; sourceTree = "<group>"; };
 		23EB792027CE6434009AFC1C /* CompetitionInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionInfo.swift; sourceTree = "<group>"; };
+		5AB62E2327CE5BC0005FA340 /* CreateTimeCompView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTimeCompView.swift; sourceTree = "<group>"; };
 		837A014AC8004DCC6E47DAD9 /* Pods_Crown.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Crown.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A46104DD08EF13B12C6F3F4D /* Pods-Crown.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crown.release.xcconfig"; path = "Target Support Files/Pods-Crown/Pods-Crown.release.xcconfig"; sourceTree = "<group>"; };
 		C1FCCBDCA9702607B098B425 /* Pods-Crown.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crown.debug.xcconfig"; path = "Target Support Files/Pods-Crown/Pods-Crown.debug.xcconfig"; sourceTree = "<group>"; };
@@ -83,6 +86,7 @@
 		E376332927BD558200A7AD56 /* CrownUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CrownUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E376332D27BD558200A7AD56 /* CrownUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrownUITests.swift; sourceTree = "<group>"; };
 		E376332F27BD558200A7AD56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E3D9E45D27CE61FD00282DBC /* TimeInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,10 +136,12 @@
 			isa = PBXGroup;
 			children = (
 				E3040B6227C673930029E9CA /* TimeCompView.swift */,
+				5AB62E2327CE5BC0005FA340 /* CreateTimeCompView.swift */,
 				E3040B6427C673A70029E9CA /* BracketView.swift */,
 				23EB791E27CE5C03009AFC1C /* CreateScoreCompView.swift */,
 				E3040B6627C673B90029E9CA /* ScoreCompView.swift */,
 				E34F8C1627C7D25300949EED /* CompetitionChooserView.swift */,
+				E3D9E45D27CE61FD00282DBC /* TimeInfo.swift */,
 			);
 			path = Competitions;
 			sourceTree = "<group>";
@@ -439,8 +445,10 @@
 				E3040B5D27BD937E0029E9CA /* RegisterView.swift in Sources */,
 				E3040B5127BD92640029E9CA /* FirebaseFunctions.swift in Sources */,
 				23EB792127CE6434009AFC1C /* CompetitionInfo.swift in Sources */,
+				5AB62E2427CE5BC0005FA340 /* CreateTimeCompView.swift in Sources */,
 				E3040B5527BD92B60029E9CA /* HomeView.swift in Sources */,
 				E376331327BD557E00A7AD56 /* ContentView.swift in Sources */,
+				E3D9E45E27CE61FD00282DBC /* TimeInfo.swift in Sources */,
 				E3040B5F27BD939A0029E9CA /* UserInfo.swift in Sources */,
 				E376331127BD557E00A7AD56 /* CrownApp.swift in Sources */,
 				E3040B6727C673B90029E9CA /* ScoreCompView.swift in Sources */,
