@@ -13,7 +13,7 @@ class CompetitionInfo: ObservableObject{
     init(compName: String = ""){
      
         self.compName = compName
-        
+         
         //FirebaseFunctions.getAuthenticatedUser(self)
     }
 }

@@ -11,7 +11,7 @@ struct CreateScoreCompView: View {
     
     @EnvironmentObject var competitionInfo: CompetitionInfo
     
-    var body: some View {
+    var body: some View { 
           
         VStack{
             Text("New Score Competition")
