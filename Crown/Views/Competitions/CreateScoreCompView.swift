@@ -10,10 +10,10 @@ import SwiftUI
 struct CreateScoreCompView: View {
     
     @EnvironmentObject var competitionInfo: CompetitionInfo
-    
+     
     var body: some View { 
         
-        NavigationView{ 
+        NavigationView{
             
             VStack{
                 Text("New Score Competition")
