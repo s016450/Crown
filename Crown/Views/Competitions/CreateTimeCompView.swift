@@ -37,7 +37,7 @@ struct CreateTimeCompView: View {
             
             DatePicker("End Date", selection: $enddate)
             
-        //Button that takes you to the competition
+        //Button that takes you to the time competition
             
         }
        
