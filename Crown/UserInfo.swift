@@ -17,7 +17,7 @@ class UserInfo: ObservableObject{
     init(email: String = "", name: String = "", loggedIn: Bool = false){
         
         self.email = email
-        self.name = name
+        self.name = name 
         self.password = ""
         self.loggedIn = loggedIn
         

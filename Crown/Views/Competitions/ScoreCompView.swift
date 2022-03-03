@@ -11,7 +11,8 @@ struct ScoreCompView: View {
     var body: some View {
         Text("Score Competition")
     }
-}
+}   
+//array of users, on one view
 
 struct ScoreCompView_Previews: PreviewProvider {
     static var previews: some View {
