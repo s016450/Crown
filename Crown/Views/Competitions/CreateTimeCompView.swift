@@ -11,29 +11,39 @@ import SwiftUI
 struct CreateTimeCompView: View {
     
     @State private var enddate = Date()
+   // @EnvironmentObject var competetitionInfo : CompetitionInfo
+    @StateObject var competitionInfo : CompetitionInfo = CompetitionInfo()
     
+    //@StateObject var userInfo : UserInfo() = UserInfo()
+
     var body: some View {
         NavigationView{
             VStack{
                 Text("New Time Competition")
-                    .font(.system(size: 24, weight: .bold))
-                    .foregroundColor(Color.Gray)
+                    .font(.system(size: 45, weight: .bold))
+                    .foregroundColor(Color.Purple)
+                Spacer()
                 
-                Text("Competition Name")
-                    .font(.system(size: 24, weight: .bold))
-                    .foregroundColor(Color.Gray)
+                TextField("Competition Name", text:  $competitionInfo.compName)
+                    .frame(maxWidth: .infinity, minHeight: 44)
+                    .padding(.leading, 30)
+                    .font(.system(size: 18, weight: .bold))
+                    .foregroundColor(Color.Purple)
+                
+                Spacer()
                 
                 //Users Info
                 Text("Enter The Competitors")
-                    .font(.system(size: 24, weight: .bold))
-                    .foregroundColor(Color.Gray)
+                    .font(.system(size: 18, weight: .bold))
+                    .foregroundColor(Color.Purple)
                 //use an array to add users
                 
+                Spacer()
                 
                 //Time Stuff like
                 //(calender/days)
                 Text("Enter Duration of Competition")
-                    .font(.system(size: 24, weight: .bold))
+                    .font(.system(size: 18, weight: .bold))
                     .foregroundColor(Color.Gray)
                 
                 DatePicker("End Date", selection: $enddate)
