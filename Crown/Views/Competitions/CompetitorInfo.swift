@@ -8,6 +8,7 @@
 import Foundation
 
 struct CompetitorInfo : Identifiable{
+    
     var name : String
     var id = UUID()
     

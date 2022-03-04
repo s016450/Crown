@@ -27,7 +27,7 @@ struct CreateTimeCompView: View {
                 TextField("Competition Name", text:  $competitionInfo.compName)
                     .frame(maxWidth: .infinity, minHeight: 44)
                     .padding(.leading, 30)
-                    .font(.system(size: 18, weight: .bold))
+                    .font(.system(size: 20, weight: .bold))
                     .foregroundColor(Color.Purple)
                 
                 Spacer()
