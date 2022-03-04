@@ -9,7 +9,7 @@ import SwiftUI
 
 struct BracketView: View {
     var body: some View {
-        Text("Bracket")
+        Text("Hello World")
     }
 }
 
