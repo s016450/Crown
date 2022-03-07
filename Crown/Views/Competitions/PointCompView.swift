@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ScoreCompView: View {
+struct PointCompView: View {
     var body: some View {
         Text("Score Competition")
     }
@@ -16,6 +16,6 @@ struct ScoreCompView: View {
 
 struct ScoreCompView_Previews: PreviewProvider {
     static var previews: some View {
-        ScoreCompView()
+        PointCompView()
     }
 }

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CreateScoreCompView: View {
+struct CreatePointView: View {
     
     @EnvironmentObject var competitionInfo: CompetitionInfo
      
@@ -50,7 +50,7 @@ struct CreateScoreCompView: View {
             
             
             NavigationLink(
-                destination: ScoreCompView(),
+                destination: PointCompView(),
                 label: {
                     Text("Create Competetion")
                 })
@@ -62,6 +62,6 @@ struct CreateScoreCompView: View {
 
 struct CreateScoreCompView_Previews: PreviewProvider {
     static var previews: some View {
-        CreateScoreCompView()
+        CreatePointView()
     }
 }
