@@ -8,15 +8,15 @@
 import SwiftUI
 
 struct Competitor: View {
-   
-    //@State var competitors : [CompetitorInfo] =
-      
-       // [CompetitorInfo(name:" "),
-       //  CompetitorInfo(name:" "),
-        // CompetitorInfo(name:" "),
-        // CompetitorInfo(name:" "),
-       //  CompetitorInfo(name:" "),
-         //CompetitorInfo(name:" ")]
+    
+    @State var competitors : [CompetitorInfo] =
+        
+        [CompetitorInfo(name:" "),
+         CompetitorInfo(name:" "),
+         CompetitorInfo(name:" "),
+         CompetitorInfo(name:" "),
+         CompetitorInfo(name:" "),
+         CompetitorInfo(name:" ")]
     
     
     var body: some View {

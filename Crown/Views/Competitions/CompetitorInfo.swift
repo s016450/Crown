@@ -14,5 +14,6 @@ struct CompetitorInfo : Identifiable{
     
     init(name : String = "User"){
         self.name = name
+        //users names
     }
 }

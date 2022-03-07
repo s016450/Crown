@@ -20,25 +20,21 @@ struct CreateTimeCompView: View {
         NavigationView{
             VStack{
                 Text("New Time Competition")
-                    .font(.system(size: 45, weight: .bold))
+                    .font(.system(size: 40, weight: .bold))
                     .foregroundColor(Color.Purple)
-                Spacer()
                 
                 TextField("Competition Name", text:  $competitionInfo.compName)
                     .frame(maxWidth: .infinity, minHeight: 44)
                     .padding(.leading, 30)
                     .font(.system(size: 20, weight: .bold))
                     .foregroundColor(Color.Purple)
-                
-                Spacer()
-                
+                                
                 //Users Info
                 Text("Enter The Competitors")
                     .font(.system(size: 18, weight: .bold))
                     .foregroundColor(Color.Purple)
                 //use an array to add users
-                
-                Spacer()
+                Spacer(minLength: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/)
                 
                 //Time Stuff like
                 //(calender/days)
@@ -51,13 +47,17 @@ struct CreateTimeCompView: View {
                 
                 //Button that takes you to the time competition
                 //Navigation View
-                
+                Spacer(minLength: 0)
                 NavigationLink(
                     destination: TimeCompView(),
                     label: {
                         Text("Create Competetion")
+                            .font(.system(size: 20, weight: .regular))
                             .foregroundColor(.Purple)
+                            .background(Color.Yellow)
+                            .cornerRadius(15.0)
                     })
+                Spacer(minLength: 0)
             }
             
             
