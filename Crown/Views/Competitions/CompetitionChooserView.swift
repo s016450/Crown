@@ -38,9 +38,9 @@ struct CompetitionChooserView: View {
                                     timeColor = Color.Yellow
                                     buttonColor = Color.Yellow
                                     competitionChoice = "time"
-                                    timeOffset = 56
-                                    pointOffset = 56
-                                    bracketOffset = 56
+                                    timeOffset = 55
+                                    pointOffset = 55
+                                    bracketOffset = 55
                                 }
                                 else if buttonColor == Color.Yellow && competitionChoice != "time"{
                                     showTimeInfo = true
@@ -50,9 +50,9 @@ struct CompetitionChooserView: View {
                                     pointColor = Color.Gray
                                     bracketColor = Color.Gray
                                     competitionChoice = "time"
-                                    timeOffset = 56
-                                    pointOffset = 56
-                                    bracketOffset = 56
+                                    timeOffset = 55
+                                    pointOffset = 55
+                                    bracketOffset = 55
                                 }
                                 else{
                                     competitionChoice = nil
@@ -100,9 +100,9 @@ struct CompetitionChooserView: View {
                                     pointColor = Color.Yellow
                                     buttonColor = Color.Yellow
                                     competitionChoice = "point"
-                                    timeOffset = 56
-                                    pointOffset = 56
-                                    bracketOffset = 56
+                                    timeOffset = 55
+                                    pointOffset = 55
+                                    bracketOffset = 55
                                 }
                                 else if buttonColor == Color.Yellow && competitionChoice != "point"{
                                     showPointInfo = true
@@ -112,9 +112,10 @@ struct CompetitionChooserView: View {
                                     timeColor = Color.Gray
                                     bracketColor = Color.Gray
                                     competitionChoice = "point"
-                                    timeOffset = 56
-                                    pointOffset = 56
-                                    bracketOffset = 56                        }
+                                    timeOffset = 55
+                                    pointOffset = 55
+                                    bracketOffset = 55
+                                }
                                 else{
                                     competitionChoice = nil
                                     showPointInfo = false
