@@ -2,18 +2,18 @@
 //  CompetitorInfo.swift
 //  Crown
 //
-//  Created by Maya Ringold (student LM) on 3/4/22.
+//  Created by Maya Ringold (student LM) on 3/8/22.
 //
 
 import Foundation
 
 struct CompetitorInfo : Identifiable{
-    
     var name : String
     var id = UUID()
     
     init(name : String = "User"){
         self.name = name
-        //users names
     }
+    
 }
+

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		23EB791F27CE5C03009AFC1C /* CreatePointView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EB791E27CE5C03009AFC1C /* CreatePointView.swift */; };
 		23EB792127CE6434009AFC1C /* CompetitionInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EB792027CE6434009AFC1C /* CompetitionInfo.swift */; };
+		5A0A936727D7A22500C3943D /* Competitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0A936627D7A22500C3943D /* Competitor.swift */; };
+		5A0A936927D7A23F00C3943D /* CompetitorInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0A936827D7A23F00C3943D /* CompetitorInfo.swift */; };
 		5AB62E2427CE5BC0005FA340 /* CreateTimeCompView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB62E2327CE5BC0005FA340 /* CreateTimeCompView.swift */; };
 		731AC7CCFFB14551DC3147C7 /* Pods_Crown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 837A014AC8004DCC6E47DAD9 /* Pods_Crown.framework */; };
 		E3040B4D27BD91990029E9CA /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3040B4C27BD91990029E9CA /* ButtonView.swift */; };
@@ -57,6 +59,8 @@
 /* Begin PBXFileReference section */
 		23EB791E27CE5C03009AFC1C /* CreatePointView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePointView.swift; sourceTree = "<group>"; };
 		23EB792027CE6434009AFC1C /* CompetitionInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionInfo.swift; sourceTree = "<group>"; };
+		5A0A936627D7A22500C3943D /* Competitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Competitor.swift; sourceTree = "<group>"; };
+		5A0A936827D7A23F00C3943D /* CompetitorInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitorInfo.swift; sourceTree = "<group>"; };
 		5AB62E2327CE5BC0005FA340 /* CreateTimeCompView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTimeCompView.swift; sourceTree = "<group>"; };
 		837A014AC8004DCC6E47DAD9 /* Pods_Crown.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Crown.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A46104DD08EF13B12C6F3F4D /* Pods-Crown.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crown.release.xcconfig"; path = "Target Support Files/Pods-Crown/Pods-Crown.release.xcconfig"; sourceTree = "<group>"; };
@@ -148,6 +152,8 @@
 				E3D9E45D27CE61FD00282DBC /* TimeInfo.swift */,
 				E3C62CC027CE6B2700F7A805 /* BracketInfo.swift */,
 				E3C62CC627CE6C2C00F7A805 /* PointInfo.swift */,
+				5A0A936627D7A22500C3943D /* Competitor.swift */,
+				5A0A936827D7A23F00C3943D /* CompetitorInfo.swift */,
 			);
 			path = Competitions;
 			sourceTree = "<group>";
@@ -448,6 +454,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E3C62CC727CE6C2C00F7A805 /* PointInfo.swift in Sources */,
+				5A0A936927D7A23F00C3943D /* CompetitorInfo.swift in Sources */,
 				E34F8C1727C7D25300949EED /* CompetitionChooserView.swift in Sources */,
 				E3040B5D27BD937E0029E9CA /* RegisterView.swift in Sources */,
 				E3040B5127BD92640029E9CA /* FirebaseFunctions.swift in Sources */,
@@ -461,6 +468,7 @@
 				E3040B6727C673B90029E9CA /* PointCompView.swift in Sources */,
 				23EB791F27CE5C03009AFC1C /* CreatePointView.swift in Sources */,
 				E3040B4D27BD91990029E9CA /* ButtonView.swift in Sources */,
+				5A0A936727D7A22500C3943D /* Competitor.swift in Sources */,
 				E3040B6527C673A70029E9CA /* BracketView.swift in Sources */,
 				E3040B6327C673930029E9CA /* TimeCompView.swift in Sources */,
 				E3C62CC127CE6B2700F7A805 /* BracketInfo.swift in Sources */,
