@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct TimeCompView: View {
+    
     var body: some View {
         Text("Time Competition")
     }
