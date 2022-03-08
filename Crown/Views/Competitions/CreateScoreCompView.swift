@@ -18,8 +18,8 @@ struct CreateScoreCompView: View {
             
             VStack{
                 Text("New Score Competition")
-                    .font(.system(size: 24, weight: .bold))
-                    .foregroundColor(Color.Gray)
+                    .font(.system(size: 18, weight: .bold))
+                   
                 
                 //enter competition name
                 TextField("Enter Competition Name", text: $competitionInfo.compName)
@@ -33,33 +33,45 @@ struct CreateScoreCompView: View {
                 //user info
                 //array to add users
                 Text("Enter Competitors Below")
-                    .font(.system(size: 24, weight: .bold))
+                    .font(.system(size: 18, weight: .bold))
                     .foregroundColor(Color.Gray)
-                
-                
+                    .padding()
                 
                 //input number of points needed
                 
                 Text("Enter Points End Goal")
-                    .font(.system(size: 24, weight: .bold))
+                    .font(.system(size: 18, weight: .bold))
                     .foregroundColor(Color.Gray)
+                
+                TextField("Enter points here", text: $competitionInfo.compPoints)
+                    .frame(maxWidth: .infinity,
+                           minHeight: 44)
+                    .padding(.leading, 30)
+                    .foregroundColor(Color.Gray.opacity(0.5))
+                
+                ButtonView(title: "Create Account",
+                           background: .clear,
+                           foreground: Color.Yellow,
+                           border: Color.Yellow){
+                    NavigationLink(
+                        destination: ScoreCompView(),
+                        label: {
+                            Text("Create Competetion")
+                                .foregroundColor(.Purple)
+                        }) //end navlink label
+                
                 
             }//end vstack
             
-            
-            NavigationLink(
-                destination: ScoreCompView(),
-                label: {
-                    Text("Create Competetion")
-                })
-            
         }//end nav view
         
-    }
-}
+    }//end nav view
+}//end body
+    
+}//end struct
 
 struct CreateScoreCompView_Previews: PreviewProvider {
     static var previews: some View {
         CreateScoreCompView()
     }
-}
+}//end struct

@@ -9,10 +9,12 @@ import Foundation
 
 class CompetitionInfo: ObservableObject{
     var compName: String
+    var compPoints: String
    
-    init(compName: String = ""){
+    init(compName: String = "", compPoints: String = ""){
      
         self.compName = compName
+        self.compPoints = compPoints
          
         //FirebaseFunctions.getAuthenticatedUser(self)
     }
