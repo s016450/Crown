@@ -2,23 +2,23 @@
 //  Competitor.swift
 //  Crown
 //
-//  Created by Maya Ringold (student LM) on 3/4/22.
+//  Created by Maya Ringold (student LM) on 3/8/22.
 //
 
 import SwiftUI
 
 struct Competitor: View {
-   
-    //@State var competitors : [CompetitorInfo] =
-      
-       // [CompetitorInfo(name:" "),
-       //  CompetitorInfo(name:" "),
-        // CompetitorInfo(name:" "),
-        // CompetitorInfo(name:" "),
-       //  CompetitorInfo(name:" "),
-         //CompetitorInfo(name:" ")]
+    @State var competitors : [CompetitorInfo] =
+        
+        [CompetitorInfo(name:" "),
+         CompetitorInfo(name:" "),
+         CompetitorInfo(name:" "),
+         CompetitorInfo(name:" "),
+         CompetitorInfo(name:" "),
+         CompetitorInfo(name:" ")]
     
     
+
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }
