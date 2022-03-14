@@ -9,6 +9,7 @@ import Foundation
 
 class CompetitionInfo: ObservableObject{
     var compName: String
+    var endDate = Date()
    
     init(compName: String = ""){
      

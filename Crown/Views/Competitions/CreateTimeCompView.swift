@@ -11,28 +11,30 @@ import SwiftUI
 struct CreateTimeCompView: View {
     
     @State private var enddate = Date()
-   // @EnvironmentObject var competetitionInfo : CompetitionInfo
+    // @EnvironmentObject var competetitionInfo : CompetitionInfo
     @StateObject var competitionInfo : CompetitionInfo = CompetitionInfo()
     
     //@StateObject var userInfo : UserInfo() = UserInfo()
-    
-    //date picker stuff https://stackoverflow.com/questions/52984284/swift-save-uidatepicker-date-into-coredata
-    
+
     var body: some View {
         NavigationView{
             VStack{
                 Text("New Time Competition")
                     .font(.system(size: 30, weight: .bold))
-                    .foregroundColor(Color.Yellow)
-                    .background(Color.Purple)
+                    .padding()
+                    .foregroundColor(.Purple)
+                    .overlay(RoundedRectangle(cornerRadius: 16)
+                                .stroke(Color.Yellow, lineWidth: 4)
+                                )
+                                
                     .padding(.top, 100)
-                    .cornerRadius(10.0)
                 
                 
                 TextField("Enter Competition Name", text:  $competitionInfo.compName)
                     .frame(maxWidth: .infinity, minHeight: 44)
                     .padding(.top, 40)
                     .padding(.leading , 10)
+                    
                     .font(.system(size: 20, weight: .bold))
                     .foregroundColor(Color.Purple)
                 
@@ -40,6 +42,7 @@ struct CreateTimeCompView: View {
                 Text("Enter The Competitors")
                     .font(.system(size: 20, weight: .bold))
                     .foregroundColor(Color.Purple)
+                    
                     .padding()
                 //use an array to add users
                 Spacer(minLength: 0)
@@ -48,9 +51,13 @@ struct CreateTimeCompView: View {
                 //(calender/days)
                 Text("Enter Duration of Competition")
                     .font(.system(size: 20, weight: .bold))
+                    .padding()
                     .foregroundColor(Color.Purple)
+                    .overlay(RoundedRectangle(cornerRadius: 16)
+                                .stroke(Color.Yellow, lineWidth: 4)
+                                )
                 
-                DatePicker("Select End Date", selection: $enddate)
+                DatePicker("Select End Date", selection: $competitionInfo.endDate)
                     .foregroundColor(Color.Purple)
                     .padding()
                 
@@ -63,11 +70,15 @@ struct CreateTimeCompView: View {
                     destination: TimeCompView(),
                     label: {
                         Text("Create Competetion")
-                            .font(.system(size: 40, weight: .regular))
+                            .font(.system(size: 18, weight: .bold))
+                            .padding()
                             .foregroundColor(.Purple)
-                            .border(Color.Yellow, width: 2)
-                       
+                            .overlay(RoundedRectangle(cornerRadius: 16)
+                                        .stroke(Color.Yellow, lineWidth: 4))
+                            .padding()
                         
+                        
+
                     }).padding()
                 Spacer(minLength: 0)
             }.ignoresSafeArea(.all)

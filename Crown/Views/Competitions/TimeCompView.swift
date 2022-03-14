@@ -8,9 +8,12 @@
 import SwiftUI
 
 struct TimeCompView: View {
+    // @EnvironmentObject var competetitionInfo : CompetitionInfo
+     @StateObject var competitionInfo : CompetitionInfo = CompetitionInfo()
     
     var body: some View {
-        Text("Time Competition")
+        Text("End Date: \(competitionInfo.endDate)")
+      
     }
 }
 
