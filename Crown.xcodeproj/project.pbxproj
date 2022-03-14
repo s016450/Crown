@@ -36,6 +36,7 @@
 		E376332E27BD558200A7AD56 /* CrownUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E376332D27BD558200A7AD56 /* CrownUITests.swift */; };
 		E3C62CC127CE6B2700F7A805 /* BracketInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C62CC027CE6B2700F7A805 /* BracketInfo.swift */; };
 		E3C62CC727CE6C2C00F7A805 /* PointInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C62CC627CE6C2C00F7A805 /* PointInfo.swift */; };
+		E3D7E4EC27D7AA9B00318F74 /* LoginNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D7E4EB27D7AA9B00318F74 /* LoginNavigator.swift */; };
 		E3D9E45E27CE61FD00282DBC /* TimeInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D9E45D27CE61FD00282DBC /* TimeInfo.swift */; };
 /* End PBXBuildFile section */
 
@@ -94,6 +95,7 @@
 		E376332F27BD558200A7AD56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E3C62CC027CE6B2700F7A805 /* BracketInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BracketInfo.swift; sourceTree = "<group>"; };
 		E3C62CC627CE6C2C00F7A805 /* PointInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointInfo.swift; sourceTree = "<group>"; };
+		E3D7E4EB27D7AA9B00318F74 /* LoginNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNavigator.swift; sourceTree = "<group>"; };
 		E3D9E45D27CE61FD00282DBC /* TimeInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -248,6 +250,7 @@
 				E3040B5827BD93310029E9CA /* NavAppearanceModifier.swift */,
 				E3040B5A27BD93660029E9CA /* PreviewLayoutComponentModifier.swift */,
 				E3040B5E27BD939A0029E9CA /* UserInfo.swift */,
+				E3D7E4EB27D7AA9B00318F74 /* LoginNavigator.swift */,
 				E3040B6027BD97BF0029E9CA /* GoogleService-Info.plist */,
 			);
 			path = Crown;
@@ -453,6 +456,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3D7E4EC27D7AA9B00318F74 /* LoginNavigator.swift in Sources */,
 				E3C62CC727CE6C2C00F7A805 /* PointInfo.swift in Sources */,
 				5A0A936927D7A23F00C3943D /* CompetitorInfo.swift in Sources */,
 				E34F8C1727C7D25300949EED /* CompetitionChooserView.swift in Sources */,
