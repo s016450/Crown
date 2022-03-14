@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CreateScoreCompView: View {
+struct CreatePointView: View {
     
     @State var competitionInfo : CompetitionInfo = CompetitionInfo()
     //@EnviornmentObject var competitionInfo: CompetitionInfo
@@ -18,18 +18,16 @@ struct CreateScoreCompView: View {
             
             VStack{
                 Text("New Score Competition")
-                    .font(.system(size: 18, weight: .bold))
-                   
+                    .font(.system(size: 24, weight: .bold))
+                    .padding(50)
                 
                 //enter competition name
-                TextField("Enter Competition Name", text: $competitionInfo.compName)
+                TextField("Enter competition name", text: $competitionInfo.compName)
                     .frame(maxWidth: .infinity,
                            minHeight: 44)
                     .padding(.leading, 30)
                     .foregroundColor(Color.Gray.opacity(0.5))
                 
-                
-            
                 //user info
                 //array to add users
                 Text("Enter Competitors Below")
@@ -49,29 +47,40 @@ struct CreateScoreCompView: View {
                     .padding(.leading, 30)
                     .foregroundColor(Color.Gray.opacity(0.5))
                 
-                ButtonView(title: "Create Account",
-                           background: .clear,
-                           foreground: Color.Yellow,
-                           border: Color.Yellow){
+    
                     NavigationLink(
-                        destination: ScoreCompView(),
+                        destination: PointCompView(),
                         label: {
                             Text("Create Competetion")
+                                .font(.system(size: 18, weight: .bold))
+                                .padding()
                                 .foregroundColor(.Purple)
+                                .overlay(RoundedRectangle(cornerRadius: 16)
+                                            .stroke(Color.Purple, lineWidth: 4))
+                                .padding()
+                                
                         }) //end navlink label
-                
                 
             }//end vstack
             
+//<<<<<<< HEAD:Crown/Views/Competitions/CreateScoreCompView.swift
+//=======
+//
+//            NavigationLink(
+//                destination: PointCompView(),
+//                label: {
+//                    Text("Create Competetion")
+//                })
+//
+//>>>>>>> main:Crown/Views/Competitions/CreatePointView.swift
         }//end nav view
         
-    }//end nav view
-}//end body
+    }//end body
     
 }//end struct
 
 struct CreateScoreCompView_Previews: PreviewProvider {
     static var previews: some View {
-        CreateScoreCompView()
+        CreatePointView()
     }
 }//end struct

@@ -13,15 +13,13 @@ class UserInfo: ObservableObject{
     var password: String
     var confirmPassword: String = ""
     @Published var loggedIn: Bool
-    
+
     init(email: String = "", name: String = "", loggedIn: Bool = false){
         
         self.email = email
         self.name = name 
         self.password = ""
         self.loggedIn = loggedIn
-        
-        //FirebaseFunctions.getAuthenticatedUser(self)
     }
 }
  
