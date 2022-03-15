@@ -11,15 +11,18 @@ struct HomeView: View {
     
     @EnvironmentObject var userInfo: UserInfo
     @State private var showCompetitionChooser = false
-
-        var body: some View {
+    @State private var showAccountView = false
+    
+    var body: some View {
+        
+        NavigationView{
             
-            NavigationView{
-                
             VStack(alignment: .leading,
                    spacing: 16){
                 
-                Button(action: {}, label: {
+                Button(action: {
+                    showAccountView = true
+                }, label: {
                     Image(systemName: "person.fill")
                         .font(.system(size: 24, weight: .bold))
                         .foregroundColor(.white)
@@ -28,6 +31,9 @@ struct HomeView: View {
                         .clipShape(Circle())
                         .shadow(color: Color.Gray.opacity(0.6), radius: 5, x: 0, y: 0)
                 })
+                .sheet(isPresented: $showAccountView){
+                    AccountView()
+                }
                 
                 Button(action: {
                     showCompetitionChooser.toggle()
@@ -51,15 +57,12 @@ struct HomeView: View {
                     
                     
                 }
-                    ButtonView(title: "Sign Out"){
-                        userInfo.email = ""
-                        userInfo.password = ""
-                        userInfo.confirmPassword = ""
-                        userInfo.loggedIn = false
-                    }
             }
             .padding(.horizontal, 16)
         }
+        .ignoresSafeArea()
+        .navigationTitle("Crown")
+        .navigationBarItems(leading: Image("crown").resizable().frame(width: 100, height: 100))
     }
 }
 

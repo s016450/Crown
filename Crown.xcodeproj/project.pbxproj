@@ -34,9 +34,11 @@
 		E376331827BD558100A7AD56 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E376331727BD558100A7AD56 /* Preview Assets.xcassets */; };
 		E376332327BD558200A7AD56 /* CrownTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E376332227BD558200A7AD56 /* CrownTests.swift */; };
 		E376332E27BD558200A7AD56 /* CrownUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E376332D27BD558200A7AD56 /* CrownUITests.swift */; };
+		E39D218727D8D582002EFE2F /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39D218627D8D582002EFE2F /* AccountView.swift */; };
+		E39D218927D950D1002EFE2F /* tabview.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39D218827D950D1002EFE2F /* tabview.swift */; };
+		E39D218E27E0D074002EFE2F /* FindView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39D218D27E0D073002EFE2F /* FindView.swift */; };
 		E3C62CC127CE6B2700F7A805 /* BracketInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C62CC027CE6B2700F7A805 /* BracketInfo.swift */; };
 		E3C62CC727CE6C2C00F7A805 /* PointInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C62CC627CE6C2C00F7A805 /* PointInfo.swift */; };
-		E3D7E4EC27D7AA9B00318F74 /* LoginNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D7E4EB27D7AA9B00318F74 /* LoginNavigator.swift */; };
 		E3D9E45E27CE61FD00282DBC /* TimeInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D9E45D27CE61FD00282DBC /* TimeInfo.swift */; };
 /* End PBXBuildFile section */
 
@@ -93,9 +95,11 @@
 		E376332927BD558200A7AD56 /* CrownUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CrownUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E376332D27BD558200A7AD56 /* CrownUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrownUITests.swift; sourceTree = "<group>"; };
 		E376332F27BD558200A7AD56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E39D218627D8D582002EFE2F /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
+		E39D218827D950D1002EFE2F /* tabview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tabview.swift; sourceTree = "<group>"; };
+		E39D218D27E0D073002EFE2F /* FindView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindView.swift; sourceTree = "<group>"; };
 		E3C62CC027CE6B2700F7A805 /* BracketInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BracketInfo.swift; sourceTree = "<group>"; };
 		E3C62CC627CE6C2C00F7A805 /* PointInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointInfo.swift; sourceTree = "<group>"; };
-		E3D7E4EB27D7AA9B00318F74 /* LoginNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNavigator.swift; sourceTree = "<group>"; };
 		E3D9E45D27CE61FD00282DBC /* TimeInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -163,8 +167,10 @@
 		E3040B6927C673F00029E9CA /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E39D218527D8D567002EFE2F /* Account */,
 				E3040B6E27C6750B0029E9CA /* Button */,
 				E3040B6827C673CD0029E9CA /* Competitions */,
+				E39D218C27E0D013002EFE2F /* Find */,
 				E3040B6C27C674A20029E9CA /* Forgot Password */,
 				E3040B6D27C674E80029E9CA /* Home */,
 				E3040B6A27C674670029E9CA /* Login */,
@@ -201,6 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				E3040B5427BD92B60029E9CA /* HomeView.swift */,
+				E39D218827D950D1002EFE2F /* tabview.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -250,7 +257,6 @@
 				E3040B5827BD93310029E9CA /* NavAppearanceModifier.swift */,
 				E3040B5A27BD93660029E9CA /* PreviewLayoutComponentModifier.swift */,
 				E3040B5E27BD939A0029E9CA /* UserInfo.swift */,
-				E3D7E4EB27D7AA9B00318F74 /* LoginNavigator.swift */,
 				E3040B6027BD97BF0029E9CA /* GoogleService-Info.plist */,
 			);
 			path = Crown;
@@ -280,6 +286,22 @@
 				E376332F27BD558200A7AD56 /* Info.plist */,
 			);
 			path = CrownUITests;
+			sourceTree = "<group>";
+		};
+		E39D218527D8D567002EFE2F /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				E39D218627D8D582002EFE2F /* AccountView.swift */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
+		E39D218C27E0D013002EFE2F /* Find */ = {
+			isa = PBXGroup;
+			children = (
+				E39D218D27E0D073002EFE2F /* FindView.swift */,
+			);
+			path = Find;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -456,9 +478,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E3D7E4EC27D7AA9B00318F74 /* LoginNavigator.swift in Sources */,
 				E3C62CC727CE6C2C00F7A805 /* PointInfo.swift in Sources */,
 				5A0A936927D7A23F00C3943D /* CompetitorInfo.swift in Sources */,
+				E39D218927D950D1002EFE2F /* tabview.swift in Sources */,
 				E34F8C1727C7D25300949EED /* CompetitionChooserView.swift in Sources */,
 				E3040B5D27BD937E0029E9CA /* RegisterView.swift in Sources */,
 				E3040B5127BD92640029E9CA /* FirebaseFunctions.swift in Sources */,
@@ -470,12 +492,14 @@
 				E3040B5F27BD939A0029E9CA /* UserInfo.swift in Sources */,
 				E376331127BD557E00A7AD56 /* CrownApp.swift in Sources */,
 				E3040B6727C673B90029E9CA /* PointCompView.swift in Sources */,
+				E39D218E27E0D074002EFE2F /* FindView.swift in Sources */,
 				23EB791F27CE5C03009AFC1C /* CreatePointView.swift in Sources */,
 				E3040B4D27BD91990029E9CA /* ButtonView.swift in Sources */,
 				5A0A936727D7A22500C3943D /* Competitor.swift in Sources */,
 				E3040B6527C673A70029E9CA /* BracketView.swift in Sources */,
 				E3040B6327C673930029E9CA /* TimeCompView.swift in Sources */,
 				E3C62CC127CE6B2700F7A805 /* BracketInfo.swift in Sources */,
+				E39D218727D8D582002EFE2F /* AccountView.swift in Sources */,
 				E3040B5327BD92910029E9CA /* ForgotPasswordView.swift in Sources */,
 				E3040B5727BD92F90029E9CA /* LoginView.swift in Sources */,
 				E3040B5B27BD93660029E9CA /* PreviewLayoutComponentModifier.swift in Sources */,

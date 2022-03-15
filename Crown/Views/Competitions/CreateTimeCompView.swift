@@ -13,7 +13,7 @@ struct CreateTimeCompView: View {
     @State private var enddate = Date()
    // @EnvironmentObject var competetitionInfo : CompetitionInfo
     @StateObject var competitionInfo : CompetitionInfo = CompetitionInfo()
-    
+
     //@StateObject var userInfo : UserInfo() = UserInfo()
     
     //date picker stuff https://stackoverflow.com/questions/52984284/swift-save-uidatepicker-date-into-coredata
