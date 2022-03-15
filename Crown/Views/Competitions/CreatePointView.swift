@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CreatePointView: View {
     
-    @EnvironmentObject var competitionInfo: CompetitionInfo
+    //@EnvironmentObject var competitionInfo: CompetitionInfo
      
     var body: some View { 
         
@@ -21,7 +21,7 @@ struct CreatePointView: View {
                     .foregroundColor(Color.Gray)
                 
                 //enter competition name
-                TextField("Competition Name", text: $competitionInfo.compName)
+                /*TextField("Competition Name", text: $competitionInfo.compName)
                     .frame(maxWidth: .infinity,
                            minHeight: 44)
                     .padding(.leading, 30)
@@ -29,7 +29,7 @@ struct CreatePointView: View {
                     .disableAutocorrection(true)
                     .autocapitalization(.none)
                     .foregroundColor(Color.Gray.opacity(0.5))
-                
+                */
                 
                 
                 //user info

@@ -24,6 +24,7 @@ import SwiftUI
 struct LoginView: View {
     
     @EnvironmentObject var userInfo: UserInfo
+    @Environment(\.presentationMode) var presentationMode
     @State private var showRegistration = false
     @State private var showForgotPassword = false
     @State var correctCredentials = false

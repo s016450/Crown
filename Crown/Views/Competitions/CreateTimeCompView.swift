@@ -13,7 +13,7 @@ struct CreateTimeCompView: View {
     @State private var enddate = Date()
     // @EnvironmentObject var competetitionInfo : CompetitionInfo
     @StateObject var competitionInfo : CompetitionInfo = CompetitionInfo()
-    
+
     //@StateObject var userInfo : UserInfo() = UserInfo()
 
     var body: some View {
