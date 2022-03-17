@@ -13,9 +13,10 @@ struct CreateTimeCompView: View {
     @State private var enddate = Date()
     // @EnvironmentObject var competetitionInfo : CompetitionInfo
     @StateObject var competitionInfo : CompetitionInfo = CompetitionInfo()
-    @State var competitiors: [String: Int] = [:]
+    @State var competitors: [String: Int] = [:]
     @State var manualCompetitors = false
     @State var privateCompetition = false
+    @State var competitorName: String = ""
     
     var body: some View {
         
@@ -57,7 +58,7 @@ struct CreateTimeCompView: View {
                     .frame(maxWidth: .infinity, minHeight: 44)
                     .padding(.top, 40)
                     .padding(.leading , 10)
-                    
+                
                     .font(.system(size: 20, weight: .bold))
                     .foregroundColor(Color.Purple)
                 
@@ -68,13 +69,36 @@ struct CreateTimeCompView: View {
                         .font(.system(size: 18, weight: .bold))
                         .foregroundColor(.Gray)
                 }
-                .toggleStyle(.button)
+                .toggleStyle(SwitchToggleStyle(tint: .Yellow))
                 .padding()
                 
                 if manualCompetitors{
-                    Text("Add")
-                        .transition(.scale)
+                    TextField("Competitor Name", text: $competitorName)
+                        .padding()
+                    Button("Add"){
+                        if competitorName != ""{
+                            competitors[competitorName] = 0
+                            competitorName = ""
+                        }
+                    }
+                    ScrollView{
+                        LazyVGrid(columns: [
+                            GridItem(.fixed(UIScreen.main.bounds.width - 20))
+                        ], content: {
+                            ForEach(competitors.sorted(by: >), id: \.key) { key, value in
+                                HStack{
+                                    Text(key)
+                                    Spacer()
+                                    Image(systemName: "trash")
+                                }
+                            }
+                        })
+                        
+                        
+                    }
                 }
+                
+                
                 
                 Toggle(isOn: $privateCompetition, label: {
                     Image(systemName: privateCompetition == true ? "lock.fill" : "lock.open.fill")
@@ -85,19 +109,9 @@ struct CreateTimeCompView: View {
                         .foregroundColor(.Gray)
                     
                 })
-                .toggleStyle(SwitchToggleStyle(tint: .Yellow))
-                .padding()
-                Spacer(minLength: 0)
-                
-                //Time Stuff like
-                //(calender/days)
-                Text("Enter Duration of Competition")
-                    .font(.system(size: 20, weight: .bold))
+                    .toggleStyle(SwitchToggleStyle(tint: .Yellow))
                     .padding()
-                    .foregroundColor(Color.Purple)
-                    .overlay(RoundedRectangle(cornerRadius: 16)
-                                .stroke(Color.Yellow, lineWidth: 4)
-                    )
+                Spacer(minLength: 0)
                 
                 DatePicker("Select End Date", selection: $competitionInfo.endDate)
                     .foregroundColor(Color.Purple)
