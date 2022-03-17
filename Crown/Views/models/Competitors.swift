@@ -11,6 +11,7 @@ struct Competitors : Identifiable{
     var user : String
     var points : Int
     var id = UUID()
+  
     
     init(user : String = "User", points : Int ){
         self.user = user
