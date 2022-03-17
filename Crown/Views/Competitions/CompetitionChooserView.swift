@@ -27,7 +27,6 @@ struct CompetitionChooserView: View {
     var body: some View {
         
         NavigationView{
-            
             ZStack{
                 VStack{
                     VStack{
@@ -255,7 +254,8 @@ struct CompetitionChooserView: View {
                 .padding(.horizontal, 15)
             }
             .ignoresSafeArea()
-        }
+        }.ignoresSafeArea(.all)
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 func getDestination(choice: String)-> AnyView{

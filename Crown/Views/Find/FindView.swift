@@ -9,7 +9,7 @@ import SwiftUI
 
 struct FindView: View {
     
-    @State var search: String
+    @State private var search: String = ""
     
     var body: some View {
         VStack{
@@ -35,6 +35,7 @@ struct FindView: View {
                             .frame(maxWidth: 410)
                     }
                 )
+            
             Spacer()
         }
         .ignoresSafeArea()
@@ -43,6 +44,6 @@ struct FindView: View {
 
 struct FindView_Previews: PreviewProvider {
     static var previews: some View {
-        FindView(search: "")
+        FindView()
     }
 }

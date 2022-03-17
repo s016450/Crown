@@ -10,6 +10,11 @@ import FirebaseFirestore
 
 class CompetitionInfo: ObservableObject{
     var compName: String
+<<<<<<< HEAD:Crown/CompetitionInfo.swift
+    var compPoints: String
+   
+    init(compName: String = "", compPoints: String = ""){
+=======
     var endDate = Date()
     var id = UUID()
     @Published var competitors: [String : Int] = [String:Int]() //dictionary

@@ -14,6 +14,9 @@ struct AccountView: View {
     var body: some View {
         NavigationView{
             VStack{
+                
+                Text("Email: \(userInfo.email)")
+                
                 ButtonView(title: "Sign Out"){
                     userInfo.email = ""
                     userInfo.password = ""
