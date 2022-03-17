@@ -11,59 +11,105 @@ import SwiftUI
 struct CreateTimeCompView: View {
     
     @State private var enddate = Date()
-   // @EnvironmentObject var competetitionInfo : CompetitionInfo
+    // @EnvironmentObject var competetitionInfo : CompetitionInfo
     @StateObject var competitionInfo : CompetitionInfo = CompetitionInfo()
+    @State var competitiors: [String: Int] = [:]
+    @State var manualCompetitors = false
+    @State var privateCompetition = false
     
-    //@StateObject var userInfo : UserInfo() = UserInfo()
-
     var body: some View {
+        
         NavigationView{
             VStack{
-                Text("New Time Competition")
-                    .font(.system(size: 40, weight: .bold))
-                    .foregroundColor(Color.Purple)
                 
-                TextField("Competition Name", text:  $competitionInfo.compName)
+                Text("New Time Competition")
+                    .font(.system(size: 32, weight: .bold))
+                    .padding()
+                    .foregroundColor(.Gray)
+                    .padding(.top, 75)
+                
+                TextField("Competition Name", text: $competitionInfo.compName)
+                    .frame(maxWidth: .infinity,
+                           minHeight: 44)
+                    .padding(.leading, 45)
+                    .disableAutocorrection(true)
+                    .autocapitalization(.none)
+                    .foregroundColor(Color.Gray.opacity(0.5))
+                    .background(
+                        
+                        ZStack(alignment: .leading){
+                            
+                            
+                            Image(systemName: "pencil")
+                                .font(.system(size: 16, weight: .heavy))
+                                .padding(.leading, 10)
+                                .foregroundColor(Color.Gray.opacity(0.5))
+                            
+                            RoundedRectangle(cornerRadius: 10, style: .continuous)
+                                .stroke(Color.Gray.opacity(0.5))
+                                .frame(maxWidth: 410)
+                        }
+                    )
+                    .padding(.top, 20)
+                
+                
+                TextField("Enter Competition Name", text:  $competitionInfo.compName)
                     .frame(maxWidth: .infinity, minHeight: 44)
-                    .padding(.leading, 30)
+                    .padding(.top, 40)
+                    .padding(.leading , 10)
+                    
                     .font(.system(size: 20, weight: .bold))
                     .foregroundColor(Color.Purple)
-                                
-                //Users Info
-                Text("Enter The Competitors")
-                    .font(.system(size: 18, weight: .bold))
-                    .foregroundColor(Color.Purple)
-                //use an array to add users
-                Spacer(minLength: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/)
+                
+                Toggle(isOn: $manualCompetitors){
+                    Image(systemName: "person.3.fill")
+                        .foregroundColor(.Gray)
+                    Text("Manually Enter Competitors")
+                        .font(.system(size: 18, weight: .bold))
+                        .foregroundColor(.Gray)
+                }
+                .toggleStyle(.button)
+                .padding()
+                
+                if manualCompetitors{
+                    Text("Add")
+                        .transition(.scale)
+                }
+                
+                Toggle(isOn: $privateCompetition, label: {
+                    Image(systemName: privateCompetition == true ? "lock.fill" : "lock.open.fill")
+                        .foregroundColor(.Gray)
+                    Text("Make Competition Private")
+                        .padding(.leading, privateCompetition == true ? 17.3: 15)
+                        .font(.system(size: 18, weight: .bold))
+                        .foregroundColor(.Gray)
+                    
+                })
+                .toggleStyle(SwitchToggleStyle(tint: .Yellow))
+                .padding()
+                Spacer(minLength: 0)
                 
                 //Time Stuff like
                 //(calender/days)
                 Text("Enter Duration of Competition")
-                    .font(.system(size: 18, weight: .bold))
-                    .foregroundColor(Color.Gray)
+                    .font(.system(size: 20, weight: .bold))
+                    .padding()
+                    .foregroundColor(Color.Purple)
+                    .overlay(RoundedRectangle(cornerRadius: 16)
+                                .stroke(Color.Yellow, lineWidth: 4)
+                    )
                 
-                DatePicker("End Date", selection: $enddate)
-                    .foregroundColor(.Purple)
+                DatePicker("Select End Date", selection: $competitionInfo.endDate)
+                    .foregroundColor(Color.Purple)
+                    .padding()
+                
                 
                 //Button that takes you to the time competition
                 //Navigation View
                 Spacer(minLength: 0)
-                NavigationLink(
-                    destination: TimeCompView(),
-                    label: {
-                        Text("Create Competetion")
-                            .font(.system(size: 20, weight: .regular))
-                            .foregroundColor(.Purple)
-                            .background(Color.Yellow)
-                            .cornerRadius(15.0)
-                    })
-                Spacer(minLength: 0)
-            }
-            
-            
-            
-        }
-        
+                
+            }.ignoresSafeArea(.all)
+        }.ignoresSafeArea(.all)
     }
 }
 

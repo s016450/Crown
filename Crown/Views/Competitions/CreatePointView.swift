@@ -9,9 +9,14 @@ import SwiftUI
 
 struct CreatePointView: View {
     
+<<<<<<< HEAD
     @State var competitionInfo : CompetitionInfo = CompetitionInfo()
     //@EnviornmentObject var competitionInfo: CompetitionInfo
     
+=======
+    //@EnvironmentObject var competitionInfo: CompetitionInfo
+     
+>>>>>>> main
     var body: some View { 
         
         NavigationView{
@@ -22,11 +27,20 @@ struct CreatePointView: View {
                     .padding(50)
                 
                 //enter competition name
+<<<<<<< HEAD
                 TextField("Enter competition name", text: $competitionInfo.compName)
+=======
+                /*TextField("Competition Name", text: $competitionInfo.compName)
+>>>>>>> main
                     .frame(maxWidth: .infinity,
                            minHeight: 44)
                     .padding(.leading, 30)
                     .foregroundColor(Color.Gray.opacity(0.5))
+<<<<<<< HEAD
+=======
+                */
+                
+>>>>>>> main
                 
                 //user info
                 //array to add users

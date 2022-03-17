@@ -20,7 +20,7 @@ struct ButtonView: View {
     private let cornerRadius: CGFloat = 10
     
     internal init(title: String,
-                  background: Color = .blue,
+                  background: Color = Color.Yellow,
                   foreground: Color = .white,
                   border: Color = .clear,
                   handler: @escaping ButtonView.ActionHandler) {
