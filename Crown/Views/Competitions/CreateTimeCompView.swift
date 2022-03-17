@@ -13,21 +13,44 @@ struct CreateTimeCompView: View {
     @State private var enddate = Date()
     // @EnvironmentObject var competetitionInfo : CompetitionInfo
     @StateObject var competitionInfo : CompetitionInfo = CompetitionInfo()
-
-    //@StateObject var userInfo : UserInfo() = UserInfo()
-
+    @State var competitiors: [String: Int] = [:]
+    @State var manualCompetitors = false
+    @State var privateCompetition = false
+    
     var body: some View {
+        
         NavigationView{
             VStack{
+                
                 Text("New Time Competition")
-                    .font(.system(size: 30, weight: .bold))
+                    .font(.system(size: 32, weight: .bold))
                     .padding()
-                    .foregroundColor(.Purple)
-                    .overlay(RoundedRectangle(cornerRadius: 16)
-                                .stroke(Color.Yellow, lineWidth: 4)
-                                )
-                                
-                    .padding(.top, 100)
+                    .foregroundColor(.Gray)
+                    .padding(.top, 75)
+                
+                TextField("Competition Name", text: $competitionInfo.compName)
+                    .frame(maxWidth: .infinity,
+                           minHeight: 44)
+                    .padding(.leading, 45)
+                    .disableAutocorrection(true)
+                    .autocapitalization(.none)
+                    .foregroundColor(Color.Gray.opacity(0.5))
+                    .background(
+                        
+                        ZStack(alignment: .leading){
+                            
+                            
+                            Image(systemName: "pencil")
+                                .font(.system(size: 16, weight: .heavy))
+                                .padding(.leading, 10)
+                                .foregroundColor(Color.Gray.opacity(0.5))
+                            
+                            RoundedRectangle(cornerRadius: 10, style: .continuous)
+                                .stroke(Color.Gray.opacity(0.5))
+                                .frame(maxWidth: 410)
+                        }
+                    )
+                    .padding(.top, 20)
                 
                 
                 TextField("Enter Competition Name", text:  $competitionInfo.compName)
@@ -38,13 +61,32 @@ struct CreateTimeCompView: View {
                     .font(.system(size: 20, weight: .bold))
                     .foregroundColor(Color.Purple)
                 
-                //Users Info
-                Text("Enter The Competitors")
-                    .font(.system(size: 20, weight: .bold))
-                    .foregroundColor(Color.Purple)
+                Toggle(isOn: $manualCompetitors){
+                    Image(systemName: "person.3.fill")
+                        .foregroundColor(.Gray)
+                    Text("Manually Enter Competitors")
+                        .font(.system(size: 18, weight: .bold))
+                        .foregroundColor(.Gray)
+                }
+                .toggleStyle(.button)
+                .padding()
+                
+                if manualCompetitors{
+                    Text("Add")
+                        .transition(.scale)
+                }
+                
+                Toggle(isOn: $privateCompetition, label: {
+                    Image(systemName: privateCompetition == true ? "lock.fill" : "lock.open.fill")
+                        .foregroundColor(.Gray)
+                    Text("Make Competition Private")
+                        .padding(.leading, privateCompetition == true ? 17.3: 15)
+                        .font(.system(size: 18, weight: .bold))
+                        .foregroundColor(.Gray)
                     
-                    .padding()
-                //use an array to add users
+                })
+                .toggleStyle(SwitchToggleStyle(tint: .Yellow))
+                .padding()
                 Spacer(minLength: 0)
                 
                 //Time Stuff like
@@ -55,7 +97,7 @@ struct CreateTimeCompView: View {
                     .foregroundColor(Color.Purple)
                     .overlay(RoundedRectangle(cornerRadius: 16)
                                 .stroke(Color.Yellow, lineWidth: 4)
-                                )
+                    )
                 
                 DatePicker("Select End Date", selection: $competitionInfo.endDate)
                     .foregroundColor(Color.Purple)
@@ -66,27 +108,8 @@ struct CreateTimeCompView: View {
                 //Navigation View
                 Spacer(minLength: 0)
                 
-                NavigationLink(
-                    destination: TimeCompView(),
-                    label: {
-                        Text("Create Competetion")
-                            .font(.system(size: 18, weight: .bold))
-                            .padding()
-                            .foregroundColor(.Purple)
-                            .overlay(RoundedRectangle(cornerRadius: 16)
-                                        .stroke(Color.Yellow, lineWidth: 4))
-                            .padding()
-                        
-                        
-
-                    }).padding()
-                Spacer(minLength: 0)
             }.ignoresSafeArea(.all)
-            
-            
-            
-        }
-        
+        }.ignoresSafeArea(.all)
     }
 }
 

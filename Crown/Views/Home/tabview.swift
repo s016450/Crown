@@ -28,7 +28,7 @@ struct tabview: View {
                     }
                 case 1:
                     NavigationView{
-                        FindView(search: "")
+                        FindView()
                     }
                     .ignoresSafeArea()
                 case 2:
@@ -69,7 +69,7 @@ struct tabview: View {
                     }
                 }
             }
-        }.ignoresSafeArea()
+        }.ignoresSafeArea(.all)
     }
 }
 
