@@ -75,27 +75,38 @@ struct CreateTimeCompView: View {
                 if manualCompetitors{
                     TextField("Competitor Name", text: $competitorName)
                         .padding()
-                    Button("Add"){
+                    
+                    ButtonView(title: "Add",
+                               background: .Yellow,
+                               foreground: .white,
+                               border: .Yellow){
                         if competitorName != ""{
                             competitors[competitorName] = 0
                             competitorName = ""
                         }
                     }
-                    ScrollView{
+                               .frame(width: 50, height: 25)
+                    
+                    ScrollView(showsIndicators: false){
                         LazyVGrid(columns: [
-                            GridItem(.fixed(UIScreen.main.bounds.width - 20))
+                            GridItem(.fixed(UIScreen.main.bounds.width - 80))
                         ], content: {
-                            ForEach(competitors.sorted(by: >), id: \.key) { key, value in
+                            ForEach(competitors.sorted(by: <), id: \.key) { key, value in
                                 HStack{
                                     Text(key)
                                     Spacer()
-                                    Image(systemName: "trash")
+                                    Button(action: {
+                                        competitors.removeValue(forKey: key)
+                                    }, label: {
+                                        Image(systemName: "trash")
+                                        
+                                    })
                                 }
+                                .padding(.top)
                             }
                         })
-                        
-                        
                     }
+                    .frame(width: 100, height: 100, alignment: .center)
                 }
                 
                 
