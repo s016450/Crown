@@ -10,9 +10,6 @@ import FirebaseFirestore
 
 class CompetitionInfo: ObservableObject{
     var compName: String
-    var compPoints: String
-   
-    init(compName: String = "", compPoints: String = ""){
     var endDate = Date()
     var id = UUID()
     @Published var competitors: [String : Int] = [String:Int]() //dictionary
@@ -30,3 +27,4 @@ class CompetitionInfo: ObservableObject{
 func clear(CompetitionInfo: CompetitionInfo){
     CompetitionInfo.compName = ""
 }
+

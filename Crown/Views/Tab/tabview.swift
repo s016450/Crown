@@ -7,6 +7,13 @@
 
 import SwiftUI
 
+extension UINavigationController {
+    // Remove back button text
+    open override func viewWillLayoutSubviews() {
+        navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+    }
+}
+
 struct tabview: View {
     
     @State private var selectedIndex = 0
@@ -69,7 +76,9 @@ struct tabview: View {
                     }
                 }
             }
-        }.ignoresSafeArea(.all)
+        }
+        .accentColor(.Yellow)
+        .ignoresSafeArea(.all)
     }
 }
 

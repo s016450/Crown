@@ -18,9 +18,7 @@ struct PointCompView: View {
             Text("hello")
                 .font(.system(size: 24, weight: .bold))
                 .padding(50)
-            
-            Text("\(competitionInfo.compPoints)")
-            
+                        
             Text("Competitors:")
             //leaderboard of competitors
             

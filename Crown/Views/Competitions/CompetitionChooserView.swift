@@ -240,22 +240,14 @@ struct CompetitionChooserView: View {
                                         .stroke(buttonColor, lineWidth: 2))
                     }
                     .disabled(lock)
-                    
-                    
-                    Spacer()
-                    Spacer()
-                    Spacer()
-                    Spacer()
-                    Spacer()
-                    Spacer()
-                    Spacer()
-                    Spacer()
+                    .padding(.bottom, 17)
                 }
                 .padding(.horizontal, 15)
             }
             .ignoresSafeArea()
         }.ignoresSafeArea(.all)
         .navigationViewStyle(StackNavigationViewStyle())
+        .accentColor(.Yellow)
     }
 }
 func getDestination(choice: String)-> AnyView{

@@ -20,47 +20,38 @@ struct CreateTimeCompView: View {
     
     var body: some View {
         
-        NavigationView{
             VStack{
-                
+                VStack{
                 Text("New Time Competition")
                     .font(.system(size: 32, weight: .bold))
                     .padding()
                     .foregroundColor(.Gray)
-                    .padding(.top, 75)
+                    .padding(.top, 20)
                 
                 TextField("Competition Name", text: $competitionInfo.compName)
+                    .font(.system(size: 18, weight: .bold))
                     .frame(maxWidth: .infinity,
                            minHeight: 44)
-                    .padding(.leading, 45)
+                    .padding(.leading, 60)
                     .disableAutocorrection(true)
                     .autocapitalization(.none)
-                    .foregroundColor(Color.Gray.opacity(0.5))
+                    .foregroundColor(Color.Yellow)
                     .background(
                         
                         ZStack(alignment: .leading){
                             
                             
                             Image(systemName: "pencil")
-                                .font(.system(size: 16, weight: .heavy))
+                                .font(.system(size: 20, weight: .heavy))
                                 .padding(.leading, 10)
-                                .foregroundColor(Color.Gray.opacity(0.5))
+                                .foregroundColor(Color.Gray)
                             
                             RoundedRectangle(cornerRadius: 10, style: .continuous)
-                                .stroke(Color.Gray.opacity(0.5))
+                                .stroke(Color.Gray.opacity(0))
                                 .frame(maxWidth: 410)
                         }
                     )
                     .padding(.top, 20)
-                
-                
-                TextField("Enter Competition Name", text:  $competitionInfo.compName)
-                    .frame(maxWidth: .infinity, minHeight: 44)
-                    .padding(.top, 40)
-                    .padding(.leading , 10)
-                
-                    .font(.system(size: 20, weight: .bold))
-                    .foregroundColor(Color.Purple)
                 
                 Toggle(isOn: $manualCompetitors){
                     Image(systemName: "person.3.fill")
@@ -73,8 +64,27 @@ struct CreateTimeCompView: View {
                 .padding()
                 
                 if manualCompetitors{
+                    
                     TextField("Competitor Name", text: $competitorName)
-                        .padding()
+                        .font(.system(size: 18, weight: .bold))
+                        .frame(maxWidth: .infinity,
+                               minHeight: 44)
+                        .padding(.leading, 60)
+                        .foregroundColor(Color.Yellow)
+                        .background(
+                            
+                            ZStack(alignment: .leading){
+                                
+                                
+                                Image(systemName: "person.fill")
+                                    .padding(.leading, 10)
+                                    .foregroundColor(Color.Gray)
+                                
+                                RoundedRectangle(cornerRadius: 10, style: .continuous)
+                                    .stroke(Color.Gray.opacity(0))
+                                    .frame(maxWidth: 410)
+                            }
+                        )
                     
                     ButtonView(title: "Add",
                                background: .Yellow,
@@ -94,19 +104,31 @@ struct CreateTimeCompView: View {
                             ForEach(competitors.sorted(by: <), id: \.key) { key, value in
                                 HStack{
                                     Text(key)
+                                        .font(.system(size: 18, weight: .semibold))
                                     Spacer()
                                     Button(action: {
                                         competitors.removeValue(forKey: key)
                                     }, label: {
                                         Image(systemName: "trash")
+                                            .font(.system(size: 18, weight: .semibold))
+                                            .foregroundColor(.Gray)
                                         
                                     })
                                 }
-                                .padding(.top)
+                                .padding(.vertical, 5)
                             }
                         })
                     }
-                    .frame(width: 100, height: 100, alignment: .center)
+                    .frame(width: 100, height: 110, alignment: .center)
+                    .background(
+                        RoundedRectangle(cornerRadius: 10, style: .continuous)
+                            .stroke(Color.Gray, lineWidth: 1.5)
+                            
+                            .frame(width: 400, height: 120)
+                            .background(Color.Yellow.opacity(0.1))
+                    )
+                    .padding(.top, 30)
+
                 }
                 
                 
@@ -122,19 +144,42 @@ struct CreateTimeCompView: View {
                 })
                     .toggleStyle(SwitchToggleStyle(tint: .Yellow))
                     .padding()
-                Spacer(minLength: 0)
+                
+                DatePicker("Select Start Date", selection: $competitionInfo.endDate)
+                    .font(.system(size: 18, weight: .bold))
+                    .foregroundColor(Color.Gray)
+                    .accentColor(.Yellow)
+                    .padding()
+
                 
                 DatePicker("Select End Date", selection: $competitionInfo.endDate)
-                    .foregroundColor(Color.Purple)
+                    .font(.system(size: 18, weight: .bold))
+                    .foregroundColor(Color.Gray)
+                    .accentColor(.Yellow)
                     .padding()
+
                 
                 
-                //Button that takes you to the time competition
-                //Navigation View
-                Spacer(minLength: 0)
+                Spacer()
+                }
                 
-            }.ignoresSafeArea(.all)
+                NavigationLink(destination: CustomizeTimeView()){
+                    Text("Create Competition")
+                        .frame(maxWidth: .infinity,
+                               maxHeight: 50)
+                        .background(Color.Yellow)
+                        .foregroundColor(Color.white)
+                        .font(.system(size: 16, weight: .bold))
+                        .cornerRadius(10)
+                        .overlay(RoundedRectangle(cornerRadius: 10)
+                                    .stroke(Color.Yellow, lineWidth: 2))
+                }
+                .padding(.horizontal, 15)
+                .padding(.bottom, manualCompetitors == true ? 106:  17)
+                
+                
         }.ignoresSafeArea(.all)
+            .accentColor(.Yellow)
     }
 }
 
