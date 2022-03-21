@@ -49,12 +49,6 @@ struct CreatePointView: View {
                     .font(.system(size: 18, weight: .bold))
                     .foregroundColor(Color.Gray)
                 
-                TextField("Enter points here", text: $competitionInfo.compPoints)
-                    .frame(maxWidth: .infinity,
-                           minHeight: 44)
-                    .padding(.leading, 30)
-                    .foregroundColor(Color.Gray.opacity(0.5))
-                
     
                     NavigationLink(
                         destination: PointCompView(),

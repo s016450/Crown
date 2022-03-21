@@ -36,6 +36,7 @@
 		E39D218727D8D582002EFE2F /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39D218627D8D582002EFE2F /* AccountView.swift */; };
 		E39D218927D950D1002EFE2F /* tabview.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39D218827D950D1002EFE2F /* tabview.swift */; };
 		E39D218E27E0D074002EFE2F /* FindView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39D218D27E0D073002EFE2F /* FindView.swift */; };
+		E39D219327E834E6002EFE2F /* CustomizeTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39D219227E834E6002EFE2F /* CustomizeTimeView.swift */; };
 		E3C62CC127CE6B2700F7A805 /* BracketInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C62CC027CE6B2700F7A805 /* BracketInfo.swift */; };
 		E3C62CC727CE6C2C00F7A805 /* PointInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C62CC627CE6C2C00F7A805 /* PointInfo.swift */; };
 		E3D9E45E27CE61FD00282DBC /* TimeInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D9E45D27CE61FD00282DBC /* TimeInfo.swift */; };
@@ -96,6 +97,7 @@
 		E39D218627D8D582002EFE2F /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		E39D218827D950D1002EFE2F /* tabview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tabview.swift; sourceTree = "<group>"; };
 		E39D218D27E0D073002EFE2F /* FindView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindView.swift; sourceTree = "<group>"; };
+		E39D219227E834E6002EFE2F /* CustomizeTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizeTimeView.swift; sourceTree = "<group>"; };
 		E3C62CC027CE6B2700F7A805 /* BracketInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BracketInfo.swift; sourceTree = "<group>"; };
 		E3C62CC627CE6C2C00F7A805 /* PointInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointInfo.swift; sourceTree = "<group>"; };
 		E3D9E45D27CE61FD00282DBC /* TimeInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeInfo.swift; sourceTree = "<group>"; };
@@ -177,11 +179,13 @@
 				E39D218527D8D567002EFE2F /* Account */,
 				E3040B6E27C6750B0029E9CA /* Button */,
 				E3040B6827C673CD0029E9CA /* Competitions */,
+				E311C36D27E89F30004001E7 /* Customize */,
 				E39D218C27E0D013002EFE2F /* Find */,
 				E3040B6C27C674A20029E9CA /* Forgot Password */,
 				E3040B6D27C674E80029E9CA /* Home */,
 				E3040B6A27C674670029E9CA /* Login */,
 				E3040B6B27C674800029E9CA /* Register */,
+				E39D219427E8354A002EFE2F /* Tab */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -214,7 +218,6 @@
 			isa = PBXGroup;
 			children = (
 				E3040B5427BD92B60029E9CA /* HomeView.swift */,
-				E39D218827D950D1002EFE2F /* tabview.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -225,6 +228,14 @@
 				E3040B4C27BD91990029E9CA /* ButtonView.swift */,
 			);
 			path = Button;
+			sourceTree = "<group>";
+		};
+		E311C36D27E89F30004001E7 /* Customize */ = {
+			isa = PBXGroup;
+			children = (
+				E39D219227E834E6002EFE2F /* CustomizeTimeView.swift */,
+			);
+			path = Customize;
 			sourceTree = "<group>";
 		};
 		E376330427BD557E00A7AD56 = {
@@ -307,6 +318,14 @@
 				E39D218D27E0D073002EFE2F /* FindView.swift */,
 			);
 			path = Find;
+			sourceTree = "<group>";
+		};
+		E39D219427E8354A002EFE2F /* Tab */ = {
+			isa = PBXGroup;
+			children = (
+				E39D218827D950D1002EFE2F /* tabview.swift */,
+			);
+			path = Tab;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -496,6 +515,7 @@
 				E3040B5F27BD939A0029E9CA /* UserInfo.swift in Sources */,
 				E376331127BD557E00A7AD56 /* CrownApp.swift in Sources */,
 				E3040B6727C673B90029E9CA /* PointCompView.swift in Sources */,
+				E39D219327E834E6002EFE2F /* CustomizeTimeView.swift in Sources */,
 				E39D218E27E0D074002EFE2F /* FindView.swift in Sources */,
 				23EB791F27CE5C03009AFC1C /* CreatePointView.swift in Sources */,
 				E3040B4D27BD91990029E9CA /* ButtonView.swift in Sources */,
