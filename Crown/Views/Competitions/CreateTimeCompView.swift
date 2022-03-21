@@ -21,7 +21,7 @@ struct CreateTimeCompView: View {
     var body: some View {
         
             VStack{
-                VStack{
+                VStack(spacing: -3){
                 Text("New Time Competition")
                     .font(.system(size: 32, weight: .bold))
                     .padding()
@@ -124,7 +124,7 @@ struct CreateTimeCompView: View {
                         RoundedRectangle(cornerRadius: 10, style: .continuous)
                             .stroke(Color.Gray, lineWidth: 1.5)
                             
-                            .frame(width: 400, height: 120)
+                            .frame(width: 350, height: 120)
                             .background(Color.Yellow.opacity(0.1))
                     )
                     .padding(.top, 30)
@@ -145,14 +145,14 @@ struct CreateTimeCompView: View {
                     .toggleStyle(SwitchToggleStyle(tint: .Yellow))
                     .padding()
                 
-                DatePicker("Select Start Date", selection: $competitionInfo.endDate)
+                DatePicker("Start Date", selection: $competitionInfo.endDate)
                     .font(.system(size: 18, weight: .bold))
                     .foregroundColor(Color.Gray)
                     .accentColor(.Yellow)
                     .padding()
 
                 
-                DatePicker("Select End Date", selection: $competitionInfo.endDate)
+                DatePicker("End Date", selection: $competitionInfo.endDate)
                     .font(.system(size: 18, weight: .bold))
                     .foregroundColor(Color.Gray)
                     .accentColor(.Yellow)
@@ -175,7 +175,7 @@ struct CreateTimeCompView: View {
                                     .stroke(Color.Yellow, lineWidth: 2))
                 }
                 .padding(.horizontal, 15)
-                .padding(.bottom, manualCompetitors == true ? 106:  17)
+                .padding(.bottom, manualCompetitors == true ? -9.5:  17)
                 
                 
         }.ignoresSafeArea(.all)
