@@ -9,23 +9,59 @@ import SwiftUI
 
 struct CustomizeTimeView: View {
     
-    @State private var showAccountView = false
+    @State private var backgroundColor = Color.white
+    @State private var titleColor = Color.Gray
+    @State private var barColor = Color.Yellow
+    @StateObject var competitionInfo : CompetitionInfo = CompetitionInfo()
+    
     
     var body: some View {
-        Button(action: {
-            showAccountView = true
-        }, label: {
-            Image(systemName: "paintbrush.fill")
-                .font(.system(size: 24, weight: .bold))
-                .foregroundColor(.white)
+        
+        
+        VStack {
+            
+            Text(competitionInfo.compName == "" ? "New Time Competition" : competitionInfo.compName)
+                .font(.system(size: 28, weight: .heavy))
+                .foregroundColor(titleColor)
+                .padding(.top,80)
+            
+            ColorPicker("",selection: $titleColor, supportsOpacity: false)
+                .frame(width: 25, height: 25)
+            
+            VStack{
+                Text("Leaderboard")
+                    .font(.system(size: 26, weight: .bold))
+                VStack{
+                    RoundedRectangle(cornerRadius: 10, style: .continuous)
+                        .fill(barColor)
+                        .frame(width: 350, height: 50)
+                    RoundedRectangle(cornerRadius: 10, style: .continuous)
+                        .fill(barColor)
+                        .frame(width: 350, height: 50)
+                    RoundedRectangle(cornerRadius: 10, style: .continuous)
+                        .fill(barColor)
+                        .frame(width: 350, height: 50)
+                    RoundedRectangle(cornerRadius: 10, style: .continuous)
+                        .fill(barColor)
+                        .frame(width: 350, height: 50)
+                    RoundedRectangle(cornerRadius: 10, style: .continuous)
+                        .fill(barColor)
+                        .frame(width: 350, height: 50)
+                }
                 .padding()
-                .background(Color.Yellow)
-                .clipShape(Circle())
-                .shadow(color: Color.Yellow.opacity(0.6), radius: 5, x: 0, y: 0)
-        })
-        .sheet(isPresented: $showAccountView){
-            AccountView()
-        }    }
+                
+            }
+            
+            ColorPicker("",selection: $backgroundColor, supportsOpacity: false)
+                .frame(width: 25, height: 25)
+            
+            Spacer()
+            
+        }
+        .ignoresSafeArea()
+        .frame(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height+50)
+        .background(backgroundColor)
+    }
 }
 
 struct PreviewTimeView_Previews: PreviewProvider {
