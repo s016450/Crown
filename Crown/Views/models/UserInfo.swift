@@ -22,11 +22,3 @@ class UserInfo: ObservableObject{
         self.loggedIn = loggedIn
     }
 }
- 
-func clear(UserInfo: UserInfo){
-    UserInfo.email = ""
-    UserInfo.name = ""
-    UserInfo.password = ""
-    UserInfo.confirmPassword = ""
-}
-

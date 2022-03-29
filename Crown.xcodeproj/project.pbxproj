@@ -144,6 +144,7 @@
 				5A50D17827E0DAE80063CFDF /* Competitors.swift */,
 				23EB792027CE6434009AFC1C /* CompetitionInfo.swift */,
 				E3040B5027BD92640029E9CA /* FirebaseFunctions.swift */,
+				E3040B5E27BD939A0029E9CA /* UserInfo.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -272,7 +273,6 @@
 				E3040B4E27BD92280029E9CA /* Constants.swift */,
 				E3040B5827BD93310029E9CA /* NavAppearanceModifier.swift */,
 				E3040B5A27BD93660029E9CA /* PreviewLayoutComponentModifier.swift */,
-				E3040B5E27BD939A0029E9CA /* UserInfo.swift */,
 				E3040B6027BD97BF0029E9CA /* GoogleService-Info.plist */,
 			);
 			path = Crown;

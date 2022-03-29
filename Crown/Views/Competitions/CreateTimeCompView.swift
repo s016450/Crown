@@ -12,15 +12,15 @@ struct CreateTimeCompView: View {
     
     @State private var enddate = Date()
     // @EnvironmentObject var competetitionInfo : CompetitionInfo
-    @StateObject var competitionInfo : CompetitionInfo = CompetitionInfo()
+    @EnvironmentObject var competitionInfo : CompetitionInfo
     @State var competitors: [String: Int] = [:]
     @State var manualCompetitors = false
     @State var privateCompetition = false
     @State var competitorName: String = ""
     
     var body: some View {
-        
-            VStack{
+
+        VStack{
                 VStack(spacing: -3){
                 Text("New Time Competition")
                     .font(.system(size: 32, weight: .bold))
@@ -91,7 +91,7 @@ struct CreateTimeCompView: View {
                                foreground: .white,
                                border: .Yellow){
                         if competitorName != ""{
-                            competitors[competitorName] = 0
+                            competitionInfo.competitors[competitorName] = 0
                             competitorName = ""
                         }
                     }
@@ -101,13 +101,13 @@ struct CreateTimeCompView: View {
                         LazyVGrid(columns: [
                             GridItem(.fixed(UIScreen.main.bounds.width - 80))
                         ], content: {
-                            ForEach(competitors.sorted(by: <), id: \.key) { key, value in
+                            ForEach(competitionInfo.competitors.sorted(by: <), id: \.key) { key, value in
                                 HStack{
                                     Text(key)
                                         .font(.system(size: 18, weight: .semibold))
                                     Spacer()
                                     Button(action: {
-                                        competitors.removeValue(forKey: key)
+                                        competitionInfo.competitors.removeValue(forKey: key)
                                     }, label: {
                                         Image(systemName: "trash")
                                             .font(.system(size: 18, weight: .semibold))
