@@ -8,7 +8,7 @@
 import Foundation
 
 struct Competitors : Identifiable{
-  
+    
     var user : String
     var points : Int
     var id = UUID()
@@ -20,18 +20,17 @@ struct Competitors : Identifiable{
         
     }
     
-    func dataAsDictionaryCompetitor() -> [String: Any]{
+
+    func dataAsDictionary() -> [String: Any]{
         
         var data: [String: Any] = [String: Any]()
         
         data["user"] = user
         data["points"] = points
-        data["id"] = id.uuidString
+        data["uid"] = id.uuidString
         
         return data
         
     }//end function
-    
-    
     
 }

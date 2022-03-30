@@ -35,11 +35,11 @@ class CompetitionInfo: ObservableObject{
         var Competitor = [String: Any]()
         
         for Competitors in self.competitors{
-
-            //Competitor[Competitors.id.uuidString] = Competitors.dataAsDictionary()
-
+            
+            Competitor[Competitors.id.uuidString] = Competitors.dataAsDictionary()
+            
         }
-
+        
         
         
         data["Competitor"] = Competitor
