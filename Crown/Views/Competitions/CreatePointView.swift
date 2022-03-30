@@ -163,7 +163,11 @@ struct CreatePointView: View {
                     }//end vstack with spacing -3
                     
                     NavigationLink(destination: PointCompView()){
-                        Text("Create Competition")
+                        Button("Create Competition"){
+                            
+                        //FirebaseFunctions.createUser(competitor)
+                       
+                        }
                             .frame(maxWidth: .infinity,
                                    maxHeight: 50)
                             .background(Color.Yellow)
