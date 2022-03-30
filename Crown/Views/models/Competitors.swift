@@ -8,12 +8,13 @@
 import Foundation
 
 struct Competitors : Identifiable{
+  
     var user : String
     var points : Int
     var id = UUID()
     
     
-    init(user : String = "User", points : Int ){
+    init(user : String , points : Int ){
         self.user = user
         self.points = points
         

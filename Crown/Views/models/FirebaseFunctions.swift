@@ -7,7 +7,26 @@
 
 import Foundation
 import FirebaseAuth
+import FirebaseFirestore
  
+
+func createUser(competitor: CompetitionInfo, completion: @escaping (Error?) -> ()){
+
+        let data = competitor.dataAsDictionary()
+
+
+//    guard let competitorId = competitor.competitorId else {
+//            return
+//        }
+    
+        Firestore
+            .firestore()
+            .collection("competitors")
+            //.document(competitorId.uuidString)
+           // .setData(data, merge: true) { (error) in
+                //completion(error)
+}
+    
 struct FirebaseFunctions{
     
     static func authenticate(email: String, password: String, completion: @escaping (Bool) ->()){
@@ -54,5 +73,4 @@ struct FirebaseFunctions{
     }
 }
  
- 
-
+}

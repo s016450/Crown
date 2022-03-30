@@ -12,10 +12,10 @@ class CompetitionInfo: ObservableObject{
     var compName: String
     var endDate = Date()
     var startDate = Date()
-    var id = UUID()
-    @Published var competitors: [String : Int] = [String:Int]() //dictionary
+    var competitorId = UUID()
+    @Published var competitors: [Competitors] = [Competitors]() //an array
     
-    init(compName: String = "", competitors: [String:Int] = [String:Int]()){
+    init(compName: String = "", competitors: [Competitors] = [Competitors]()){
         
         self.compName = compName
         self.competitors = competitors
@@ -30,19 +30,19 @@ class CompetitionInfo: ObservableObject{
         data["compName"] = compName
         data["endDate"] = endDate
         data["startDate"] = startDate
-        data["uid"] = id.uuidString
+        data["uid"] = competitorId.uuidString
         
-        var competitors = [String: Any]()
+        var Competitor = [String: Any]()
         
-//        for competitor in self.competitors{
-//
-//            competitors[competitor.id.uuidString] = competitor.dataAsDictionary()
-//
-//        }
+        for Competitors in self.competitors{
+
+            //Competitor[Competitors.id.uuidString] = Competitors.dataAsDictionary()
+
+        }
+
         
         
-        
-        data["competitors"] = competitors
+        data["Competitor"] = Competitor
         
         
         
