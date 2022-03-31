@@ -21,11 +21,37 @@ class CompetitionInfo: ObservableObject{
     init(compName: String = "", competitors: [String:Int] = [String:Int]()){
      
         self.compName = compName
+        self.points = points
         self.competitors = competitors
-         
+        
         //FirebaseFunctions.getAuthenticatedUser(self)
     }
-   
+    
+    func dataAsDictionary() -> [String: Any]{
+        
+        var data: [String: Any] = [String: Any]()
+        
+        data["compName"] = compName
+        data["points"] = points
+        data["endDate"] = endDate
+        data["startDate"] = startDate
+        data["uid"] = competitorId.uuidString
+        
+        var Competitor = [String: Any]()
+        
+        for Competitors in self.competitors{
+            
+            Competitor[Competitors.id.uuidString] = Competitors.dataAsDictionary()
+            
+        }
+        
+        data["Competitor"] = Competitor
+        
+        return data
+        
+    }
+    
+    
 }
 
 func clear(CompetitionInfo: CompetitionInfo){

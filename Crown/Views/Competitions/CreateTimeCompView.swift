@@ -11,6 +11,7 @@ import SwiftUI
 struct CreateTimeCompView: View {
     
     @State private var enddate = Date()
+    @State private var startdate = Date()
     // @EnvironmentObject var competetitionInfo : CompetitionInfo
     @EnvironmentObject var competitionInfo : CompetitionInfo
     @State var competitors: [String: Int] = [:]
@@ -145,7 +146,7 @@ struct CreateTimeCompView: View {
                     .toggleStyle(SwitchToggleStyle(tint: .Yellow))
                     .padding()
                 
-                DatePicker("Start Date", selection: $competitionInfo.endDate)
+                DatePicker("Start Date", selection: $competitionInfo.startDate)
                     .font(.system(size: 18, weight: .bold))
                     .foregroundColor(Color.Gray)
                     .accentColor(.Yellow)
