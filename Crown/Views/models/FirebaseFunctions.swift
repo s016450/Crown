@@ -10,20 +10,20 @@ import FirebaseAuth
 import FirebaseFirestore
 
 
-func createUser(competitor: CompetitionInfo, completion: @escaping (Error?) -> ()){
-    
-    let data = competitor.dataAsDictionary()
-    
-    Firestore
-        .firestore()
-        .collection("competitors")
-        .document(competitor.competitorId.uuidString)
-        .setData(data, merge: true) { (error) in
-            completion(error)
-        }
-}
-
 struct FirebaseFunctions{
+    
+    func createUser(competitor: CompetitionInfo, completion: @escaping (Error?) -> ()){
+        
+        let data = competitor.dataAsDictionary()
+        
+        Firestore
+            .firestore()
+            .collection("competitors")
+            .document(competitor.competitorId.uuidString)
+            .setData(data, merge: true) { (error) in
+                completion(error)
+            }
+    }
     
     static func authenticate(email: String, password: String, completion: @escaping (Bool) ->()){
         
