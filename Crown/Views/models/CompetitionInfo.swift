@@ -10,14 +10,16 @@ import FirebaseFirestore
 
 class CompetitionInfo: ObservableObject{
     var compName: String
+    var points : String
     var endDate = Date()
     var startDate = Date()
     var competitorId = UUID()
     @Published var competitors: [Competitors] = [Competitors]() //an array
     
-    init(compName: String = "", competitors: [Competitors] = [Competitors]()){
+    init(compName: String = "", points: String = "",competitors: [Competitors] = [Competitors]()){
         
         self.compName = compName
+        self.points = points
         self.competitors = competitors
         
         //FirebaseFunctions.getAuthenticatedUser(self)
@@ -28,6 +30,7 @@ class CompetitionInfo: ObservableObject{
         var data: [String: Any] = [String: Any]()
         
         data["compName"] = compName
+        data["points"] = points
         data["endDate"] = endDate
         data["startDate"] = startDate
         data["uid"] = competitorId.uuidString
@@ -40,11 +43,7 @@ class CompetitionInfo: ObservableObject{
             
         }
         
-        
-        
         data["Competitor"] = Competitor
-        
-        
         
         return data
         
