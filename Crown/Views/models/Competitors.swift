@@ -20,7 +20,6 @@ struct Competitors : Identifiable{
         
     }
     
-
     func dataAsDictionary() -> [String: Any]{
         
         var data: [String: Any] = [String: Any]()
