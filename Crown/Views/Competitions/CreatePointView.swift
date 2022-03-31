@@ -144,11 +144,9 @@ struct CreatePointView: View {
                             
                         })
                         .toggleStyle(SwitchToggleStyle(tint: .Yellow))
-                    
-                        
+                        .padding()
          
-                    
-                    TextField("Final Point Goal", text: $competitionInfo.compName)
+                    TextField("Final Point Goal", text: $competitionInfo.points)
                         .font(.system(size: 18, weight: .bold))
                         .frame(maxWidth: .infinity,
                                minHeight: 44)
@@ -160,7 +158,6 @@ struct CreatePointView: View {
                             
                             ZStack(alignment: .leading){
                                 
-                                
                                 Image(systemName: "pencil")
                                     .font(.system(size: 20, weight: .heavy))
                                     .padding(.leading, 10)
@@ -171,7 +168,9 @@ struct CreatePointView: View {
                                     .frame(maxWidth: 410)
                             }
                         )
-                        .padding(.top, 20)
+                      
+                   
+                    Spacer()
                         
                     }//end vstack with spacing -3
                     
