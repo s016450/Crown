@@ -15,6 +15,7 @@ struct CreatePointView: View {
     @State var manualCompetitors = false
     @State var privateCompetition = false
     @State var competitorName: String = ""
+    @State var points: String = ""
     
     var body: some View { 
         
@@ -23,12 +24,12 @@ struct CreatePointView: View {
             VStack{
                 
                 VStack(spacing: -3){
-                    
+                  
                     Text("New Point Competition")
                         .font(.system(size: 32, weight: .bold))
                         .padding()
                         .foregroundColor(.Gray)
-                        .padding(.top, 20)
+                        .padding(.top, 50)
                     
                     TextField("Competition Name", text: $competitionInfo.compName)
                         .font(.system(size: 18, weight: .bold))
@@ -143,22 +144,34 @@ struct CreatePointView: View {
                             
                         })
                         .toggleStyle(SwitchToggleStyle(tint: .Yellow))
-                        .padding()
+                    
                         
-                        DatePicker("Start Date", selection: $competitionInfo.startDate)
-                            .font(.system(size: 18, weight: .bold))
-                            .foregroundColor(Color.Gray)
-                            .accentColor(.Yellow)
-                            .padding()
-                        
-                        
-                        DatePicker("End Date", selection: $competitionInfo.endDate)
-                            .font(.system(size: 18, weight: .bold))
-                            .foregroundColor(Color.Gray)
-                            .accentColor(.Yellow)
-                            .padding()
-                        
-                        Spacer()
+         
+                    
+                    TextField("Final Point Goal", text: $competitionInfo.compName)
+                        .font(.system(size: 18, weight: .bold))
+                        .frame(maxWidth: .infinity,
+                               minHeight: 44)
+                        .padding(.leading, 60)
+                        .disableAutocorrection(true)
+                        .autocapitalization(.none)
+                        .foregroundColor(Color.Yellow)
+                        .background(
+                            
+                            ZStack(alignment: .leading){
+                                
+                                
+                                Image(systemName: "pencil")
+                                    .font(.system(size: 20, weight: .heavy))
+                                    .padding(.leading, 10)
+                                    .foregroundColor(Color.Gray)
+                                
+                                RoundedRectangle(cornerRadius: 10, style: .continuous)
+                                    .stroke(Color.Gray.opacity(0))
+                                    .frame(maxWidth: 410)
+                            }
+                        )
+                        .padding(.top, 20)
                         
                     }//end vstack with spacing -3
                     
