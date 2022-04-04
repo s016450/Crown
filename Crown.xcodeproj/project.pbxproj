@@ -40,6 +40,7 @@
 		E3C62CC127CE6B2700F7A805 /* BracketInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C62CC027CE6B2700F7A805 /* BracketInfo.swift */; };
 		E3C62CC727CE6C2C00F7A805 /* PointInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C62CC627CE6C2C00F7A805 /* PointInfo.swift */; };
 		E3D9E45E27CE61FD00282DBC /* TimeInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D9E45D27CE61FD00282DBC /* TimeInfo.swift */; };
+		E3E84E7D27FB15FC00B6C63D /* ColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E84E7C27FB15FC00B6C63D /* ColorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +102,7 @@
 		E3C62CC027CE6B2700F7A805 /* BracketInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BracketInfo.swift; sourceTree = "<group>"; };
 		E3C62CC627CE6C2C00F7A805 /* PointInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointInfo.swift; sourceTree = "<group>"; };
 		E3D9E45D27CE61FD00282DBC /* TimeInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeInfo.swift; sourceTree = "<group>"; };
+		E3E84E7C27FB15FC00B6C63D /* ColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -235,6 +237,7 @@
 			isa = PBXGroup;
 			children = (
 				E39D219227E834E6002EFE2F /* CustomizeTimeView.swift */,
+				E3E84E7C27FB15FC00B6C63D /* ColorView.swift */,
 			);
 			path = Customize;
 			sourceTree = "<group>";
@@ -518,6 +521,7 @@
 				E39D219327E834E6002EFE2F /* CustomizeTimeView.swift in Sources */,
 				E39D218E27E0D074002EFE2F /* FindView.swift in Sources */,
 				23EB791F27CE5C03009AFC1C /* CreatePointView.swift in Sources */,
+				E3E84E7D27FB15FC00B6C63D /* ColorView.swift in Sources */,
 				E3040B4D27BD91990029E9CA /* ButtonView.swift in Sources */,
 				E3040B6527C673A70029E9CA /* BracketView.swift in Sources */,
 				E3040B6327C673930029E9CA /* TimeCompView.swift in Sources */,

@@ -10,15 +10,16 @@ import FirebaseFirestore
 import SwiftUI
 
 class CompetitionInfo: ObservableObject{
-    var compName: String = ""
-    @Published var backgroundColor: Color = Color.white
+    var compName: String
     @Published var titleColor: Color = Color.Gray
     @Published var barColor: Color = Color.Yellow
+    var startDate = Date()
     var endDate = Date()
-    var id = UUID()
-    @Published var competitors: [String : Int]  //dictionary
+    var competitorId = UUID()
+    var points: String
+    @Published var competitors: [Competitors] = [Competitors]() //dictionary
 
-    init(compName: String = "", competitors: [String:Int] = [String:Int]()){
+    init(compName: String = "", points: String = "", competitors: [Competitors] = [Competitors]()){
      
         self.compName = compName
         self.points = points
