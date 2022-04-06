@@ -10,8 +10,6 @@ import SwiftUI
 //this class will set up 
 struct CreateTimeCompView: View {
     
-    @State private var enddate = Date()
-    @State private var startdate = Date()
     @EnvironmentObject var competitionInfo : CompetitionInfo
     @State var manualCompetitors = false
     @State var privateCompetition = false
@@ -22,7 +20,7 @@ struct CreateTimeCompView: View {
             VStack{
                 VStack(spacing: -3){
                     Text("New Time Competition")
-                        .font(.system(size: 32, weight: .bold))
+                        .font(.system(size: 32, weight: .heavy))
                         .padding()
                         .foregroundColor(.Gray)
                         .padding(.top, 20)
