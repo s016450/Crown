@@ -20,10 +20,11 @@ class AppDelegate: NSObject, UIApplicationDelegate{
 struct CrownApp: App {
     @UIApplicationDelegateAdaptor private var appDelegate: AppDelegate
     @StateObject var userInfo = UserInfo()
+    @StateObject var competitionInfo = CompetitionInfo()
     
     var body: some Scene {
         WindowGroup {
-            ContentView().environmentObject(userInfo)
+            ContentView().environmentObject(userInfo).environmentObject(competitionInfo)
         }
     }
 }
