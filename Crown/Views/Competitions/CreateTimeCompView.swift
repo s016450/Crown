@@ -16,15 +16,13 @@ struct CreateTimeCompView: View {
     @State var competitorName: String = ""
     
     var body: some View {
-        NavigationView{
             VStack{
                 VStack(spacing: -3){
                     Text("New Time Competition")
                         .font(.system(size: 32, weight: .heavy))
                         .padding()
                         .foregroundColor(.Gray)
-                        .padding(.top, 20)
-                    
+
                     TextField("Competition Name", text: $competitionInfo.compName)
                         .font(.system(size: 18, weight: .bold))
                         .frame(maxWidth: .infinity,
@@ -177,9 +175,7 @@ struct CreateTimeCompView: View {
                 
             }.ignoresSafeArea(.all)
                 .accentColor(.Yellow)
-        }
-        .navigationTitle("")
-        .navigationBarHidden(true)
+        
     }
 }
 

@@ -74,6 +74,8 @@ struct CustomizeTimeView: View {
         }
         .ignoresSafeArea()
         .frame(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height+50)
+        
+        
     }
 }
 

@@ -23,8 +23,6 @@ struct CreatePointView: View {
                     .font(.system(size: 32, weight: .heavy))
                     .padding()
                     .foregroundColor(.Gray)
-                    .padding(.top, 20)
-                
                 
                 HStack(spacing: 30){
                     VStack(spacing: 40){
