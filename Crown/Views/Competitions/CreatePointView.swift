@@ -173,9 +173,6 @@ struct CreatePointView: View {
             }.ignoresSafeArea(.all)
                 .accentColor(.Yellow)
         }
-        .navigationTitle("")
-        .navigationBarHidden(true)
-        
         
     }
     

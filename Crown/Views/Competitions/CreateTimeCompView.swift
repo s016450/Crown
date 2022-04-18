@@ -10,17 +10,20 @@ import SwiftUI
 //this class will set up 
 struct CreateTimeCompView: View {
     
+    //@StateObject var competitionInfo : CompetitionInfo = CompetitionInfo()
     @EnvironmentObject var competitionInfo : CompetitionInfo
     @State var manualCompetitors = false
     @State var privateCompetition = false
     @State var competitorName: String = ""
     
     var body: some View {
+        
             VStack{
                 VStack(spacing: -3){
                     Text("New Time Competition")
                         .font(.system(size: 32, weight: .heavy))
                         .padding()
+                        .padding(.top, 15)
                         .foregroundColor(.Gray)
 
                     TextField("Competition Name", text: $competitionInfo.compName)
@@ -159,7 +162,7 @@ struct CreateTimeCompView: View {
                 }
                 
                 NavigationLink(destination: CustomizeTimeView()){
-                    Text("Create Competition")
+                    Text("Customize")
                         .frame(maxWidth: .infinity,
                                maxHeight: 50)
                         .background(Color.Yellow)
@@ -170,12 +173,12 @@ struct CreateTimeCompView: View {
                                     .stroke(Color.Yellow, lineWidth: 2))
                 }
                 .padding(.horizontal, 15)
-                .padding(.bottom, manualCompetitors == true ? -9.5:  17)
+                .padding(.bottom, manualCompetitors == true ? -8:  17)
                 
                 
             }.ignoresSafeArea(.all)
                 .accentColor(.Yellow)
-        
+
     }
 }
 

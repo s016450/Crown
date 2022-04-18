@@ -25,14 +25,13 @@ struct CompetitionChooserView: View {
     
     
     var body: some View {
-        
         VStack{
             VStack{
                 
                 Text("Competition Builder")
                     .font(.system(size: 35, weight: .heavy))
                     .foregroundColor(Color.Gray)
-                    .padding(.top, 20)
+                    .padding(.top, 30)
 
                 Spacer()
                 Button(action: {
@@ -248,6 +247,7 @@ struct CompetitionChooserView: View {
         }
         .ignoresSafeArea()
         .padding(.horizontal, 15)
+        
     }
 }
 func getDestination(choice: String)-> AnyView{
