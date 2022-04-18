@@ -24,7 +24,7 @@ struct HomeView: View {
                     showAccountView = true
                 }, label: {
                     Image(systemName: "person.fill")
-                        .font(.system(size: 23, weight: .bold))
+                        .font(.system(size: 24, weight: .bold))
                         .foregroundColor(.white)
                         .padding()
                         .background(Color.Gray)
