@@ -22,7 +22,7 @@ struct CustomizeTimeView: View {
                 .frame(width: UIScreen.main.bounds.size.width - 40, alignment: .center)
                 .multilineTextAlignment(.center)
                 .font(.system(size: 28, weight: .heavy))
-                .foregroundColor(competitionInfo.titleColor)
+                .foregroundColor(Color.Gray)
                 .padding(.top,80)
             
             HStack{
@@ -31,7 +31,7 @@ struct CustomizeTimeView: View {
                 Text(getTime(time: competitionInfo.startDate.distance(to: competitionInfo.endDate)))
                     .font(.system(size: 16, weight: .bold))
             }
-                .padding()
+            .padding()
             
             VStack{
                 
@@ -130,8 +130,13 @@ struct CustomizeTimeView: View {
             .padding()
             
             Spacer()
+            Button(action: {
+                FirebaseFunctions.createUser(competitor: competitionInfo) { userInfo in
+                    print("user uploaded")
+                }
+                
+            }, label: {
             
-            NavigationLink(destination: CustomizeTimeView()){
                 Text("Create")
                     .frame(maxWidth: .infinity,
                            maxHeight: 50)
@@ -140,8 +145,8 @@ struct CustomizeTimeView: View {
                     .font(.system(size: 16, weight: .bold))
                     .cornerRadius(10)
                     .overlay(RoundedRectangle(cornerRadius: 10)
-                        .stroke(Color.Yellow, lineWidth: 2))
-            }
+                                .stroke(Color.Yellow, lineWidth: 2))
+            })
             .padding(.horizontal)
             .padding(.bottom, 170)
         }

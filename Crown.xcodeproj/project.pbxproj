@@ -166,14 +166,8 @@
 			children = (
 				E3040B6227C673930029E9CA /* TimeCompView.swift */,
 				5A654DC127FDD16E006095B2 /* FirebaseDummy.swift */,
-				5AB62E2327CE5BC0005FA340 /* CreateTimeCompView.swift */,
 				E3040B6427C673A70029E9CA /* BracketView.swift */,
-				23EB791E27CE5C03009AFC1C /* CreatePointView.swift */,
 				E3040B6627C673B90029E9CA /* PointCompView.swift */,
-				E34F8C1627C7D25300949EED /* CompetitionChooserView.swift */,
-				E3D9E45D27CE61FD00282DBC /* TimeInfo.swift */,
-				E3C62CC027CE6B2700F7A805 /* BracketInfo.swift */,
-				E3C62CC627CE6C2C00F7A805 /* PointInfo.swift */,
 			);
 			path = Competitions;
 			sourceTree = "<group>";
@@ -184,7 +178,9 @@
 				5A50D17727E0DAD60063CFDF /* models */,
 				E39D218527D8D567002EFE2F /* Account */,
 				E3040B6E27C6750B0029E9CA /* Button */,
+				E3490C94280D9ABA00904E3F /* Chooser */,
 				E3040B6827C673CD0029E9CA /* Competitions */,
+				E3490C96280D9B0600904E3F /* Create */,
 				E311C36D27E89F30004001E7 /* Customize */,
 				E39D218C27E0D013002EFE2F /* Find */,
 				E3040B6C27C674A20029E9CA /* Forgot Password */,
@@ -243,6 +239,34 @@
 				E3E84E7C27FB15FC00B6C63D /* ColorView.swift */,
 			);
 			path = Customize;
+			sourceTree = "<group>";
+		};
+		E3490C94280D9ABA00904E3F /* Chooser */ = {
+			isa = PBXGroup;
+			children = (
+				E34F8C1627C7D25300949EED /* CompetitionChooserView.swift */,
+				E3490C95280D9AD500904E3F /* Info */,
+			);
+			path = Chooser;
+			sourceTree = "<group>";
+		};
+		E3490C95280D9AD500904E3F /* Info */ = {
+			isa = PBXGroup;
+			children = (
+				E3C62CC027CE6B2700F7A805 /* BracketInfo.swift */,
+				E3C62CC627CE6C2C00F7A805 /* PointInfo.swift */,
+				E3D9E45D27CE61FD00282DBC /* TimeInfo.swift */,
+			);
+			path = Info;
+			sourceTree = "<group>";
+		};
+		E3490C96280D9B0600904E3F /* Create */ = {
+			isa = PBXGroup;
+			children = (
+				23EB791E27CE5C03009AFC1C /* CreatePointView.swift */,
+				5AB62E2327CE5BC0005FA340 /* CreateTimeCompView.swift */,
+			);
+			path = Create;
 			sourceTree = "<group>";
 		};
 		E376330427BD557E00A7AD56 = {

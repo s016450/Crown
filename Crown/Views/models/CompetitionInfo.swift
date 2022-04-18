@@ -11,7 +11,6 @@ import SwiftUI
 
 class CompetitionInfo: ObservableObject{
     var compName: String
-    @Published var titleColor: Color = Color.Gray
     @Published var barColor: Color = Color.Yellow
     var startDate = Date()
     var endDate = Date()
