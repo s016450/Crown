@@ -12,6 +12,7 @@ struct HomeView: View {
     @EnvironmentObject var userInfo: UserInfo
     @State private var showCompetitionChooser = false
     @State private var showAccountView = false
+    @State private var showFirebaseDummy = false
     
     var body: some View {
         
@@ -19,6 +20,22 @@ struct HomeView: View {
             
             VStack(alignment: .leading,
                    spacing: 16){
+                
+                Button(action: {
+                    showFirebaseDummy = true
+                }, label: {
+                    Image(systemName: "person")
+                        .font(.system(size: 24, weight: .bold))
+                        .foregroundColor(.white)
+                        .padding()
+                        .background(Color.Gray)
+                        .clipShape(Circle())
+                        .shadow(color: Color.Gray.opacity(0.6), radius: 5, x: 0, y: 0)
+                })
+                
+                .sheet(isPresented: $showFirebaseDummy){
+                    FirebaseDummy()
+                }
                 
                 Button(action: {
                     showAccountView = true

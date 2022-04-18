@@ -12,7 +12,7 @@ import FirebaseFirestore
 
 struct FirebaseFunctions{
     
-    func createUser(competitor: CompetitionInfo, completion: @escaping (Error?) -> ()){
+   static func createUser(competitor: CompetitionInfo, completion: @escaping (Error?) -> ()){
         
         let data = competitor.dataAsDictionary()
         
