@@ -11,14 +11,14 @@ struct CustomizeTimeView: View {
     
     //@StateObject var competitionInfo : CompetitionInfo = CompetitionInfo()
     
-    @EnvironmentObject var competitionInfo : CompetitionInfo
+    @EnvironmentObject var userInfo : UserInfo
     
     var body: some View {
         
-        let names = getThree(defaults: ["Competitor 1", "Competitor 2", "Competitor 3"], competitors: competitionInfo.competitors)
+        let names = getThree(defaults: ["Competitor 1", "Competitor 2", "Competitor 3"], competitors: self.userInfo.ownCompetitions[userInfo.ownCompetitions.count - 1].competitors)
         VStack {
             
-            Text(competitionInfo.compName == "" ? "New Time Competition" : competitionInfo.compName)
+            Text(self.userInfo.ownCompetitions[userInfo.ownCompetitions.count - 1].compName == "" ? "New Time Competition" : self.userInfo.ownCompetitions[userInfo.ownCompetitions.count - 1].compName)
                 .frame(width: UIScreen.main.bounds.size.width - 40, alignment: .center)
                 .multilineTextAlignment(.center)
                 .font(.system(size: 28, weight: .heavy))
@@ -28,7 +28,7 @@ struct CustomizeTimeView: View {
             HStack{
                 Image(systemName: "stopwatch")
                     .font(.system(size: 16, weight: .bold))
-                Text(getTime(time: competitionInfo.startDate.distance(to: competitionInfo.endDate)))
+                Text(getTime(time: userInfo.ownCompetitions[userInfo.ownCompetitions.count - 1].startDate.distance(to: userInfo.ownCompetitions[userInfo.ownCompetitions.count - 1].endDate)))
                     .font(.system(size: 16, weight: .bold))
             }
             .padding()
@@ -44,17 +44,17 @@ struct CustomizeTimeView: View {
                     Text(names[0])
                         .font(.system(size: 16, weight: .bold))
                     RoundedRectangle(cornerRadius: 10, style: .continuous)
-                        .fill(competitionInfo.barColor)
+                        .fill(userInfo.ownCompetitions[userInfo.ownCompetitions.count - 1].barColor)
                         .frame(width: 300, height: 50)
                     Text(names[1])
                         .font(.system(size: 16, weight: .bold))
                     RoundedRectangle(cornerRadius: 10, style: .continuous)
-                        .fill(competitionInfo.barColor)
+                        .fill(userInfo.ownCompetitions[userInfo.ownCompetitions.count - 1].barColor)
                         .frame(width: 250, height: 50)
                     Text(names[2])
                         .font(.system(size: 16, weight: .bold))
                     RoundedRectangle(cornerRadius: 10, style: .continuous)
-                        .fill(competitionInfo.barColor)
+                        .fill(userInfo.ownCompetitions[userInfo.ownCompetitions.count - 1].barColor)
                         .frame(width: 200, height: 50)
                 }
                 .padding(.top, 10)
@@ -62,63 +62,63 @@ struct CustomizeTimeView: View {
                 
                 HStack{
                     Button(action: {
-                        competitionInfo.barColor = Color.Red},
+                        userInfo.ownCompetitions[userInfo.ownCompetitions.count - 1].barColor = Color.Red},
                            label: {
                         RoundedRectangle(cornerRadius: 5, style: .continuous)
                             .fill(Color.Red)
                             .frame(width: 25, height: 25)
                         .overlay(RoundedRectangle(cornerRadius: 5).stroke(lineWidth: 1).foregroundColor(Color.Gray))})
                     Button(action: {
-                        competitionInfo.barColor = Color.Purple},
+                        userInfo.ownCompetitions[userInfo.ownCompetitions.count - 1].barColor = Color.Purple},
                            label: {
                         RoundedRectangle(cornerRadius: 5, style: .continuous)
                             .fill(Color.Purple)
                             .frame(width: 25, height: 25)
                         .overlay(RoundedRectangle(cornerRadius: 5).stroke(lineWidth: 1).foregroundColor(Color.Gray))})
                     Button(action: {
-                        competitionInfo.barColor = Color.Blue},
+                        userInfo.ownCompetitions[userInfo.ownCompetitions.count - 1].barColor = Color.Blue},
                            label: {
                         RoundedRectangle(cornerRadius: 5, style: .continuous)
                             .fill(Color.Blue)
                             .frame(width: 25, height: 25)
                         .overlay(RoundedRectangle(cornerRadius: 5).stroke(lineWidth: 1).foregroundColor(Color.Gray))})
                     Button(action: {
-                        competitionInfo.barColor = Color.Orange},
+                        userInfo.ownCompetitions[userInfo.ownCompetitions.count - 1].barColor = Color.Orange},
                            label: {
                         RoundedRectangle(cornerRadius: 5, style: .continuous)
                             .fill(Color.Orange)
                             .frame(width: 25, height: 25)
                         .overlay(RoundedRectangle(cornerRadius: 5).stroke(lineWidth: 1).foregroundColor(Color.Gray))})
                     Button(action: {
-                        competitionInfo.barColor = Color.Yellow},
+                        userInfo.ownCompetitions[userInfo.ownCompetitions.count - 1].barColor = Color.Yellow},
                            label: {
                         RoundedRectangle(cornerRadius: 5, style: .continuous)
                             .fill(Color.Yellow)
                             .frame(width: 25, height: 25)
                         .overlay(RoundedRectangle(cornerRadius: 5).stroke(lineWidth: 1).foregroundColor(Color.Gray))})
                     Button(action: {
-                        competitionInfo.barColor = Color.green},
+                        userInfo.ownCompetitions[userInfo.ownCompetitions.count - 1].barColor = Color.green},
                            label: {
                         RoundedRectangle(cornerRadius: 5, style: .continuous)
                             .fill(Color.green)
                             .frame(width: 25, height: 25)
                         .overlay(RoundedRectangle(cornerRadius: 5).stroke(lineWidth: 1).foregroundColor(Color.Gray))})
                     Button(action: {
-                        competitionInfo.barColor = Color.Blu},
+                        userInfo.ownCompetitions[userInfo.ownCompetitions.count - 1].barColor = Color.Blu},
                            label: {
                         RoundedRectangle(cornerRadius: 5, style: .continuous)
                             .fill(Color.Blu)
                             .frame(width: 25, height: 25)
                         .overlay(RoundedRectangle(cornerRadius: 5).stroke(lineWidth: 1).foregroundColor(Color.Gray))})
                     Button(action: {
-                        competitionInfo.barColor = Color.Pink},
+                        userInfo.ownCompetitions[userInfo.ownCompetitions.count - 1].barColor = Color.Pink},
                            label: {
                         RoundedRectangle(cornerRadius: 5, style: .continuous)
                             .fill(Color.Pink)
                             .frame(width: 25, height: 25)
                         .overlay(RoundedRectangle(cornerRadius: 5).stroke(lineWidth: 1).foregroundColor(Color.Gray))})
                     Button(action: {
-                        competitionInfo.barColor = Color.LightGray},
+                        userInfo.ownCompetitions[userInfo.ownCompetitions.count - 1].barColor = Color.LightGray},
                            label: {
                         RoundedRectangle(cornerRadius: 5, style: .continuous)
                             .fill(Color.LightGray)
@@ -131,7 +131,7 @@ struct CustomizeTimeView: View {
             
             Spacer()
             Button(action: {
-                FirebaseFunctions.createUser(competitor: competitionInfo) { userInfo in
+                FirebaseFunctions.createUser(competitor: userInfo.ownCompetitions[userInfo.ownCompetitions.count - 1]) { userInfo in
                     print("user uploaded")
                 }
                 

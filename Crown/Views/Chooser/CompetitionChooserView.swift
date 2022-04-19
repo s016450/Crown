@@ -10,6 +10,8 @@ import SwiftUI
 struct CompetitionChooserView: View {
     
     @Environment(\.presentationMode) var presentationMode
+    //@StateObject var userInfo: UserInfo = UserInfo()
+    @EnvironmentObject var userInfo: UserInfo
     @State var buttonColor = Color.gray
     @State var timeColor = Color.Gray
     @State var pointColor = Color.Gray
@@ -32,7 +34,7 @@ struct CompetitionChooserView: View {
                     .font(.system(size: 35, weight: .heavy))
                     .foregroundColor(Color.Gray)
                     .padding(.top, 30)
-
+                
                 Spacer()
                 Button(action: {
                     withAnimation{
@@ -231,17 +233,25 @@ struct CompetitionChooserView: View {
                 Spacer()
                 
             }
-            NavigationLink(destination: getDestination(choice: competitionChoice)){
+            NavigationLink(destination: getDestination(choice: competitionChoice).onAppear {
+                print(userInfo.ownCompetitions.count)
+                print(userInfo.ownCompetitions[userInfo.ownCompetitions.count - 1].compName)
+            }){
                 Text("Create Competition")
-                    .frame(maxWidth: .infinity,
-                           maxHeight: 50)
+                    .frame(maxWidth: .infinity, maxHeight: 50)
                     .background(buttonColor)
                     .foregroundColor(Color.white)
                     .font(.system(size: 16, weight: .bold))
                     .cornerRadius(10)
                     .overlay(RoundedRectangle(cornerRadius: 10)
                                 .stroke(buttonColor, lineWidth: 2))
+                
+                
             }
+            .simultaneousGesture(TapGesture().onEnded{
+                print("TAPPED")
+                userInfo.ownCompetitions.append(CompetitionInfo())
+            })
             .disabled(lock)
             .padding(.bottom, 17)
         }

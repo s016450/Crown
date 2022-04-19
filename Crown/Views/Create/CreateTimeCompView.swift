@@ -11,7 +11,7 @@ import SwiftUI
 struct CreateTimeCompView: View {
     
     //@StateObject var competitionInfo : CompetitionInfo = CompetitionInfo()
-    @EnvironmentObject var competitionInfo : CompetitionInfo
+    @EnvironmentObject var userInfo : UserInfo
     @State var manualCompetitors = false
     @State var privateCompetition = false
     @State var competitorName: String = ""
@@ -26,7 +26,7 @@ struct CreateTimeCompView: View {
                         .padding(.top, 15)
                         .foregroundColor(.Gray)
 
-                    TextField("Competition Name", text: $competitionInfo.compName)
+                    TextField("Competition Name", text: $userInfo.ownCompetitions[userInfo.ownCompetitions.count - 1].compName)
                         .font(.system(size: 18, weight: .bold))
                         .frame(maxWidth: .infinity,
                                minHeight: 44)
@@ -89,7 +89,7 @@ struct CreateTimeCompView: View {
                                    foreground: .white,
                                    border: .Yellow){
                             if competitorName != ""{
-                                competitionInfo.competitors.append(Competitors(user: competitorName, points: 0))
+                                self.userInfo.ownCompetitions[userInfo.ownCompetitions.count - 1].competitors.append(Competitors(user: competitorName, points: 0))
                                 competitorName = ""
                             }
                         }
@@ -99,13 +99,13 @@ struct CreateTimeCompView: View {
                             LazyVGrid(columns: [
                                 GridItem(.fixed(UIScreen.main.bounds.width - 80))
                             ], content: {
-                                ForEach(competitionInfo.competitors) { info in
+                                ForEach(self.userInfo.ownCompetitions[userInfo.ownCompetitions.count - 1].competitors) { info in
                                     HStack{
                                         Text(info.user)
                                             .font(.system(size: 18, weight: .semibold))
                                         Spacer()
                                         Button(action: {
-                                            competitionInfo.competitors.remove(at: getIndex(name: info.user, competitors: competitionInfo.competitors))
+                                            self.userInfo.ownCompetitions[userInfo.ownCompetitions.count - 1].competitors.remove(at: getIndex(name: info.user, competitors: self.userInfo.ownCompetitions[userInfo.ownCompetitions.count - 1].competitors))
                                         }, label: {
                                             Image(systemName: "trash")
                                                 .font(.system(size: 18, weight: .semibold))
@@ -143,14 +143,14 @@ struct CreateTimeCompView: View {
                         .toggleStyle(SwitchToggleStyle(tint: .Yellow))
                         .padding()
                     
-                    DatePicker("Start Date", selection: $competitionInfo.startDate)
+                    DatePicker("Start Date", selection: $userInfo.ownCompetitions[userInfo.ownCompetitions.count - 1].startDate)
                         .font(.system(size: 18, weight: .bold))
                         .foregroundColor(Color.Gray)
                         .accentColor(.Yellow)
                         .padding()
                     
                     
-                    DatePicker("End Date", selection: $competitionInfo.endDate)
+                    DatePicker("End Date", selection: $userInfo.ownCompetitions[userInfo.ownCompetitions.count - 1].endDate)
                         .font(.system(size: 18, weight: .bold))
                         .foregroundColor(Color.Gray)
                         .accentColor(.Yellow)
