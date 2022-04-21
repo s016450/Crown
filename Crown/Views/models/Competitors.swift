@@ -7,9 +7,9 @@
 
 import Foundation
 
-struct Competitors : Identifiable{
+class Competitors : ObservableObject, Identifiable{
     
-    var user : String
+    @Published var user : String
     var points : Int
     var id = UUID()
     

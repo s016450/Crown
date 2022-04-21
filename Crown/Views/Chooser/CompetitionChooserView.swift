@@ -249,7 +249,6 @@ struct CompetitionChooserView: View {
                 
             }
             .simultaneousGesture(TapGesture().onEnded{
-                print("TAPPED")
                 userInfo.ownCompetitions.append(CompetitionInfo())
             })
             .disabled(lock)

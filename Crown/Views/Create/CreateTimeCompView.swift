@@ -53,7 +53,9 @@ struct CreateTimeCompView: View {
                     
                     Toggle(isOn: $manualCompetitors){
                         Image(systemName: "person.3.fill")
+                            .font(.system(size: 12))
                             .foregroundColor(.Gray)
+                        Spacer(minLength: 20)
                         Text("Manually Enter Competitors")
                             .font(.system(size: 18, weight: .bold))
                             .foregroundColor(.Gray)

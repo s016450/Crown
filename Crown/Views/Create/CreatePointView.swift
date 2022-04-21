@@ -9,87 +9,86 @@ import SwiftUI
 
 struct CreatePointView: View {
     
-    //@StateObject var competitionInfo : CompetitionInfo = CompetitionInfo()
-    @EnvironmentObject var competitionInfo : CompetitionInfo
+    //@StateObject var userInfo : UserInfo = UserInfo()
+    @EnvironmentObject var userInfo : UserInfo
     @State var manualCompetitors = false
     @State var privateCompetition = false
     @State var competitorName: String = ""
     @State var points: String = ""
     
     var body: some View {
-        NavigationView{
-            VStack{
-                
-                Text("New Time Competition")
+        VStack{
+            VStack(spacing: -3){
+                Text("New Point Competition")
                     .font(.system(size: 32, weight: .heavy))
                     .padding()
+                    .padding(.top, 15)
                     .foregroundColor(.Gray)
-                
-                HStack(spacing: 30){
-                    VStack(spacing: 40){
-                        Image(systemName: "pencil")
-                            .font(.system(size: 20, weight: .heavy))
-                            .foregroundColor(.Gray)
-                        /*
-                         Image(systemName: "star.circle")
-                         .font(.system(size: 20, weight: .heavy))
-                         .foregroundColor(.Gray)
-                         Image(systemName: privateCompetition == true ? "lock.fill" : "lock.open.fill")
-                         .font(.system(size: 19))
-                         .foregroundColor(.Gray)*/
-                    }
-                    VStack(spacing: 38){
-                        TextField("Competition Name", text: $competitionInfo.compName)
-                            .font(.system(size: 18, weight: .bold))
-                            .foregroundColor(Color.Yellow)
-                        /*
-                         TextField("Ending Point Value", text: $competitionInfo.points)
-                         .font(.system(size: 18, weight: .bold))
-                         .foregroundColor(Color.Yellow)
-                         Toggle(isOn: $privateCompetition, label: {
-                         Text("Make Competition Private")
-                         .font(.system(size: 18, weight: .bold))
-                         .foregroundColor(.Gray)
-                         })
-                         .toggleStyle(SwitchToggleStyle(tint: .Yellow))
-                         */
-                    }
-                }
-                .padding()
-                
-                HStack(spacing: 21){
-                    Image(systemName: "person.3.fill")
-                        .font(.system(size: 16))
-                        .foregroundColor(.Gray)
-                    Toggle(isOn: $manualCompetitors){
+
+                TextField("Competition Name", text: $userInfo.ownCompetitions[userInfo.ownCompetitions.count - 1].compName)
+                    .font(.system(size: 18, weight: .bold))
+                    .frame(maxWidth: .infinity,
+                           minHeight: 44)
+                    .padding(.leading, 60)
+                    .disableAutocorrection(true)
+                    .autocapitalization(.none)
+                    .foregroundColor(Color.Yellow)
+                    .background(
                         
-                        Text("Manually Enter Competitors")
-                            .font(.system(size: 18, weight: .bold))
-                            .foregroundColor(.Gray)
-                    }
-                    .toggleStyle(SwitchToggleStyle(tint: .Yellow))
+                        ZStack(alignment: .leading){
+                            
+                            
+                            Image(systemName: "pencil")
+                                .font(.system(size: 20, weight: .heavy))
+                                .padding(.leading, 10)
+                                .foregroundColor(Color.Gray)
+                            
+                            RoundedRectangle(cornerRadius: 10, style: .continuous)
+                                .stroke(Color.Gray.opacity(0))
+                                .frame(maxWidth: 410)
+                        }
+                    )
+                    .padding(.top, 20)
+                
+                Toggle(isOn: $manualCompetitors){
+                    Image(systemName: "person.3.fill")
+                        .foregroundColor(.Gray)
+                    Text("Manually Enter Competitors")
+                        .font(.system(size: 18, weight: .bold))
+                        .foregroundColor(.Gray)
                 }
+                .toggleStyle(SwitchToggleStyle(tint: .Yellow))
                 .padding()
                 
                 if manualCompetitors{
                     
-                    HStack(spacing: 35){
-                        Image(systemName: "person.fill")
-                            .font(.system(size: 20))
-                            .foregroundColor(.Gray)
-                        TextField("Competitor Name", text: $competitorName)
-                            .font(.system(size: 18, weight: .bold))
-                            .foregroundColor(Color.Yellow)
-                    }
-                    .padding()
-                    
+                    TextField("Competitor Name", text: $competitorName)
+                        .font(.system(size: 18, weight: .bold))
+                        .frame(maxWidth: .infinity,
+                               minHeight: 44)
+                        .padding(.leading, 60)
+                        .foregroundColor(Color.Yellow)
+                        .background(
+                            
+                            ZStack(alignment: .leading){
+                                
+                                
+                                Image(systemName: "person.fill")
+                                    .padding(.leading, 10)
+                                    .foregroundColor(Color.Gray)
+                                
+                                RoundedRectangle(cornerRadius: 10, style: .continuous)
+                                    .stroke(Color.Gray.opacity(0))
+                                    .frame(maxWidth: 410)
+                            }
+                        )
                     
                     ButtonView(title: "Add",
                                background: .Yellow,
                                foreground: .white,
                                border: .Yellow){
                         if competitorName != ""{
-                            competitionInfo.competitors.append(Competitors(user: competitorName, points: 0))
+                            self.userInfo.ownCompetitions[userInfo.ownCompetitions.count - 1].competitors.append(Competitors(user: competitorName, points: 0))
                             competitorName = ""
                         }
                     }
@@ -99,13 +98,13 @@ struct CreatePointView: View {
                         LazyVGrid(columns: [
                             GridItem(.fixed(UIScreen.main.bounds.width - 80))
                         ], content: {
-                            ForEach(competitionInfo.competitors) { info in
+                            ForEach(self.userInfo.ownCompetitions[userInfo.ownCompetitions.count - 1].competitors) { info in
                                 HStack{
                                     Text(info.user)
                                         .font(.system(size: 18, weight: .semibold))
                                     Spacer()
                                     Button(action: {
-                                        competitionInfo.competitors.remove(at: getIndex(name: info.user, competitors: competitionInfo.competitors))
+                                        self.userInfo.ownCompetitions[userInfo.ownCompetitions.count - 1].competitors.remove(at: getIndex(name: info.user, competitors: self.userInfo.ownCompetitions[userInfo.ownCompetitions.count - 1].competitors))
                                     }, label: {
                                         Image(systemName: "trash")
                                             .font(.system(size: 18, weight: .semibold))
@@ -130,11 +129,12 @@ struct CreatePointView: View {
                 }
                 
                 
+                
                 Toggle(isOn: $privateCompetition, label: {
                     Image(systemName: privateCompetition == true ? "lock.fill" : "lock.open.fill")
                         .foregroundColor(.Gray)
                     Text("Make Competition Private")
-                        .padding(.leading, privateCompetition == true ? 27.3: 25)
+                        .padding(.leading, privateCompetition == true ? 17.3: 15)
                         .font(.system(size: 18, weight: .bold))
                         .foregroundColor(.Gray)
                     
@@ -142,38 +142,52 @@ struct CreatePointView: View {
                     .toggleStyle(SwitchToggleStyle(tint: .Yellow))
                     .padding()
                 
-                HStack(spacing: 30){
-                    Image(systemName: "star.circle")
-                        .font(.system(size: 20, weight: .heavy))
-                        .foregroundColor(.Gray)
-                    TextField("Ending Point Value", text: $competitionInfo.points)
+                if #available(iOS 15.0, *) {
+                    TextField("Winning Point Value", value: $userInfo.ownCompetitions[userInfo.ownCompetitions.count - 1].points, format: .number)
                         .font(.system(size: 18, weight: .bold))
-                        .foregroundColor(Color.Yellow)
-                }
-                .padding()
-                
-                
-                Spacer()
-                
-                
-                NavigationLink(destination: CustomizeTimeView()){
-                    Text("Create Competition")
                         .frame(maxWidth: .infinity,
-                               maxHeight: 50)
-                        .background(Color.Yellow)
-                        .foregroundColor(Color.white)
-                        .font(.system(size: 16, weight: .bold))
-                        .cornerRadius(10)
-                        .overlay(RoundedRectangle(cornerRadius: 10)
-                                    .stroke(Color.Yellow, lineWidth: 2))
+                               minHeight: 44)
+                        .padding(.leading, 60)
+                        .keyboardType(.numberPad)
+                        .foregroundColor(Color.Yellow)
+                        .background(
+                            
+                            ZStack(alignment: .leading){
+                                
+                                
+                                Image(systemName: "star.circle.fill")
+                                    .font(.system(size: 20, weight: .heavy))
+                                    .padding(.leading, 10)
+                                    .foregroundColor(Color.Gray)
+                                
+                                RoundedRectangle(cornerRadius: 10, style: .continuous)
+                                    .stroke(Color.Gray.opacity(0))
+                                    .frame(maxWidth: 410)
+                            }
+                        )
+                } else {
+                    // Fallback on earlier versions
                 }
-                .padding(.horizontal, 15)
-                .padding(.bottom, manualCompetitors == true ? -2.5:  17)
-                
-                
-            }.ignoresSafeArea(.all)
-                .accentColor(.Yellow)
-        }
+                Spacer()
+            }
+            
+            NavigationLink(destination: CustomizeTimeView()){
+                Text("Customize")
+                    .frame(maxWidth: .infinity,
+                           maxHeight: 50)
+                    .background(Color.Yellow)
+                    .foregroundColor(Color.white)
+                    .font(.system(size: 16, weight: .bold))
+                    .cornerRadius(10)
+                    .overlay(RoundedRectangle(cornerRadius: 10)
+                                .stroke(Color.Yellow, lineWidth: 2))
+            }
+            .padding(.horizontal, 15)
+            .padding(.bottom, manualCompetitors == true ? 17:  17)
+            
+            
+        }.ignoresSafeArea(.all)
+            .accentColor(.Yellow)
         
     }
     
