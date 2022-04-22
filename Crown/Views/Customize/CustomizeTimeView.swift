@@ -14,6 +14,20 @@ struct CustomizeTimeView: View {
     @EnvironmentObject var userInfo : UserInfo
     @EnvironmentObject var change: Change
     @State var color = Color.Yellow
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+
+    var btnBack : some View {
+        Button(action: {
+            self.presentationMode.wrappedValue.dismiss()
+        }) {
+            HStack {
+                Image(systemName: "chevron.left")
+                    .font(.system(size: 18, weight: .semibold))
+                    .foregroundColor(.Yellow)
+            }
+        }
+    }
+    
     var body: some View {
         
         let names = getThree(defaults: ["Competitor 1", "Competitor 2", "Competitor 3"], competitors: self.userInfo.ownCompetitions[userInfo.ownCompetitions.count - 1].competitors)
@@ -155,6 +169,8 @@ struct CustomizeTimeView: View {
         }
         .ignoresSafeArea()
         .frame(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height+50)
+        .navigationBarBackButtonHidden(true)
+        .navigationBarItems(leading: btnBack)
     }
 }
 

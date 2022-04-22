@@ -11,20 +11,35 @@ struct CreatePointView: View {
     
     //@StateObject var userInfo : UserInfo = UserInfo()
     @EnvironmentObject var userInfo : UserInfo
+    @EnvironmentObject var delete: Delete
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @State var manualCompetitors = false
     @State var privateCompetition = false
     @State var competitorName: String = ""
     @State var points: String = ""
     
+    var btnBack : some View {
+        Button(action: {
+            delete.delete = true
+            self.presentationMode.wrappedValue.dismiss()
+        }) {
+            HStack {
+                Image(systemName: "chevron.left")
+                    .font(.system(size: 18, weight: .semibold))
+                    .foregroundColor(.Yellow)
+            }
+        }
+    }
+    
     var body: some View {
         VStack{
             VStack(spacing: -3){
                 Text("New Point Competition")
-                    .font(.system(size: 32, weight: .heavy))
+                    .font(.system(size: 28, weight: .heavy))
                     .padding()
                     .padding(.top, 15)
                     .foregroundColor(.Gray)
-
+                
                 TextField("Competition Name", text: $userInfo.ownCompetitions[userInfo.ownCompetitions.count - 1].compName)
                     .font(.system(size: 18, weight: .bold))
                     .frame(maxWidth: .infinity,
@@ -144,33 +159,33 @@ struct CreatePointView: View {
                     .toggleStyle(SwitchToggleStyle(tint: .Yellow))
                     .padding()
                 /*
-                if #available(iOS 15.0, *) {
-                    TextField("Winning Point Value", value: $userInfo.ownCompetitions[userInfo.ownCompetitions.count - 1].points, format: .number)
-                        .font(.system(size: 18, weight: .bold))
-                        .frame(maxWidth: .infinity,
-                               minHeight: 44)
-                        .padding(.leading, 60)
-                        .keyboardType(.numberPad)
-                        .foregroundColor(Color.Yellow)
-                        .background(
-                            
-                            ZStack(alignment: .leading){
-                                
-                                
-                                Image(systemName: "star.circle.fill")
-                                    .font(.system(size: 20, weight: .heavy))
-                                    .padding(.leading, 10)
-                                    .foregroundColor(Color.Gray)
-                                
-                                RoundedRectangle(cornerRadius: 10, style: .continuous)
-                                    .stroke(Color.Gray.opacity(0))
-                                    .frame(maxWidth: 410)
-                            }
-                        )
-                } else {
-                    // Fallback on earlier versions
-                }
- */
+                 if #available(iOS 15.0, *) {
+                 TextField("Winning Point Value", value: $userInfo.ownCompetitions[userInfo.ownCompetitions.count - 1].points, format: .number)
+                 .font(.system(size: 18, weight: .bold))
+                 .frame(maxWidth: .infinity,
+                 minHeight: 44)
+                 .padding(.leading, 60)
+                 .keyboardType(.numberPad)
+                 .foregroundColor(Color.Yellow)
+                 .background(
+                 
+                 ZStack(alignment: .leading){
+                 
+                 
+                 Image(systemName: "star.circle.fill")
+                 .font(.system(size: 20, weight: .heavy))
+                 .padding(.leading, 10)
+                 .foregroundColor(Color.Gray)
+                 
+                 RoundedRectangle(cornerRadius: 10, style: .continuous)
+                 .stroke(Color.Gray.opacity(0))
+                 .frame(maxWidth: 410)
+                 }
+                 )
+                 } else {
+                 // Fallback on earlier versions
+                 }
+                 */
                 Spacer()
             }
             
@@ -189,11 +204,12 @@ struct CreatePointView: View {
             .padding(.bottom, 17)
             
             
-        }.ignoresSafeArea(.all)
-            .accentColor(.Yellow)
-        
+        }
+        .ignoresSafeArea(.all)
+        .navigationBarBackButtonHidden(true)
+        .navigationBarItems(leading: btnBack)
+        .accentColor(.Yellow)
     }
-    
 }
 
 struct CreateScoreCompView_Previews: PreviewProvider {

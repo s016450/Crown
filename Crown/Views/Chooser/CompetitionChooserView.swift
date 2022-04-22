@@ -259,12 +259,18 @@ struct CompetitionChooserView: View {
             .disabled(lock)
             .padding(.bottom, 17)
         }
-        .onAppear{
+        .onDisappear(perform: {
+            print("HI")
+            print(delete.delete)
             if delete.delete{
                 print("DELETED")
-                userInfo.ownCompetitions.remove(at: userInfo.ownCompetitions.count - 1)
+                userInfo.ownCompetitions.remove(at: userInfo.ownCompetitions.count - 2)
+                print(userInfo.ownCompetitions)
+                delete.delete = false
             }
-        }
+        })
+        
+        
         .ignoresSafeArea()
         .padding(.horizontal, 15)
         

@@ -17,17 +17,16 @@ struct CreateTimeCompView: View {
     @State var manualCompetitors = false
     @State var privateCompetition = false
     @State var competitorName: String = ""
-    @State var check = false
+
     var btnBack : some View {
         Button(action: {
-            check = true
+            delete.delete = true
             self.presentationMode.wrappedValue.dismiss()
         }) {
             HStack {
-                Image("ic_back") // set image here
-                    .aspectRatio(contentMode: .fit)
-                    .foregroundColor(.white)
-                Text("Go back")
+                Image(systemName: "chevron.left")
+                    .font(.system(size: 18, weight: .semibold))
+                    .foregroundColor(.Yellow)
             }
         }
     }
@@ -37,7 +36,7 @@ struct CreateTimeCompView: View {
         VStack{
             VStack(spacing: -3){
                 Text("New Time Competition")
-                    .font(.system(size: 32, weight: .heavy))
+                    .font(.system(size: 28, weight: .heavy))
                     .padding()
                     .padding(.top, 15)
                     .foregroundColor(.Gray)
@@ -193,16 +192,13 @@ struct CreateTimeCompView: View {
                                 .stroke(Color.Yellow, lineWidth: 2))
             }
             .padding(.horizontal, 15)
-            .padding(.bottom, manualCompetitors == true ? -8:  17)
+            .padding(.bottom, manualCompetitors == true ? -6.5:  17)
             
         }
         .ignoresSafeArea(.all)
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading: btnBack)
         .accentColor(.Yellow)
-        .onDisappear(perform: {
-            delete.delete = true
-        })
     }
 }
 

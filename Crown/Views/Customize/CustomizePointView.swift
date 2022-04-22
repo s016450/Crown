@@ -11,13 +11,27 @@ struct CustomizePointView: View {
     
     @EnvironmentObject var userInfo : UserInfo
     @EnvironmentObject var change: Change
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @State var color = Color.Yellow
+    
+    var btnBack : some View {
+        Button(action: {
+            self.presentationMode.wrappedValue.dismiss()
+        }) {
+            HStack {
+                Image(systemName: "chevron.left")
+                    .font(.system(size: 18, weight: .semibold))
+                    .foregroundColor(.Yellow)
+            }
+        }
+    }
+    
     var body: some View {
         
         let names = getThree(defaults: ["Competitor 1", "Competitor 2", "Competitor 3"], competitors: self.userInfo.ownCompetitions[userInfo.ownCompetitions.count - 1].competitors)
         VStack {
             
-            Text(self.userInfo.ownCompetitions[userInfo.ownCompetitions.count - 1].compName == "" ? "New Time Competition" : self.userInfo.ownCompetitions[userInfo.ownCompetitions.count - 1].compName)
+            Text(self.userInfo.ownCompetitions[userInfo.ownCompetitions.count - 1].compName == "" ? "New Point Competition" : self.userInfo.ownCompetitions[userInfo.ownCompetitions.count - 1].compName)
                 .frame(width: UIScreen.main.bounds.size.width - 40, alignment: .center)
                 .multilineTextAlignment(.center)
                 .font(.system(size: 28, weight: .heavy))
@@ -144,6 +158,8 @@ struct CustomizePointView: View {
             .padding(.bottom, 170)
         }
         .ignoresSafeArea()
+        .navigationBarBackButtonHidden(true)
+        .navigationBarItems(leading: btnBack)
         .frame(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height+50)
     }
 }
