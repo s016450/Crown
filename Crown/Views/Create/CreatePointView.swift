@@ -143,7 +143,7 @@ struct CreatePointView: View {
                 })
                     .toggleStyle(SwitchToggleStyle(tint: .Yellow))
                     .padding()
-                
+                /*
                 if #available(iOS 15.0, *) {
                     TextField("Winning Point Value", value: $userInfo.ownCompetitions[userInfo.ownCompetitions.count - 1].points, format: .number)
                         .font(.system(size: 18, weight: .bold))
@@ -170,6 +170,7 @@ struct CreatePointView: View {
                 } else {
                     // Fallback on earlier versions
                 }
+ */
                 Spacer()
             }
             

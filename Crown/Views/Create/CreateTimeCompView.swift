@@ -12,15 +12,15 @@ struct CreateTimeCompView: View {
     
     //@StateObject var competitionInfo : CompetitionInfo = CompetitionInfo()
     @EnvironmentObject var userInfo : UserInfo
+    @EnvironmentObject var delete: Delete
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @State var manualCompetitors = false
     @State var privateCompetition = false
     @State var competitorName: String = ""
-    @State var delete = false
-    
+    @State var check = false
     var btnBack : some View {
         Button(action: {
-            delete = true
+            check = true
             self.presentationMode.wrappedValue.dismiss()
         }) {
             HStack {
@@ -201,9 +201,7 @@ struct CreateTimeCompView: View {
         .navigationBarItems(leading: btnBack)
         .accentColor(.Yellow)
         .onDisappear(perform: {
-            if delete{
-                userInfo.ownCompetitions.remove(at: userInfo.ownCompetitions.count - 1)
-            }
+            delete.delete = true
         })
     }
 }

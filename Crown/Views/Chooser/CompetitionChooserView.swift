@@ -7,10 +7,15 @@
 
 import SwiftUI
 
+class Delete: ObservableObject{
+    @Published var delete = false
+}
+
 struct CompetitionChooserView: View {
     
+    
     @Environment(\.presentationMode) var presentationMode
-    //@StateObject var userInfo: UserInfo = UserInfo()
+    @EnvironmentObject var delete: Delete
     @EnvironmentObject var userInfo: UserInfo
     @State var buttonColor = Color.gray
     @State var timeColor = Color.Gray
@@ -235,7 +240,7 @@ struct CompetitionChooserView: View {
             }
             NavigationLink(destination: getDestination(choice: competitionChoice).onAppear {
                 print(userInfo.ownCompetitions.count)
-                print(userInfo.ownCompetitions[userInfo.ownCompetitions.count - 1].compName)
+                print(userInfo.ownCompetitions)
             }){
                 Text("Create Competition")
                     .frame(maxWidth: .infinity, maxHeight: 50)
@@ -253,6 +258,12 @@ struct CompetitionChooserView: View {
             })
             .disabled(lock)
             .padding(.bottom, 17)
+        }
+        .onAppear{
+            if delete.delete{
+                print("DELETED")
+                userInfo.ownCompetitions.remove(at: userInfo.ownCompetitions.count - 1)
+            }
         }
         .ignoresSafeArea()
         .padding(.horizontal, 15)
