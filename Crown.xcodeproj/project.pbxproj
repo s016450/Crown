@@ -27,6 +27,7 @@
 		E3040B6327C673930029E9CA /* TimeCompView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3040B6227C673930029E9CA /* TimeCompView.swift */; };
 		E3040B6527C673A70029E9CA /* BracketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3040B6427C673A70029E9CA /* BracketView.swift */; };
 		E3040B6727C673B90029E9CA /* PointCompView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3040B6627C673B90029E9CA /* PointCompView.swift */; };
+		E317536D2812DD3C0010E643 /* CustomizePointView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E317536C2812DD3C0010E643 /* CustomizePointView.swift */; };
 		E34F8C1727C7D25300949EED /* CompetitionChooserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34F8C1627C7D25300949EED /* CompetitionChooserView.swift */; };
 		E376331127BD557E00A7AD56 /* CrownApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E376331027BD557E00A7AD56 /* CrownApp.swift */; };
 		E376331327BD557E00A7AD56 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E376331227BD557E00A7AD56 /* ContentView.swift */; };
@@ -41,7 +42,6 @@
 		E3C62CC127CE6B2700F7A805 /* BracketInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C62CC027CE6B2700F7A805 /* BracketInfo.swift */; };
 		E3C62CC727CE6C2C00F7A805 /* PointInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C62CC627CE6C2C00F7A805 /* PointInfo.swift */; };
 		E3D9E45E27CE61FD00282DBC /* TimeInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D9E45D27CE61FD00282DBC /* TimeInfo.swift */; };
-		E3E84E7D27FB15FC00B6C63D /* ColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E84E7C27FB15FC00B6C63D /* ColorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +84,7 @@
 		E3040B6227C673930029E9CA /* TimeCompView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeCompView.swift; sourceTree = "<group>"; };
 		E3040B6427C673A70029E9CA /* BracketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BracketView.swift; sourceTree = "<group>"; };
 		E3040B6627C673B90029E9CA /* PointCompView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointCompView.swift; sourceTree = "<group>"; };
+		E317536C2812DD3C0010E643 /* CustomizePointView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizePointView.swift; sourceTree = "<group>"; };
 		E34F8C1627C7D25300949EED /* CompetitionChooserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionChooserView.swift; sourceTree = "<group>"; };
 		E376330D27BD557E00A7AD56 /* Crown.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Crown.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E376331027BD557E00A7AD56 /* CrownApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrownApp.swift; sourceTree = "<group>"; };
@@ -104,7 +105,6 @@
 		E3C62CC027CE6B2700F7A805 /* BracketInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BracketInfo.swift; sourceTree = "<group>"; };
 		E3C62CC627CE6C2C00F7A805 /* PointInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointInfo.swift; sourceTree = "<group>"; };
 		E3D9E45D27CE61FD00282DBC /* TimeInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeInfo.swift; sourceTree = "<group>"; };
-		E3E84E7C27FB15FC00B6C63D /* ColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -236,7 +236,7 @@
 			isa = PBXGroup;
 			children = (
 				E39D219227E834E6002EFE2F /* CustomizeTimeView.swift */,
-				E3E84E7C27FB15FC00B6C63D /* ColorView.swift */,
+				E317536C2812DD3C0010E643 /* CustomizePointView.swift */,
 			);
 			path = Customize;
 			sourceTree = "<group>";
@@ -543,13 +543,13 @@
 				E376331327BD557E00A7AD56 /* ContentView.swift in Sources */,
 				E3D9E45E27CE61FD00282DBC /* TimeInfo.swift in Sources */,
 				E3040B5F27BD939A0029E9CA /* UserInfo.swift in Sources */,
+				E317536D2812DD3C0010E643 /* CustomizePointView.swift in Sources */,
 				5A654DC227FDD16E006095B2 /* FirebaseDummy.swift in Sources */,
 				E376331127BD557E00A7AD56 /* CrownApp.swift in Sources */,
 				E3040B6727C673B90029E9CA /* PointCompView.swift in Sources */,
 				E39D219327E834E6002EFE2F /* CustomizeTimeView.swift in Sources */,
 				E39D218E27E0D074002EFE2F /* FindView.swift in Sources */,
 				23EB791F27CE5C03009AFC1C /* CreatePointView.swift in Sources */,
-				E3E84E7D27FB15FC00B6C63D /* ColorView.swift in Sources */,
 				E3040B4D27BD91990029E9CA /* ButtonView.swift in Sources */,
 				E3040B6527C673A70029E9CA /* BracketView.swift in Sources */,
 				E3040B6327C673930029E9CA /* TimeCompView.swift in Sources */,

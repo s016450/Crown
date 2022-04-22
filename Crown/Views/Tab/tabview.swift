@@ -20,6 +20,7 @@ class Change: ObservableObject{
 struct tabview: View {
     
     @EnvironmentObject var change: Change
+    @EnvironmentObject var userInfo: UserInfo
     //@State private var selectedIndex = 0
     let tabViewImageNames = ["house", "magnifyingglass", "plus.app", "rosette", "person"]
     let clickedTabViewImageNames = ["house.fill", "magnifyingglass", "plus.app.fill", "rosette",  "person.fill"]

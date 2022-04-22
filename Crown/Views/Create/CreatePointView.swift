@@ -104,7 +104,9 @@ struct CreatePointView: View {
                                         .font(.system(size: 18, weight: .semibold))
                                     Spacer()
                                     Button(action: {
-                                        self.userInfo.ownCompetitions[userInfo.ownCompetitions.count - 1].competitors.remove(at: getIndex(name: info.user, competitors: self.userInfo.ownCompetitions[userInfo.ownCompetitions.count - 1].competitors))
+                                        self.userInfo.ownCompetitions[userInfo.ownCompetitions.count - 1].competitors.remove(at: getIndex(name: info.user, competitors: userInfo.ownCompetitions[userInfo.ownCompetitions.count - 1].competitors))
+                                        competitorName = " "
+                                        competitorName = ""
                                     }, label: {
                                         Image(systemName: "trash")
                                             .font(.system(size: 18, weight: .semibold))
@@ -171,7 +173,7 @@ struct CreatePointView: View {
                 Spacer()
             }
             
-            NavigationLink(destination: CustomizeTimeView()){
+            NavigationLink(destination: CustomizePointView()){
                 Text("Customize")
                     .frame(maxWidth: .infinity,
                            maxHeight: 50)
@@ -183,7 +185,7 @@ struct CreatePointView: View {
                                 .stroke(Color.Yellow, lineWidth: 2))
             }
             .padding(.horizontal, 15)
-            .padding(.bottom, manualCompetitors == true ? 17:  17)
+            .padding(.bottom, 17)
             
             
         }.ignoresSafeArea(.all)
