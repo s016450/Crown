@@ -12,6 +12,7 @@ struct CustomizeTimeView: View {
     //@StateObject var competitionInfo : CompetitionInfo = CompetitionInfo()
     
     @EnvironmentObject var userInfo : UserInfo
+    @EnvironmentObject var change: Change
     @State var color = Color.Yellow
     var body: some View {
         
@@ -136,7 +137,7 @@ struct CustomizeTimeView: View {
                 FirebaseFunctions.createUser(competitor: userInfo.ownCompetitions[userInfo.ownCompetitions.count - 1]) { userInfo in
                     print("user uploaded")
                 }
-                
+                change.selectedIndex = 0
             }, label: {
             
                 Text("Create")

@@ -107,7 +107,9 @@ struct CreateTimeCompView: View {
                                             .font(.system(size: 18, weight: .semibold))
                                         Spacer()
                                         Button(action: {
-                                            self.userInfo.ownCompetitions[userInfo.ownCompetitions.count - 1].competitors.remove(at: getIndex(name: info.user, competitors: self.userInfo.ownCompetitions[userInfo.ownCompetitions.count - 1].competitors))
+                                            self.userInfo.ownCompetitions[userInfo.ownCompetitions.count - 1].competitors.remove(at: getIndex(name: info.user, competitors: userInfo.ownCompetitions[userInfo.ownCompetitions.count - 1].competitors))
+                                            competitorName = " "
+                                            competitorName = ""
                                         }, label: {
                                             Image(systemName: "trash")
                                                 .font(.system(size: 18, weight: .semibold))

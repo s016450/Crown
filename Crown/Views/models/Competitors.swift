@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Competitors : ObservableObject, Identifiable{
+class Competitors : Identifiable{
     
     @Published var user : String
     var points : Int

@@ -13,10 +13,14 @@ extension UINavigationController {
         navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }
 }
+class Change: ObservableObject{
+    @Published var selectedIndex = 0
+}
 
 struct tabview: View {
     
-    @State private var selectedIndex = 0
+    @EnvironmentObject var change: Change
+    //@State private var selectedIndex = 0
     let tabViewImageNames = ["house", "magnifyingglass", "plus.app", "rosette", "person"]
     let clickedTabViewImageNames = ["house.fill", "magnifyingglass", "plus.app.fill", "rosette",  "person.fill"]
     
@@ -27,7 +31,7 @@ struct tabview: View {
     var body: some View {
         VStack{
             ZStack{
-                switch selectedIndex{
+                switch change.selectedIndex{
                 
                 case 0:
                     NavigationView{
@@ -37,7 +41,6 @@ struct tabview: View {
                     NavigationView{
                         FindView()
                     }
-                    .ignoresSafeArea()
                 case 2:
                     NavigationView{
                         CompetitionChooserView()
@@ -65,11 +68,11 @@ struct tabview: View {
                 HStack{
                     ForEach(0..<5){ num in
                         Button(action: {
-                            selectedIndex  = num
+                            change.selectedIndex  = num
                         }, label: {
                             Spacer()
-                            Image(systemName: selectedIndex == num ? clickedTabViewImageNames[num] : tabViewImageNames[num])
-                                .foregroundColor(selectedIndex == num ? Color.Yellow : .gray)
+                            Image(systemName: change.selectedIndex == num ? clickedTabViewImageNames[num] : tabViewImageNames[num])
+                                .foregroundColor(change.selectedIndex == num ? Color.Yellow : .gray)
                                 .font(.system(size: 24, weight: .bold))
                             Spacer()
                         })
