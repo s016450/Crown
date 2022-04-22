@@ -21,6 +21,7 @@ struct CreateTimeCompView: View {
     var btnBack : some View {
         Button(action: {
             delete.delete = true
+            delete.work = false
             self.presentationMode.wrappedValue.dismiss()
         }) {
             HStack {

@@ -17,10 +17,16 @@ struct CreatePointView: View {
     @State var privateCompetition = false
     @State var competitorName: String = ""
     @State var points: String = ""
+    let formatter: NumberFormatter = {
+            let formatter = NumberFormatter()
+            formatter.numberStyle = .decimal
+            return formatter
+        }()
     
     var btnBack : some View {
         Button(action: {
             delete.delete = true
+            delete.work = false
             self.presentationMode.wrappedValue.dismiss()
         }) {
             HStack {
@@ -158,34 +164,58 @@ struct CreatePointView: View {
                 })
                     .toggleStyle(SwitchToggleStyle(tint: .Yellow))
                     .padding()
-                /*
-                 if #available(iOS 15.0, *) {
-                 TextField("Winning Point Value", value: $userInfo.ownCompetitions[userInfo.ownCompetitions.count - 1].points, format: .number)
-                 .font(.system(size: 18, weight: .bold))
-                 .frame(maxWidth: .infinity,
-                 minHeight: 44)
-                 .padding(.leading, 60)
-                 .keyboardType(.numberPad)
-                 .foregroundColor(Color.Yellow)
-                 .background(
-                 
-                 ZStack(alignment: .leading){
-                 
-                 
-                 Image(systemName: "star.circle.fill")
-                 .font(.system(size: 20, weight: .heavy))
-                 .padding(.leading, 10)
-                 .foregroundColor(Color.Gray)
-                 
-                 RoundedRectangle(cornerRadius: 10, style: .continuous)
-                 .stroke(Color.Gray.opacity(0))
-                 .frame(maxWidth: 410)
-                 }
-                 )
-                 } else {
-                 // Fallback on earlier versions
-                 }
-                 */
+                
+                if #available(iOS 15.0, *) {
+                    TextField("Winning Point Value", value: $userInfo.ownCompetitions[userInfo.ownCompetitions.count - 1].points, format: .number)
+                        .font(.system(size: 18, weight: .bold))
+                        .frame(maxWidth: .infinity,
+                               minHeight: 44)
+                        .padding(.leading, 60)
+                        .keyboardType(.numberPad)
+                        .foregroundColor(Color.Yellow)
+                        .background(
+                            
+                            ZStack(alignment: .leading){
+                                
+                                
+                                Image(systemName: "star.circle")
+                                    .font(.system(size: 20, weight: .heavy))
+                                    .padding(.leading, 10)
+                                    .foregroundColor(Color.Gray)
+                                
+                                RoundedRectangle(cornerRadius: 10, style: .continuous)
+                                    .stroke(Color.Gray.opacity(0))
+                                    .frame(maxWidth: 410)
+                            }
+                        )
+                        .padding(.top, 1)
+                } else {
+                    TextField("Winning Point Value", value: $userInfo.ownCompetitions[userInfo.ownCompetitions.count - 1].points, formatter: formatter)
+                        .font(.system(size: 18, weight: .bold))
+                        .frame(maxWidth: .infinity,
+                               minHeight: 44)
+                        .padding(.leading, 60)
+                        .keyboardType(.numberPad)
+                        .foregroundColor(Color.Yellow)
+                        .background(
+                            
+                            ZStack(alignment: .leading){
+                                
+                                
+                                Image(systemName: "star.circle")
+                                    .font(.system(size: 20, weight: .heavy))
+                                    .padding(.leading, 10)
+                                    .foregroundColor(Color.Gray)
+                                
+                                RoundedRectangle(cornerRadius: 10, style: .continuous)
+                                    .stroke(Color.Gray.opacity(0))
+                                    .frame(maxWidth: 410)
+                            }
+                        )
+                        .padding(.top, 1)
+                    
+                }
+                
                 Spacer()
             }
             

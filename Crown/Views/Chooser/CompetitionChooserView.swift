@@ -9,6 +9,8 @@ import SwiftUI
 
 class Delete: ObservableObject{
     @Published var delete = false
+    @Published var work = false
+
 }
 
 struct CompetitionChooserView: View {
@@ -29,7 +31,6 @@ struct CompetitionChooserView: View {
     @State var pointOffset: CGFloat = 0.0
     @State var bracketOffset: CGFloat = 0.0
     @State var lock: Bool = true
-    
     
     var body: some View {
         VStack{
@@ -255,16 +256,20 @@ struct CompetitionChooserView: View {
             }
             .simultaneousGesture(TapGesture().onEnded{
                 userInfo.ownCompetitions.append(CompetitionInfo())
+                delete.work = true
             })
             .disabled(lock)
             .padding(.bottom, 17)
         }
         .onDisappear(perform: {
-            print("HI")
-            print(delete.delete)
             if delete.delete{
                 print("DELETED")
-                userInfo.ownCompetitions.remove(at: userInfo.ownCompetitions.count - 2)
+                if delete.work{
+                    userInfo.ownCompetitions.remove(at: userInfo.ownCompetitions.count - 2)
+                }
+                else{
+                    userInfo.ownCompetitions.remove(at: userInfo.ownCompetitions.count - 1)
+                }
                 print(userInfo.ownCompetitions)
                 delete.delete = false
             }
