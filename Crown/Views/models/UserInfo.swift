@@ -12,9 +12,12 @@ class UserInfo: ObservableObject{
     var name: String
     var password: String
     var confirmPassword: String = ""
+    var crowns: [Crown] = [Crown]()
+    
     @Published var loggedIn: Bool
     @Published var ownCompetitions: [CompetitionInfo] = [CompetitionInfo]()
-
+    @Published var joinedCompetitions: [CompetitionInfo] = [CompetitionInfo]()
+    
     init(email: String = "", name: String = "", loggedIn: Bool = false){
         
         self.email = email

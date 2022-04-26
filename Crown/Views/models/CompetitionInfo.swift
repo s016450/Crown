@@ -9,7 +9,7 @@ import Foundation
 import FirebaseFirestore
 import SwiftUI
 
-class CompetitionInfo{
+class CompetitionInfo: Identifiable{
     var compName: String
     @Published var barColor: Color = Color.Yellow
     var startDate = Date()

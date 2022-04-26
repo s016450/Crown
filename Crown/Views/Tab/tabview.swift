@@ -46,6 +46,10 @@ struct tabview: View {
                     NavigationView{
                         CompetitionChooserView()
                     }
+                case 3:
+                    NavigationView{
+                        DisplayCaseView()
+                    }
                 case 4:
                     NavigationView{
                         AccountView()

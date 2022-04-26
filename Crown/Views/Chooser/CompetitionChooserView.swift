@@ -289,7 +289,7 @@ func getDestination(choice: String)-> AnyView{
         return AnyView(CreatePointView())
     }
     else if choice == "bracket"{
-        
+        return AnyView(CreateBracketView())
     }
     return AnyView(HomeView())
 }

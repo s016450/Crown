@@ -13,6 +13,11 @@
 		5A654DC227FDD16E006095B2 /* FirebaseDummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A654DC127FDD16E006095B2 /* FirebaseDummy.swift */; };
 		5AB62E2427CE5BC0005FA340 /* CreateTimeCompView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB62E2327CE5BC0005FA340 /* CreateTimeCompView.swift */; };
 		731AC7CCFFB14551DC3147C7 /* Pods_Crown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 837A014AC8004DCC6E47DAD9 /* Pods_Crown.framework */; };
+		AB4BF252281460D400B290F7 /* CreateBracketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4BF251281460D400B290F7 /* CreateBracketView.swift */; };
+		AB4BF2542814619700B290F7 /* CustomizeBracketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4BF2532814619700B290F7 /* CustomizeBracketView.swift */; };
+		AB4BF257281470D800B290F7 /* DisplayCaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4BF256281470D800B290F7 /* DisplayCaseView.swift */; };
+		AB4BF2592814727300B290F7 /* Crown.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4BF2582814727300B290F7 /* Crown.swift */; };
+		AB4BF25C281725E000B290F7 /* FormatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4BF25B281725E000B290F7 /* FormatView.swift */; };
 		E3040B4D27BD91990029E9CA /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3040B4C27BD91990029E9CA /* ButtonView.swift */; };
 		E3040B4F27BD92280029E9CA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3040B4E27BD92280029E9CA /* Constants.swift */; };
 		E3040B5127BD92640029E9CA /* FirebaseFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3040B5027BD92640029E9CA /* FirebaseFunctions.swift */; };
@@ -69,6 +74,11 @@
 		5AB62E2327CE5BC0005FA340 /* CreateTimeCompView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTimeCompView.swift; sourceTree = "<group>"; };
 		837A014AC8004DCC6E47DAD9 /* Pods_Crown.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Crown.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A46104DD08EF13B12C6F3F4D /* Pods-Crown.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crown.release.xcconfig"; path = "Target Support Files/Pods-Crown/Pods-Crown.release.xcconfig"; sourceTree = "<group>"; };
+		AB4BF251281460D400B290F7 /* CreateBracketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateBracketView.swift; sourceTree = "<group>"; };
+		AB4BF2532814619700B290F7 /* CustomizeBracketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizeBracketView.swift; sourceTree = "<group>"; };
+		AB4BF256281470D800B290F7 /* DisplayCaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayCaseView.swift; sourceTree = "<group>"; };
+		AB4BF2582814727300B290F7 /* Crown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crown.swift; sourceTree = "<group>"; };
+		AB4BF25B281725E000B290F7 /* FormatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatView.swift; sourceTree = "<group>"; };
 		C1FCCBDCA9702607B098B425 /* Pods-Crown.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crown.debug.xcconfig"; path = "Target Support Files/Pods-Crown/Pods-Crown.debug.xcconfig"; sourceTree = "<group>"; };
 		E3040B4C27BD91990029E9CA /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		E3040B4E27BD92280029E9CA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -147,6 +157,7 @@
 			children = (
 				5A50D17827E0DAE80063CFDF /* Competitors.swift */,
 				23EB792027CE6434009AFC1C /* CompetitionInfo.swift */,
+				AB4BF2582814727300B290F7 /* Crown.swift */,
 				E3040B5027BD92640029E9CA /* FirebaseFunctions.swift */,
 				E3040B5E27BD939A0029E9CA /* UserInfo.swift */,
 			);
@@ -159,6 +170,22 @@
 				837A014AC8004DCC6E47DAD9 /* Pods_Crown.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AB4BF255281470B600B290F7 /* Display Case */ = {
+			isa = PBXGroup;
+			children = (
+				AB4BF256281470D800B290F7 /* DisplayCaseView.swift */,
+			);
+			path = "Display Case";
+			sourceTree = "<group>";
+		};
+		AB4BF25A281725BF00B290F7 /* Format */ = {
+			isa = PBXGroup;
+			children = (
+				AB4BF25B281725E000B290F7 /* FormatView.swift */,
+			);
+			path = Format;
 			sourceTree = "<group>";
 		};
 		E3040B6827C673CD0029E9CA /* Competitions */ = {
@@ -182,8 +209,10 @@
 				E3040B6827C673CD0029E9CA /* Competitions */,
 				E3490C96280D9B0600904E3F /* Create */,
 				E311C36D27E89F30004001E7 /* Customize */,
+				AB4BF255281470B600B290F7 /* Display Case */,
 				E39D218C27E0D013002EFE2F /* Find */,
 				E3040B6C27C674A20029E9CA /* Forgot Password */,
+				AB4BF25A281725BF00B290F7 /* Format */,
 				E3040B6D27C674E80029E9CA /* Home */,
 				E3040B6A27C674670029E9CA /* Login */,
 				E3040B6B27C674800029E9CA /* Register */,
@@ -235,6 +264,7 @@
 		E311C36D27E89F30004001E7 /* Customize */ = {
 			isa = PBXGroup;
 			children = (
+				AB4BF2532814619700B290F7 /* CustomizeBracketView.swift */,
 				E39D219227E834E6002EFE2F /* CustomizeTimeView.swift */,
 				E317536C2812DD3C0010E643 /* CustomizePointView.swift */,
 			);
@@ -263,6 +293,7 @@
 		E3490C96280D9B0600904E3F /* Create */ = {
 			isa = PBXGroup;
 			children = (
+				AB4BF251281460D400B290F7 /* CreateBracketView.swift */,
 				23EB791E27CE5C03009AFC1C /* CreatePointView.swift */,
 				5AB62E2327CE5BC0005FA340 /* CreateTimeCompView.swift */,
 			);
@@ -535,6 +566,7 @@
 				E3C62CC727CE6C2C00F7A805 /* PointInfo.swift in Sources */,
 				E39D218927D950D1002EFE2F /* tabview.swift in Sources */,
 				E34F8C1727C7D25300949EED /* CompetitionChooserView.swift in Sources */,
+				AB4BF2542814619700B290F7 /* CustomizeBracketView.swift in Sources */,
 				E3040B5D27BD937E0029E9CA /* RegisterView.swift in Sources */,
 				E3040B5127BD92640029E9CA /* FirebaseFunctions.swift in Sources */,
 				23EB792127CE6434009AFC1C /* CompetitionInfo.swift in Sources */,
@@ -550,7 +582,9 @@
 				E39D219327E834E6002EFE2F /* CustomizeTimeView.swift in Sources */,
 				E39D218E27E0D074002EFE2F /* FindView.swift in Sources */,
 				23EB791F27CE5C03009AFC1C /* CreatePointView.swift in Sources */,
+				AB4BF2592814727300B290F7 /* Crown.swift in Sources */,
 				E3040B4D27BD91990029E9CA /* ButtonView.swift in Sources */,
+				AB4BF252281460D400B290F7 /* CreateBracketView.swift in Sources */,
 				E3040B6527C673A70029E9CA /* BracketView.swift in Sources */,
 				E3040B6327C673930029E9CA /* TimeCompView.swift in Sources */,
 				E3C62CC127CE6B2700F7A805 /* BracketInfo.swift in Sources */,
@@ -558,7 +592,9 @@
 				E3040B5327BD92910029E9CA /* ForgotPasswordView.swift in Sources */,
 				5A50D17927E0DAE80063CFDF /* Competitors.swift in Sources */,
 				E3040B5727BD92F90029E9CA /* LoginView.swift in Sources */,
+				AB4BF25C281725E000B290F7 /* FormatView.swift in Sources */,
 				E3040B5B27BD93660029E9CA /* PreviewLayoutComponentModifier.swift in Sources */,
+				AB4BF257281470D800B290F7 /* DisplayCaseView.swift in Sources */,
 				E3040B4F27BD92280029E9CA /* Constants.swift in Sources */,
 				E3040B5927BD93310029E9CA /* NavAppearanceModifier.swift in Sources */,
 			);

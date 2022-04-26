@@ -10,76 +10,86 @@ import SwiftUI
 struct HomeView: View {
     
     @EnvironmentObject var userInfo: UserInfo
-    @State private var showCompetitionChooser = false
-    @State private var showAccountView = false
-    @State private var showFirebaseDummy = false
     
     var body: some View {
-        
-        NavigationView{
+        VStack{
+            Text("Active Competitions")
+                .font(.system(size: 35, weight: .heavy))
+                .foregroundColor(Color.Gray)
+                .padding(.top, 30)
             
-            VStack(alignment: .leading,
-                   spacing: 16){
-                
-                Button(action: {
-                    showFirebaseDummy = true
-                }, label: {
-                    Image(systemName: "person")
-                        .font(.system(size: 24, weight: .bold))
-                        .foregroundColor(.white)
-                        .padding()
-                        .background(Color.Gray)
-                        .clipShape(Circle())
-                        .shadow(color: Color.Gray.opacity(0.6), radius: 5, x: 0, y: 0)
-                })
-                
-                .sheet(isPresented: $showFirebaseDummy){
-                    FirebaseDummy()
-                }
-                
-                Button(action: {
-                    showAccountView = true
-                }, label: {
-                    Image(systemName: "person.fill")
-                        .font(.system(size: 24, weight: .bold))
-                        .foregroundColor(.white)
-                        .padding()
-                        .background(Color.Gray)
-                        .clipShape(Circle())
-                        .shadow(color: Color.Gray.opacity(0.6), radius: 5, x: 0, y: 0)
-                })
-                .sheet(isPresented: $showAccountView){
-                    AccountView()
-                }
-                
-                Button(action: {
-                    showCompetitionChooser.toggle()
-                }, label: {
-                    Image(systemName: "plus")
-                        .font(.system(size: 24, weight: .bold))
+            ScrollView{
+                VStack{
+                    Text("My Competitions")
+                        .font(.system(size: 26, weight: .heavy))
                         .foregroundColor(Color.Gray)
-                        .padding()
-                        .background(Color.white)
-                        .overlay(Circle().stroke(Color.Gray, lineWidth: 5))
-                        .clipShape(Circle())
-                        .shadow(color: Color.Gray.opacity(0.6), radius: 5, x: 0, y: 0)
-                })
-                .sheet(isPresented: $showCompetitionChooser){
-                    CompetitionChooserView()
-                }
-                
-                Spacer()
-                VStack(alignment: .leading,
-                       spacing: 16){
+                        .padding(.top, 20)
                     
+                    if userInfo.ownCompetitions.count == 0{
+                        Text("Competitions You Create Will Appear Here")
+                            .font(.system(size: 18, weight: .semibold))
+                            .padding(.top, 5)
+                    }
                     
+                    ForEach(userInfo.ownCompetitions) { info in
+                        
+                        VStack{
+                            
+                            Text(info.compName)
+                                .frame(width: UIScreen.main.bounds.size.width - 40, alignment: .center)
+                                .multilineTextAlignment(.center)
+                                .font(.system(size: 28, weight: .heavy))
+                                .foregroundColor(Color.Gray)
+                            
+                            if info.competitors.count >= 1{
+                                
+                                if let x = dictionarify(competitors: info.competitors)[dictionarify(competitors: info.competitors).keys.sorted(by: { dictionarify(competitors: info.competitors)[$0]! < dictionarify(competitors: info.competitors)[$1]! })[0]]{
+                                    Text("\(dictionarify(competitors: info.competitors).keys.sorted(by: { dictionarify(competitors: info.competitors)[$0]! < dictionarify(competitors: info.competitors)[$1]! })[0]) - \(String(x))")
+                                    if let y = info.points{
+                                        RoundedRectangle(cornerRadius: 10, style: .continuous)
+                                        //.fill(info.barColor)
+                                            .frame(width: x == 0 ? 0 :  CGFloat(y/x), height: 50)
+                                    }
+                                    
+                                    else{
+                                        RoundedRectangle(cornerRadius: 10, style: .continuous)
+                                            .fill(Color.Yellow)
+                                            .frame(width: x == 0 ? 0 : CGFloat(300/x), height: 50)
+
+                                    }
+                                }
+                            }
+                            if info.competitors.count >= 2{
+                                if let x = dictionarify(competitors: info.competitors)[dictionarify(competitors: info.competitors).keys.sorted(by: { dictionarify(competitors: info.competitors)[$0]! < dictionarify(competitors: info.competitors)[$1]! })[1]]{
+                                    Text("\(dictionarify(competitors: info.competitors).keys.sorted(by: { dictionarify(competitors: info.competitors)[$0]! < dictionarify(competitors: info.competitors)[$1]! })[1]) - \(String(x))")
+                                }
+                            }
+                            if info.competitors.count >= 3{
+                                if let x = dictionarify(competitors: info.competitors)[dictionarify(competitors: info.competitors).keys.sorted(by: { dictionarify(competitors: info.competitors)[$0]! < dictionarify(competitors: info.competitors)[$1]! })[2]]{
+                                    Text("\(dictionarify(competitors: info.competitors).keys.sorted(by: { dictionarify(competitors: info.competitors)[$0]! < dictionarify(competitors: info.competitors)[$1]! })[2]) - \(String(x))")
+                                }
+                            }
+                        }
+                        
+                    }
+                    Text("Joined Competitions")
+                        .font(.system(size: 26, weight: .heavy))
+                        .foregroundColor(Color.Gray)
+                        .padding(.top, 20)
+                    if userInfo.joinedCompetitions.count == 0{
+                        Text("Competitions You Join Will Appear Here")
+                            .font(.system(size: 18, weight: .semibold))
+                            .padding(.top, 5)
+
+
+                    }
                 }
             }
-            .padding(.horizontal, 16)
+            Spacer()
         }
         .ignoresSafeArea()
-        .navigationTitle("Crown")
-        .navigationBarItems(leading: Image("crown").resizable().frame(width: 100, height: 100))
+        .navigationBarTitle("")
+        .navigationBarHidden(true)
     }
 }
 
@@ -91,3 +101,10 @@ struct HomeView_Previews: PreviewProvider {
     }
 }
 
+func dictionarify(competitors: [Competitors])->[String: Int]{
+    var dct = [String: Int]()
+    for competitor in competitors{
+        dct[competitor.user] = competitor.points
+    }
+    return dct
+}
