@@ -11,7 +11,7 @@ import SwiftUI
 
 class CompetitionInfo: Identifiable{
     var compName: String
-    @Published var barColor: Color = Color.Yellow
+    @Published var barColor: String = "Yellow"
     var startDate = Date()
     var endDate = Date()
     var competitorId = UUID()

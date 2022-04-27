@@ -69,7 +69,8 @@ struct CustomizeBracketView: View {
                 HStack{
                     Button(action: {
                         color = .Red
-                        print(userInfo.ownCompetitions[userInfo.ownCompetitions.count - 1].barColor)}
+                        userInfo.ownCompetitions[userInfo.ownCompetitions.count - 1].barColor = "Red"
+                        }
                            ,
                            label: {
                         RoundedRectangle(cornerRadius: 5, style: .continuous)
@@ -77,56 +78,79 @@ struct CustomizeBracketView: View {
                             .frame(width: 25, height: 25)
                         .overlay(RoundedRectangle(cornerRadius: 5).stroke(lineWidth: 1).foregroundColor(Color.Gray))})
                     Button(action: {
-                        color = .Purple},
+                        color = .Purple
+                        userInfo.ownCompetitions[userInfo.ownCompetitions.count - 1].barColor = "Purple"
+
+                    },
                            label: {
                         RoundedRectangle(cornerRadius: 5, style: .continuous)
                             .fill(Color.Purple)
                             .frame(width: 25, height: 25)
                         .overlay(RoundedRectangle(cornerRadius: 5).stroke(lineWidth: 1).foregroundColor(Color.Gray))})
                     Button(action: {
-                        color = .Blue},
+                        color = .Blue
+                        userInfo.ownCompetitions[userInfo.ownCompetitions.count - 1].barColor = "Blue"
+                    },
                            label: {
                         RoundedRectangle(cornerRadius: 5, style: .continuous)
                             .fill(Color.Blue)
                             .frame(width: 25, height: 25)
                         .overlay(RoundedRectangle(cornerRadius: 5).stroke(lineWidth: 1).foregroundColor(Color.Gray))})
                     Button(action: {
-                        color = .Orange},
+                        color = .Orange
+                        userInfo.ownCompetitions[userInfo.ownCompetitions.count - 1].barColor = "Orange"
+
+                    },
                            label: {
                         RoundedRectangle(cornerRadius: 5, style: .continuous)
                             .fill(Color.Orange)
                             .frame(width: 25, height: 25)
                         .overlay(RoundedRectangle(cornerRadius: 5).stroke(lineWidth: 1).foregroundColor(Color.Gray))})
                     Button(action: {
-                        color = .Yellow},
+                        color = .Yellow
+                        userInfo.ownCompetitions[userInfo.ownCompetitions.count - 1].barColor = "Yellow"
+
+                    },
                            label: {
                         RoundedRectangle(cornerRadius: 5, style: .continuous)
                             .fill(Color.Yellow)
                             .frame(width: 25, height: 25)
                         .overlay(RoundedRectangle(cornerRadius: 5).stroke(lineWidth: 1).foregroundColor(Color.Gray))})
                     Button(action: {
-                        color = .green},
+                        color = .green
+                        userInfo.ownCompetitions[userInfo.ownCompetitions.count - 1].barColor = "green"
+
+                    },
                            label: {
                         RoundedRectangle(cornerRadius: 5, style: .continuous)
                             .fill(Color.green)
                             .frame(width: 25, height: 25)
                         .overlay(RoundedRectangle(cornerRadius: 5).stroke(lineWidth: 1).foregroundColor(Color.Gray))})
                     Button(action: {
-                        color = .Blu},
+                        color = .Blu
+                        userInfo.ownCompetitions[userInfo.ownCompetitions.count - 1].barColor = "Blu"
+
+                    },
                            label: {
                         RoundedRectangle(cornerRadius: 5, style: .continuous)
                             .fill(Color.Blu)
                             .frame(width: 25, height: 25)
                         .overlay(RoundedRectangle(cornerRadius: 5).stroke(lineWidth: 1).foregroundColor(Color.Gray))})
                     Button(action: {
-                        color = .Pink},
+                        color = .Pink
+                        userInfo.ownCompetitions[userInfo.ownCompetitions.count - 1].barColor = "Pink"
+
+                    },
                            label: {
                         RoundedRectangle(cornerRadius: 5, style: .continuous)
                             .fill(Color.Pink)
                             .frame(width: 25, height: 25)
                         .overlay(RoundedRectangle(cornerRadius: 5).stroke(lineWidth: 1).foregroundColor(Color.Gray))})
                     Button(action: {
-                        color = .LightGray},
+                        color = .LightGray
+                        userInfo.ownCompetitions[userInfo.ownCompetitions.count - 1].barColor = "LightGray"
+
+                    },
                            label: {
                         RoundedRectangle(cornerRadius: 5, style: .continuous)
                             .fill(Color.LightGray)
