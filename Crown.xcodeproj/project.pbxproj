@@ -18,6 +18,7 @@
 		AB4BF257281470D800B290F7 /* DisplayCaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4BF256281470D800B290F7 /* DisplayCaseView.swift */; };
 		AB4BF2592814727300B290F7 /* Crown.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4BF2582814727300B290F7 /* Crown.swift */; };
 		AB4BF25C281725E000B290F7 /* FormatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4BF25B281725E000B290F7 /* FormatView.swift */; };
+		E300F1AB28196D5100D4CE30 /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E300F1AA28196D5100D4CE30 /* DetailsView.swift */; };
 		E3040B4D27BD91990029E9CA /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3040B4C27BD91990029E9CA /* ButtonView.swift */; };
 		E3040B4F27BD92280029E9CA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3040B4E27BD92280029E9CA /* Constants.swift */; };
 		E3040B5127BD92640029E9CA /* FirebaseFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3040B5027BD92640029E9CA /* FirebaseFunctions.swift */; };
@@ -80,6 +81,7 @@
 		AB4BF2582814727300B290F7 /* Crown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crown.swift; sourceTree = "<group>"; };
 		AB4BF25B281725E000B290F7 /* FormatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatView.swift; sourceTree = "<group>"; };
 		C1FCCBDCA9702607B098B425 /* Pods-Crown.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crown.debug.xcconfig"; path = "Target Support Files/Pods-Crown/Pods-Crown.debug.xcconfig"; sourceTree = "<group>"; };
+		E300F1AA28196D5100D4CE30 /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
 		E3040B4C27BD91990029E9CA /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		E3040B4E27BD92280029E9CA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E3040B5027BD92640029E9CA /* FirebaseFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseFunctions.swift; sourceTree = "<group>"; };
@@ -188,6 +190,14 @@
 			path = Format;
 			sourceTree = "<group>";
 		};
+		E300F1A928196D2D00D4CE30 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				E300F1AA28196D5100D4CE30 /* DetailsView.swift */,
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
 		E3040B6827C673CD0029E9CA /* Competitions */ = {
 			isa = PBXGroup;
 			children = (
@@ -209,6 +219,7 @@
 				E3040B6827C673CD0029E9CA /* Competitions */,
 				E3490C96280D9B0600904E3F /* Create */,
 				E311C36D27E89F30004001E7 /* Customize */,
+				E300F1A928196D2D00D4CE30 /* Details */,
 				AB4BF255281470B600B290F7 /* Display Case */,
 				E39D218C27E0D013002EFE2F /* Find */,
 				E3040B6C27C674A20029E9CA /* Forgot Password */,
@@ -564,6 +575,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E3C62CC727CE6C2C00F7A805 /* PointInfo.swift in Sources */,
+				E300F1AB28196D5100D4CE30 /* DetailsView.swift in Sources */,
 				E39D218927D950D1002EFE2F /* tabview.swift in Sources */,
 				E34F8C1727C7D25300949EED /* CompetitionChooserView.swift in Sources */,
 				AB4BF2542814619700B290F7 /* CustomizeBracketView.swift in Sources */,

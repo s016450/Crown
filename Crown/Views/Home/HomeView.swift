@@ -36,10 +36,8 @@ struct HomeView: View {
                     ForEach(userInfo.ownCompetitions) { info in
                         
                         NavigationLink(destination: {
-                            
-                            
-                        },
-                                       label: {
+                            DetailsView(info: info)
+                        }, label: {
                             VStack{
                                 
                                 Text(info.compName)
