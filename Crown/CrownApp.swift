@@ -22,10 +22,11 @@ struct CrownApp: App {
     @StateObject var userInfo = UserInfo()
     @StateObject var change = Change()
     @StateObject var delete = Delete()
+    @StateObject var s = shows()
 
     var body: some Scene {
         WindowGroup {
-            ContentView().environmentObject(userInfo).environmentObject(change).environmentObject(delete)
+            ContentView().environmentObject(userInfo).environmentObject(change).environmentObject(delete).environmentObject(s)
         }
     }
 }

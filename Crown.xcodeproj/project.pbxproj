@@ -18,6 +18,9 @@
 		AB4BF257281470D800B290F7 /* DisplayCaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4BF256281470D800B290F7 /* DisplayCaseView.swift */; };
 		AB4BF2592814727300B290F7 /* Crown.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4BF2582814727300B290F7 /* Crown.swift */; };
 		AB4BF25C281725E000B290F7 /* FormatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4BF25B281725E000B290F7 /* FormatView.swift */; };
+		AB4BF25F281A54B800B290F7 /* WCDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4BF25E281A54B800B290F7 /* WCDView.swift */; };
+		AB4BF261281A5BB300B290F7 /* MDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4BF260281A5BB300B290F7 /* MDView.swift */; };
+		AB4BF263281A5C8D00B290F7 /* AMView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4BF262281A5C8D00B290F7 /* AMView.swift */; };
 		E300F1AB28196D5100D4CE30 /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E300F1AA28196D5100D4CE30 /* DetailsView.swift */; };
 		E3040B4D27BD91990029E9CA /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3040B4C27BD91990029E9CA /* ButtonView.swift */; };
 		E3040B4F27BD92280029E9CA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3040B4E27BD92280029E9CA /* Constants.swift */; };
@@ -80,6 +83,9 @@
 		AB4BF256281470D800B290F7 /* DisplayCaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayCaseView.swift; sourceTree = "<group>"; };
 		AB4BF2582814727300B290F7 /* Crown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crown.swift; sourceTree = "<group>"; };
 		AB4BF25B281725E000B290F7 /* FormatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatView.swift; sourceTree = "<group>"; };
+		AB4BF25E281A54B800B290F7 /* WCDView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WCDView.swift; sourceTree = "<group>"; };
+		AB4BF260281A5BB300B290F7 /* MDView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDView.swift; sourceTree = "<group>"; };
+		AB4BF262281A5C8D00B290F7 /* AMView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMView.swift; sourceTree = "<group>"; };
 		C1FCCBDCA9702607B098B425 /* Pods-Crown.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crown.debug.xcconfig"; path = "Target Support Files/Pods-Crown/Pods-Crown.debug.xcconfig"; sourceTree = "<group>"; };
 		E300F1AA28196D5100D4CE30 /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
 		E3040B4C27BD91990029E9CA /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
@@ -190,6 +196,16 @@
 			path = Format;
 			sourceTree = "<group>";
 		};
+		AB4BF25D281A547B00B290F7 /* Join */ = {
+			isa = PBXGroup;
+			children = (
+				AB4BF25E281A54B800B290F7 /* WCDView.swift */,
+				AB4BF260281A5BB300B290F7 /* MDView.swift */,
+				AB4BF262281A5C8D00B290F7 /* AMView.swift */,
+			);
+			path = Join;
+			sourceTree = "<group>";
+		};
 		E300F1A928196D2D00D4CE30 /* Details */ = {
 			isa = PBXGroup;
 			children = (
@@ -212,7 +228,6 @@
 		E3040B6927C673F00029E9CA /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				5A50D17727E0DAD60063CFDF /* models */,
 				E39D218527D8D567002EFE2F /* Account */,
 				E3040B6E27C6750B0029E9CA /* Button */,
 				E3490C94280D9ABA00904E3F /* Chooser */,
@@ -225,6 +240,7 @@
 				E3040B6C27C674A20029E9CA /* Forgot Password */,
 				AB4BF25A281725BF00B290F7 /* Format */,
 				E3040B6D27C674E80029E9CA /* Home */,
+				AB4BF25D281A547B00B290F7 /* Join */,
 				E3040B6A27C674670029E9CA /* Login */,
 				E3040B6B27C674800029E9CA /* Register */,
 				E39D219427E8354A002EFE2F /* Tab */,
@@ -336,6 +352,7 @@
 		E376330F27BD557E00A7AD56 /* Crown */ = {
 			isa = PBXGroup;
 			children = (
+				5A50D17727E0DAD60063CFDF /* models */,
 				E3040B6927C673F00029E9CA /* Views */,
 				E376331027BD557E00A7AD56 /* CrownApp.swift */,
 				E376331227BD557E00A7AD56 /* ContentView.swift */,
@@ -575,6 +592,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E3C62CC727CE6C2C00F7A805 /* PointInfo.swift in Sources */,
+				AB4BF261281A5BB300B290F7 /* MDView.swift in Sources */,
 				E300F1AB28196D5100D4CE30 /* DetailsView.swift in Sources */,
 				E39D218927D950D1002EFE2F /* tabview.swift in Sources */,
 				E34F8C1727C7D25300949EED /* CompetitionChooserView.swift in Sources */,
@@ -603,7 +621,9 @@
 				E39D218727D8D582002EFE2F /* AccountView.swift in Sources */,
 				E3040B5327BD92910029E9CA /* ForgotPasswordView.swift in Sources */,
 				5A50D17927E0DAE80063CFDF /* Competitors.swift in Sources */,
+				AB4BF25F281A54B800B290F7 /* WCDView.swift in Sources */,
 				E3040B5727BD92F90029E9CA /* LoginView.swift in Sources */,
+				AB4BF263281A5C8D00B290F7 /* AMView.swift in Sources */,
 				AB4BF25C281725E000B290F7 /* FormatView.swift in Sources */,
 				E3040B5B27BD93660029E9CA /* PreviewLayoutComponentModifier.swift in Sources */,
 				AB4BF257281470D800B290F7 /* DisplayCaseView.swift in Sources */,

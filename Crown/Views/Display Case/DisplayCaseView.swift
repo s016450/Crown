@@ -15,6 +15,12 @@ struct DisplayCaseView: View {
                 .foregroundColor(Color.Gray)
                 .padding(.top, 30)
             
+            Text("crowns earned from competitions will appear here")
+                .multilineTextAlignment(.center)
+                .foregroundColor(Color.Yellow)
+                .font(.system(size: 18, weight: .semibold))
+                .padding(.top, 250)
+            
             Spacer()
         }
         .ignoresSafeArea()
